@@ -39,3 +39,33 @@
 | Versión | Fecha     | Autor               | Descripción de modificación                              |
 |---------|-----------|---------------------|----------------------------------------------------------|
 | 1.0     | 1/09/2026 |  Julca Cruz, Renso Anthony        | Creación inicial de la estructura del informe            |
+
+# Contenido
+
+- [Capítulo I: Introducción](#capítulo-i-introducción)
+    - [1.1. Startup Profile](#11-startup-profile)
+        - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+        - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+    - [1.2. Solution Profile](#12-solution-profile)
+        - [1.2.1. Nombre del producto](#121-nombre-del-producto)
+        - [1.2.2. Antecedentes y problemática](#122-antecedentes-y-problemática)
+        - [1.2.3. Lean UX Process](#123-lean-ux-process)
+            - [1.2.3.1. Lean UX Problem Statement](#1231-lean-ux-problem-statement)
+            - [1.2.3.2. Lean UX Assumptions](#1232-lean-ux-assumptions)
+            - [1.2.3.3. Lean UX Hypothesis](#1233-lean-ux-hypothesis)
+            - [1.2.3.4. Lean UX Canvas](#1234-lean-ux-canvas)
+    - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+- [Capítulo II: Requirements & Analysis](#capítulo-ii-requirements--analysis)
+    - [2.1. Competidores](#21-competidores)
+    - [2.2. Entrevistas](#22-entrevistas)
+    - [2.3. Needfinding](#23-needfinding)
+        - [2.3.1. User Personas](#231-user-personas)
+        - [2.3.2. User Task Matrix](#232-user-task-matrix)
+        - [2.3.3. Empathy Maps](#233-empathy-maps)
+        - [2.3.4. As-is Scenario Mapping](#234-as-is-scenario-mapping)
+- [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
+    - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
+    - [3.2. User Stories](#32-user-stories)
+    - [3.3. Impact Map](#33-impact-map)
+    - [3.4. Product Backlog](#34-product-backlog)
+
