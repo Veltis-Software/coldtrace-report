@@ -23,7 +23,7 @@
 <h4 style="text-align: center">Integrantes:</h4>
 
 <div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
-  <p> — Condori Lozano, Alessandro Ramiro </p>
+  <p> — Condori Lozano, Alessandro Ramiro</p>
   <p>U202121579 — Julca Cruz, Renso Anthony</p>
   <p> — Morales Venegas, David Joel</p>
 </div>
@@ -125,3 +125,45 @@ Misión: Brindar a las empresas del sector alimentario una plataforma confiable,
 Visión: Consolidarnos como una referencia regional en monitoreo digital de cadena de frío, impulsando operaciones alimentarias más seguras, eficientes y sostenibles mediante soluciones web modernas, abiertas a integración, con asistencia inteligente supervisada y un modelo SaaS viable para negocios de distintos tamaños.
 
 ### 1.1.2. Perfiles de integrantes del equipo
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/img/team-members/renso.png" alt="_photo"  width="520">
+    </td>
+      <td>
+          <p align="center"><strong>Condori Lozano, Alessandro Ramiro</strong></p>
+          <p align="justify">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit parturient, varius faucibus elementum tortor neque augue gravida interdum, dapibus inceptos mollis luctus aenean scelerisque cum. Habitasse conubia luctus ut ultrices risus volutpat integer, montes aenean habitant non taciti posuere id, diam varius maecenas ligula venenatis lacinia. Interdum natoque porttitor habitant purus a dignissim posuere tristique, tortor mauris rhoncus hac mus nec lacus, magna fermentum sapien varius ante aliquam senectus.
+          </p>
+    </td>
+  </tr>
+</table>
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/img/team-members/renso.png" alt="renso_photo"  width="520">
+    </td>
+      <td>
+          <p align="center"><strong>Julca Cruz, Renso Anthony</strong></p>
+          <p align="justify">
+             Soy Renso Anthony Julca Cruz estudiante de Ingenieria de Software, actualmente curso el 7mo ciclo de esta carrera. Me gusta ser autodidacta para poder mejorar mis habilidades en el desarrollo de software, quisiera dedicarme a la parte de gestion bancaria, o la parte de data analyst.
+          </p>
+    </td>
+  </tr>
+</table>
+
+<table align="center" border="1" cellspacing="0" cellpadding="8" style="width: 90%; border-collapse: collapse;">
+  <tr>
+    <td style="width: 150px; text-align: center;">
+      <img src="assets/img/team-members/renso.png" alt="_photo"  width="520">
+    </td>
+      <td>
+          <p align="center"><strong>Morales Venegas, David Joel</strong></p>
+          <p align="justify">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit parturient, varius faucibus elementum tortor neque augue gravida interdum, dapibus inceptos mollis luctus aenean scelerisque cum. Habitasse conubia luctus ut ultrices risus volutpat integer, montes aenean habitant non taciti posuere id, diam varius maecenas ligula venenatis lacinia. Interdum natoque porttitor habitant purus a dignissim posuere tristique, tortor mauris rhoncus hac mus nec lacus, magna fermentum sapien varius ante aliquam senectus.
+          </p>
+    </td>
+  </tr>
+</table>
