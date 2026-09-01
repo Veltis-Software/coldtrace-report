@@ -69,3 +69,43 @@
     - [3.3. Impact Map](#33-impact-map)
     - [3.4. Product Backlog](#34-product-backlog)
 
+# Student Outcome
+
+En el siguiente cuadro se describe las acciones realizadas y enunciadas de conclusiones por parte del equipo, que permiten sustentar el haber alcanzado el logro ABET - EAC - Student Outcome.
+
+<table border="1" style="border-collapse: collapse; width: 100%; font-family: sans-serif; font-size: 14px;">
+    <thead>
+        <tr style="background-color: #f2f2f2; text-align: left;">
+            <th style="padding: 10px; width: 25%;">Criterio específico</th>
+            <th style="padding: 10px; width: 50%;">Acciones realizadas</th>
+            <th style="padding: 10px; width: 25%;">Conclusiones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 10px;"><strong> Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software. </strong></td>
+            <td style="padding: 10px;">
+                <p><strong>Julca Cruz, Renso Anthony</strong><br> 
+                <strong>TB1:</strong><br>
+            </td>
+            <td style="padding: 10px; vertical-align: top;"> 
+                <strong>TB1:</strong><br>
+                <br><br>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 10px;"><strong> Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software. </strong></td>
+            <td style="padding: 10px;">
+                <p><strong>Julca Cruz, Renso Anthony</strong><br> 
+                <strong>TB1:</strong><br>
+                <br>
+            </td>
+            <td style="padding: 10px; vertical-align: top;"> 
+                <strong>TB1:</strong><br>
+                <br><br>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<hr class="page-break">
