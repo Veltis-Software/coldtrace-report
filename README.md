@@ -33,3 +33,9 @@
 <h5 style="text-align: center; font-style: italic;"> Setiembre 2026 </h5>
 
 <hr class="page-break">
+
+# Registro de Versiones del Informe
+
+| Versión | Fecha     | Autor               | Descripción de modificación                              |
+|---------|-----------|---------------------|----------------------------------------------------------|
+| 1.0     | 1/09/2026 |  Julca Cruz, Renso Anthony        | Creación inicial de la estructura del informe            |
