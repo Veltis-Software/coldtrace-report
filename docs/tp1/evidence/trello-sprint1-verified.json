@@ -1,0 +1,542 @@
+{
+  "boardUrl": "https://trello.com/b/3tf7nnux/fundamentos",
+  "verifiedOn": "2026-10-10",
+  "lists": [
+    {
+      "name": "📋 Backlog (Por hacer)",
+      "count": 12,
+      "cards": [
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cdb2dc1f7681385d15dd",
+          "name": "S1-Q02 · Validación de usabilidad del ADD",
+          "url": "https://trello.com/c/CtzF1HWE/19-s1-q02-validaci%C3%B3n-de-usabilidad-del-add",
+          "description": "Ejecutar escenario QA-03 con participantes reales y criterios del informe. Las capturas y pruebas Web muestran funcionalidad; no acreditan un estudio con usuarios.\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cdafae29b93178eb8db8",
+          "name": "S1-Q01 · Benchmark de rendimiento del ADD",
+          "url": "https://trello.com/c/ViwGIv6k/18-s1-q01-benchmark-de-rendimiento-del-add",
+          "description": "Ejecutar escenario QA-02 del ADD con carga, volumen y umbrales del informe; registrar percentiles y recursos. Pruebas unitarias y CI no acreditan el escenario de calidad completo.\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cdac8a1c8a0ca4d46a20",
+          "name": "S1-D04 · Evidencia de colaboración y aceptación",
+          "url": "https://trello.com/c/nl0J8vnw/17-s1-d04-evidencia-de-colaboraci%C3%B3n-y-aceptaci%C3%B3n",
+          "description": "Revisar historias y pull requests, recopilar contribuciones reales de los integrantes y analítica GitHub. El clon de Trello no conserva el historial original. No asignar tareas, horas o autoría retroactivamente.\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cda9d3bee5e59295de35",
+          "name": "S1-D03 · Despliegue académico en Google Cloud",
+          "url": "https://trello.com/c/1kqZSYXQ/16-s1-d03-despliegue-acad%C3%A9mico-en-google-cloud",
+          "description": "Pendiente creación del proyecto e identidad y verificación presupuestaria. Preparación disponible para southamerica-west1. Desplegar una parte funcional de Sprint 1 y capturar recursos y URL verificables; despliegue integral de 5.4 corresponde a TF1. No hay recursos cloud ya creados.\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cda5e8a51f5e58389dd5",
+          "name": "S1-D02 · Video de ejecución y capturas Postman",
+          "url": "https://trello.com/c/xpBjANwD/15-s1-d02-video-de-ejecuci%C3%B3n-y-capturas-postman",
+          "description": "El enunciado exige video explicativo y capturas de interacciones Postman. Hay resultados Newman y capturas de aplicación/Swagger; aún falta el video y la captura específica de Postman. No sustituir por evidencia construida.\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111e1",
+          "name": "INF-05 · Student Outcome ABET SO-7",
+          "url": "https://trello.com/c/y24hdxcG/34-inf-05-student-outcome-abet-so-7",
+          "description": "CRITERIO RÚBRICA : requisito estructural del informe\nDEPENDE DE : INF-02\nARTEFACTOS : /report/02-student-outcome.md\nESTIMACIÓN : 3",
+          "members": [],
+          "labels": [
+            "EQUIPO"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11187",
+          "name": "INF-06 · Participant Performance Report (Anexo B)",
+          "url": "https://trello.com/c/ahep5LsK/4-inf-06-participant-performance-report-anexo-b",
+          "description": "CRITERIO RÚBRICA : entregable adjunto obligatorio\nDEPENDE DE : todos los work items de contenido\nESTIMACIÓN : 2",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11181",
+          "name": "RA-04 · Elicitación — entrevistas de Alessandro",
+          "url": "https://trello.com/c/PVT0qDiG/2-ra-04-elicitaci%C3%B3n-entrevistas-de-alessandro",
+          "description": "CRITERIO RÚBRICA : Research/entrevistas — 1.5\nDEPENDE DE             : RA-03\nBLOQUEA A              : RA-07\nESTIMACIÓN           : 5",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111b4",
+          "name": "RA-05 · Elicitación — entrevistas de Renso",
+          "url": "https://trello.com/c/gHUAfISv/19-ra-05-elicitaci%C3%B3n-entrevistas-de-renso",
+          "description": "CRITERIO RÚBRICA : Research/entrevistas — 1.5\nDEPENDE DE             : RA-03\nBLOQUEA A              : RA-07\nESTIMACIÓN           : 5",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111b7",
+          "name": "RA-06 · Elicitación — entrevistas de David",
+          "url": "https://trello.com/c/tOTVhBHS/20-ra-06-elicitaci%C3%B3n-entrevistas-de-david",
+          "description": "CRITERIO RÚBRICA : Research/entrevistas — 1.5\nDEPENDE DE             : RA-03\nBLOQUEA A              : RA-07\nESTIMACIÓN           : 5",
+          "members": [],
+          "labels": [
+            "David"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111ba",
+          "name": "RA-07 · 2.2.2 Consolidación del registro y video de evidencia",
+          "url": "https://trello.com/c/SIe0WU8f/21-ra-07-222-consolidaci%C3%B3n-del-registro-y-video-de-evidencia",
+          "description": "CRITERIO RÚBRICA : Research/entrevistas — 1.5\nDEPENDE DE       : RA-04, RA-05, RA-06\nBLOQUEA A        : RA-08\nARTEFACTOS       : /report/assets/chapter-02/interviews/\\*\\*\nESTIMACIÓN       : 3",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111e7",
+          "name": "QA-03 · Release y entrega",
+          "url": "https://trello.com/c/9AqFIBsk/36-qa-03-release-y-entrega",
+          "description": "DEPENDE DE       : QA-01, QA-02, INF-03, INF-06\nESTIMACIÓN       : 2",
+          "members": [],
+          "labels": [
+            "EQUIPO"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🔨 En progreso",
+      "count": 4,
+      "cards": [
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cda2c9daea107358ae06",
+          "name": "S1-D01 · Integración de evidencias del capítulo V",
+          "url": "https://trello.com/c/4vCXSYlc/14-s1-d01-integraci%C3%B3n-de-evidencias-del-cap%C3%ADtulo-v",
+          "description": "Actualizar secciones 5.1, 5.2 y 5.3.1 sobre el DOCX corregido; preservar tablas, imágenes y estilos; incorporar capturas reales de aplicación, Swagger, CI y tablero. Revisión visual final pendiente.\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111de",
+          "name": "INF-04 · Portada y registro de versiones",
+          "url": "https://trello.com/c/LuyWFwtu/33-inf-04-portada-y-registro-de-versiones",
+          "description": "CRITERIO RÚBRICA : Communication (2.0) — parcial\nDEPENDE DE : INF-01, INF-02\nARTEFACTOS : /report/00-portada.md, /report/01-registro-versiones.md ESTIMACIÓN : 2\n\nActualización TP1 (10/10/2026): Trabajo iniciado; faltan comprobaciones o evidencia para cerrar la entrega.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111db",
+          "name": "QA-01 · Referencias, anexos y trazabilidad de enlaces",
+          "url": "https://trello.com/c/F31H5GqP/32-qa-01-referencias-anexos-y-trazabilidad-de-enlaces",
+          "description": "CRITERIO RÚBRICA : Communication — 2.0 (parcial)\nDEPENDE DE       : todos los work items de contenido\nARTEFACTOS       : /report/99-bibliografia.md\nESTIMACIÓN       : 2\n\nActualización TP1 (10/10/2026): Revisión de evidencias y referencias en curso.\nResponsable sin asignar. Etiquetas personales heredadas; no acreditan autoría.",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111e4",
+          "name": "QA-02 · Verificación de cumplimiento contra rúbrica",
+          "url": "https://trello.com/c/xd2wsY4C/35-qa-02-verificaci%C3%B3n-de-cumplimiento-contra-r%C3%BAbrica",
+          "description": "CRITERIO RÚBRICA : Communication — 2.0 · Innovation — 1.0\nDEPENDE DE       : todos los work items\nESTIMACIÓN       : 3\n\nActualización TP1 (10/10/2026): Revisión de evidencias y referencias en curso.\nResponsable sin asignar. Etiquetas personales heredadas; no acreditan autoría.",
+          "members": [],
+          "labels": [
+            "EQUIPO"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🔍 En revisión",
+      "count": 35,
+      "cards": [
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd7ffb233716861aa9a8",
+          "name": "S1-09 · US47 · Recuperar lecturas pendientes tras reconexión",
+          "url": "https://trello.com/c/zYQJavZ1/9-s1-09-us47-recuperar-lecturas-pendientes-tras-reconexi%C3%B3n",
+          "description": "Sprint 1 / TP1\nHistoria: US47 · Recuperar lecturas pendientes tras reconexión\nTask: S1-09\nAlcance: Edge persiste lotes y reintenta; Monitoring deduplica. Ensayo: 300 s de corte, 50 sensores, 1650 lecturas aceptadas, cero duplicados.\nStory Points: 8 (estimación del Product Backlog del informe; no equivale a horas).\nHoras: no estimadas. Responsable: sin asignar.\nEvidencia: https://github.com/Veltis-Software/coldtrace-edge-gateway/commit/2f3b9b8\nEstado: implementación y pruebas disponibles; pendiente revisión de aceptación del equipo.\nActualización del tablero clonado: 10/10/2026; no reconstruye el historial de colaboración anterior.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd7cde9fac5ed6d9730f",
+          "name": "S1-08 · US46 · Recibir aviso por interrupción de lecturas",
+          "url": "https://trello.com/c/kDc7mvmr/8-s1-08-us46-recibir-aviso-por-interrupci%C3%B3n-de-lecturas",
+          "description": "Sprint 1 / TP1\nHistoria: US46 · Recibir aviso por interrupción de lecturas\nTask: S1-08\nAlcance: Monitor de silencio y evento de brecha; aviso diferenciado de desviación térmica.\nStory Points: 5 (estimación del Product Backlog del informe; no equivale a horas).\nHoras: no estimadas. Responsable: sin asignar.\nEvidencia: https://github.com/Veltis-Software/coldtrace-monitoring-service/commit/debb19e\nEstado: implementación y pruebas disponibles; pendiente revisión de aceptación del equipo.\nActualización del tablero clonado: 10/10/2026; no reconstruye el historial de colaboración anterior.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd79f663a5d110796f42",
+          "name": "S1-07 · US33 · Consultar detalle de una alerta",
+          "url": "https://trello.com/c/xubmMaxA/7-s1-07-us33-consultar-detalle-de-una-alerta",
+          "description": "Sprint 1 / TP1\nHistoria: US33 · Consultar detalle de una alerta\nTask: S1-07\nAlcance: Detalle con activo, valor detectado, rango, momento, severidad, estado y seguimiento; captura real de una incidencia académica.\nStory Points: 3 (estimación del Product Backlog del informe; no equivale a horas).\nHoras: no estimadas. Responsable: sin asignar.\nEvidencia: https://github.com/Veltis-Software/coldtrace-alert-service/commit/1933e5b\nEstado: implementación y pruebas disponibles; pendiente revisión de aceptación del equipo.\nActualización del tablero clonado: 10/10/2026; no reconstruye el historial de colaboración anterior.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd76181012c6d159d117",
+          "name": "S1-06 · US16 · Supervisar varios activos",
+          "url": "https://trello.com/c/kCOLSqD2/6-s1-06-us16-supervisar-varios-activos",
+          "description": "Sprint 1 / TP1\nHistoria: US16 · Supervisar varios activos\nTask: S1-06\nAlcance: Vista consolidada de activos con estado, última lectura y alertas activas; servicios extraídos y cliente Angular.\nStory Points: 5 (estimación del Product Backlog del informe; no equivale a horas).\nHoras: no estimadas. Responsable: sin asignar.\nEvidencia: https://github.com/Veltis-Software/coldtrace-web-app/commit/0df5146\nEstado: implementación y pruebas disponibles; pendiente revisión de aceptación del equipo.\nActualización del tablero clonado: 10/10/2026; no reconstruye el historial de colaboración anterior.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd7328d100c95642e4f4",
+          "name": "S1-05 · US14 · Generar reporte de trazabilidad",
+          "url": "https://trello.com/c/xQ6QR8uw/5-s1-05-us14-generar-reporte-de-trazabilidad",
+          "description": "Sprint 1 / TP1\nHistoria: US14 · Generar reporte de trazabilidad\nTask: S1-05\nAlcance: Trabajo asíncrono por periodo; consolidado JSON con lecturas, incidencias, responsables y acciones. Validación de aislamiento y eventos antiguos.\nStory Points: 5 (estimación del Product Backlog del informe; no equivale a horas).\nHoras: no estimadas. Responsable: sin asignar.\nEvidencia: https://github.com/Veltis-Software/coldtrace-report-service/commit/30f2c98\nEstado: implementación y pruebas disponibles; pendiente revisión de aceptación del equipo.\nActualización del tablero clonado: 10/10/2026; no reconstruye el historial de colaboración anterior.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd707d91bfdac7cbc180",
+          "name": "S1-04 · US09 · Gestionar una incidencia",
+          "url": "https://trello.com/c/v12WMNIP/4-s1-04-us09-gestionar-una-incidencia",
+          "description": "Sprint 1 / TP1\nHistoria: US09 · Gestionar una incidencia\nTask: S1-04\nAlcance: Contexto del activo, severidad y estado; registro de acciones y resolución. UI y pruebas del ciclo de seguimiento.\nStory Points: 5 (estimación del Product Backlog del informe; no equivale a horas).\nHoras: no estimadas. Responsable: sin asignar.\nEvidencia: https://github.com/Veltis-Software/coldtrace-alert-service/commit/1933e5b\nEstado: implementación y pruebas disponibles; pendiente revisión de aceptación del equipo.\nActualización del tablero clonado: 10/10/2026; no reconstruye el historial de colaboración anterior.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd6d7dda7ec07f8a4362",
+          "name": "S1-03 · US08 · Reconocer y asignar una alerta",
+          "url": "https://trello.com/c/gYfOkyUV/3-s1-03-us08-reconocer-y-asignar-una-alerta",
+          "description": "Sprint 1 / TP1\nHistoria: US08 · Reconocer y asignar una alerta\nTask: S1-03\nAlcance: Atención autorizada, responsable, fecha/estado y opción de deshacer durante 10 segundos; pruebas de concurrencia y permisos.\nStory Points: 3 (estimación del Product Backlog del informe; no equivale a horas).\nHoras: no estimadas. Responsable: sin asignar.\nEvidencia: https://github.com/Veltis-Software/coldtrace-alert-service/commit/1933e5b\nEstado: implementación y pruebas disponibles; pendiente revisión de aceptación del equipo.\nActualización del tablero clonado: 10/10/2026; no reconstruye el historial de colaboración anterior.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd6a21dcb4ce32f3d391",
+          "name": "S1-02 · US06 · Recibir alerta por desviación",
+          "url": "https://trello.com/c/kbWx9Gal/2-s1-02-us06-recibir-alerta-por-desviaci%C3%B3n",
+          "description": "Sprint 1 / TP1\nHistoria: US06 · Recibir alerta por desviación\nTask: S1-02\nAlcance: Monitoring evalúa la tolerancia y Alert persiste la alerta y notificación interna. Canal externo y benchmark integral pendientes.\nStory Points: 5 (estimación del Product Backlog del informe; no equivale a horas).\nHoras: no estimadas. Responsable: sin asignar.\nEvidencia: https://github.com/Veltis-Software/coldtrace-alert-service/commit/1933e5b\nEstado: implementación y pruebas disponibles; pendiente revisión de aceptación del equipo.\nActualización del tablero clonado: 10/10/2026; no reconstruye el historial de colaboración anterior.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd67054f57470a9d2241",
+          "name": "S1-01 · US04 · Consultar estado actual de un activo",
+          "url": "https://trello.com/c/Jk8RrPqY/1-s1-01-us04-consultar-estado-actual-de-un-activo",
+          "description": "Sprint 1 / TP1\nHistoria: US04 · Consultar estado actual de un activo\nTask: S1-01\nAlcance: Monitoring y Web: última temperatura/humedad, rango seguro, fecha y condición normal, alerta o sin datos.\nStory Points: 3 (estimación del Product Backlog del informe; no equivale a horas).\nHoras: no estimadas. Responsable: sin asignar.\nEvidencia: https://github.com/Veltis-Software/coldtrace-monitoring-service/commit/debb19e\nEstado: implementación y pruebas disponibles; pendiente revisión de aceptación del equipo.\nActualización del tablero clonado: 10/10/2026; no reconstruye el historial de colaboración anterior.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d1118d",
+          "name": "INF-01 · Definición de alcance y acuerdos técnicos",
+          "url": "https://trello.com/c/bnBpPf7v/6-inf-01-definici%C3%B3n-de-alcance-y-acuerdos-t%C3%A9cnicos",
+          "description": "CRITERIO RÚBRICA : n/a (habilitador)\nDEPENDE DE       : ninguna\nBLOQUEA A        : todos los work items\nESTIMACIÓN       : 2\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "EQUIPO"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11190",
+          "name": "INF-02 · Bootstrap del repositorio y estructura documental",
+          "url": "https://trello.com/c/lMlOGcS9/7-inf-02-bootstrap-del-repositorio-y-estructura-documental",
+          "description": "CRITERIO RÚBRICA : n/a (habilitador) — soporta evidencia de colaboración.\nDEPENDE DE : INF-01\nBLOQUEA A : todos los work items de contenido\nARTEFACTOS : /report/\\*\\*, [README.md](http://README.md \"‌\"), .gitignore\nESTIMACIÓN : 3\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d1118a",
+          "name": "INF-03 · Toolchain de generación del PDF",
+          "url": "https://trello.com/c/Hhirz69h/5-inf-03-toolchain-de-generaci%C3%B3n-del-pdf",
+          "description": "CRITERIO RÚBRICA : Communication (2.0) — parcial DEPENDE DE : INF-02 BLOQUEA A : QA-03 ARTEFACTOS : script de build, PDF de release ESTIMACIÓN : 3\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11196",
+          "name": "IN-01 · 1.1.1 Descripción de la Startup",
+          "url": "https://trello.com/c/ldydtxiJ/9-in-01-111-descripci%C3%B3n-de-la-startup",
+          "description": "CRITERIO RÚBRICA : Startup Profile — 1.5 (compartido con IN-02)\nDEPENDE DE       : INF-01\nESTIMACIÓN       : 2\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11199",
+          "name": "IN-02 · 1.1.2 Perfiles de integrante",
+          "url": "https://trello.com/c/FDeWVO9D/10-in-02-112-perfiles-de-integrante",
+          "description": "CRITERIO RÚBRICA : Startup Profile — 1.5 (compartido con IN-01)\nDEPENDE DE       : INF-02\nARTEFACTOS       : /report/assets/chapter-01/team/*.png\nESTIMACIÓN       : 2\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d1119c",
+          "name": "IN-03 · 1.2.1 Nombre del producto",
+          "url": "https://trello.com/c/Q22L3OBB/11-in-03-121-nombre-del-producto",
+          "description": "DEPENDE DE       : INF-01\nBLOQUEA A        : consistencia global del informe\nESTIMACIÓN       : 1\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d1119f",
+          "name": "IN-04 · 1.2.2 Antecedentes y Problemática",
+          "url": "https://trello.com/c/7zTHmzHZ/12-in-04-122-antecedentes-y-problem%C3%A1tica",
+          "description": "CRITERIO RÚBRICA : Problem — 1.5\nDEPENDE DE         : INF-01\nBLOQUEA A        : IN-05\nESTIMACIÓN       : 3\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "David"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111a2",
+          "name": "IN-05 · 1.2.3.1 Lean UX Problem Statements",
+          "url": "https://trello.com/c/jvzxsA4T/13-in-05-1231-lean-ux-problem-statements",
+          "description": "CRITERIO RÚBRICA : Problem Statements — 1.5\nDEPENDE DE       : IN-04\nBLOQUEA A        : IN-06\nESTIMACIÓN       : 3\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111a5",
+          "name": "IN-06 · 1.2.3.2 Lean UX Assumptions",
+          "url": "https://trello.com/c/jSxgJnCV/14-in-06-1232-lean-ux-assumptions",
+          "description": "CRITERIO RÚBRICA : Assumptions — 1.5\nDEPENDE DE       : IN-05\nBLOQUEA A        : IN-07\nESTIMACIÓN       : 3\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111a8",
+          "name": "IN-07 · 1.2.3.3 Lean UX Hypothesis Statements",
+          "url": "https://trello.com/c/IEt4I5L3/15-in-07-1233-lean-ux-hypothesis-statements",
+          "description": "CRITERIO RÚBRICA : Hypothesis — 1.5\nDEPENDE DE             : IN-06\nBLOQUEA A              : IN-08\nESTIMACIÓN           : 3\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111ae",
+          "name": "IN-08 · 1.2.3.4 Lean UX Canvas",
+          "url": "https://trello.com/c/nEqWXLnH/17-in-08-1234-lean-ux-canvas",
+          "description": "CRITERIO RÚBRICA : Vision — 1.5\nDEPENDE DE             : IN-05, IN-06, IN-07\nARTEFACTOS           : /report/assets/chapter-01/lean-ux-canvas.png\nESTIMACIÓN           : 3\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111ab",
+          "name": "IN-09 · 1.3 Segmentos objetivo",
+          "url": "https://trello.com/c/0LF2F97y/16-in-09-13-segmentos-objetivo",
+          "description": "DEPENDE DE       : IN-04\nBLOQUEA A        : RA-08\nESTIMACIÓN     : 2\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11184",
+          "name": "RA-01 · 2.1.1 Competitive Analysis Landscape",
+          "url": "https://trello.com/c/VQBSQ8rz/3-ra-01-211-competitive-analysis-landscape",
+          "description": "CRITERIO RÚBRICA : Research/benchmark — 1.5 (compartido con RA-02)\nDEPENDE DE             : IN-03\nBLOQUEA A              : RA-02\nARTEFACTOS           : /report/assets/chapter-02/competitors/\\*\\*\nESTIMACIÓN           : 5\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111b1",
+          "name": "RA-02 · 2.1.2 Estrategias y tácticas frente a competidores",
+          "url": "https://trello.com/c/2lghBxOC/18-ra-02-212-estrategias-y-t%C3%A1cticas-frente-a-competidores",
+          "description": "CRITERIO RÚBRICA : Research/benchmark — 1.5 (compartido con RA-01)\nDEPENDE DE             : RA-01\nESTIMACIÓN           : 2\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11193",
+          "name": "RA-03 · 2.2.1 Diseño de entrevistas",
+          "url": "https://trello.com/c/rxMQjmDB/8-ra-03-221-dise%C3%B1o-de-entrevistas",
+          "description": "CRITERIO RÚBRICA : Research/entrevistas — 1.5 (compartido con RA-04..RA-07)\nDEPENDE DE             : IN-09\nBLOQUEA A              : RA-04, RA-05, RA-06\nESTIMACIÓN           : 3\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "David"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111bd",
+          "name": "RA-08 · 2.2.3 Análisis de entrevistas",
+          "url": "https://trello.com/c/MWlPt9nM/22-ra-08-223-an%C3%A1lisis-de-entrevistas",
+          "description": "CRITERIO RÚBRICA : Analysis — 1.5 (compartido con RA-09..RA-11)\nDEPENDE DE       : RA-07, IN-09\nBLOQUEA A        : RA-09\nESTIMACIÓN       : 5\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "David"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111c0",
+          "name": "RA-09 · 2.3.1 User Personas",
+          "url": "https://trello.com/c/Pg29wH9h/23-ra-09-231-user-personas",
+          "description": "\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111c3",
+          "name": "RA-10 · 2.3.2 User Task Matrix",
+          "url": "https://trello.com/c/meSB8o3e/24-ra-10-232-user-task-matrix",
+          "description": "CRITERIO RÚBRICA : Analysis — 1.5\nDEPENDE DE       : RA-09\nESTIMACIÓN       : 2\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111c6",
+          "name": "RA-11 · 2.3.3 Empathy Maps",
+          "url": "https://trello.com/c/QPNmrQdV/25-ra-11-233-empathy-maps",
+          "description": "CRITERIO RÚBRICA : Analysis — 1.5\nDEPENDE DE       : RA-09\nARTEFACTOS       : /report/assets/chapter-02/empathy-maps/\\*\\*\nESTIMACIÓN       : 3\n\nActualización TP1 (10/10/2026): El artefacto está disponible en el informe corregido o en los repositorios de Veltis-Software. Se traslada a revisión de contenido; no se acredita revisión cruzada ni cierre de los criterios específicos de la lista de comprobación.\nResponsable: sin asignar en esta actualización. Las etiquetas personales heredadas del clon no acreditan autoría ni aceptación.",
+          "members": [],
+          "labels": [
+            "David"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111c9",
+          "name": "RA-12 · 2.3.4 As-Is Scenario Mapping",
+          "url": "https://trello.com/c/6xrMrLBO/26-ra-12-234-as-is-scenario-mapping",
+          "description": "CRITERIO RÚBRICA : requisito estructural (Communication)\nDEPENDE DE       : RA-09\nBLOQUEA A        : RS-01\nARTEFACTOS       : /report/assets/chapter-02/as-is-scenario-mapping/\\*\\*\nESTIMACIÓN       : 5\n\nActualización TP1 (10/10/2026): Contenido disponible en el informe corregido; pendiente de revisión y cierre de criterios específicos.\nResponsable sin asignar. Etiquetas personales heredadas; no acreditan autoría.",
+          "members": [],
+          "labels": [
+            "David"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111cc",
+          "name": "RS-01 · 3.1 To-Be Scenario Mapping",
+          "url": "https://trello.com/c/ycqJ7xBc/27-rs-01-31-to-be-scenario-mapping",
+          "description": "CRITERIO RÚBRICA : requisito estructural (Communication)\nDEPENDE DE       : RA-12\nBLOQUEA A        : RS-02\nARTEFACTOS       : /report/assets/chapter-03/to-be-scenario-mapping/\\*\\*\nESTIMACIÓN       : 5\n\nActualización TP1 (10/10/2026): Contenido disponible en el informe corregido; pendiente de revisión y cierre de criterios específicos.\nResponsable sin asignar. Etiquetas personales heredadas; no acreditan autoría.",
+          "members": [],
+          "labels": [
+            "Renso"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111cf",
+          "name": "RS-02 · 3.2 Epics",
+          "url": "https://trello.com/c/V34OLNHL/28-rs-02-32-epics",
+          "description": "CRITERIO RÚBRICA : User Stories — 2.5 (compartido con RS-03, RS-04)\nDEPENDE DE       : RS-01\nBLOQUEA A        : RS-03, RS-04\nESTIMACIÓN       : 3\n\nActualización TP1 (10/10/2026): Contenido disponible en el informe corregido; pendiente de revisión y cierre de criterios específicos.\nResponsable sin asignar. Etiquetas personales heredadas; no acreditan autoría.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111d2",
+          "name": "RS-03 · 3.2 User Stories de usuario final",
+          "url": "https://trello.com/c/UgG3NfvU/29-rs-03-32-user-stories-de-usuario-final",
+          "description": "CRITERIO RÚBRICA : User Stories — 2.5 (criterio de mayor peso en TB1)\nDEPENDE DE       : RS-02\nBLOQUEA A        : RS-05, RS-06\nESTIMACIÓN       : 8\n\nActualización TP1 (10/10/2026): Contenido disponible en el informe corregido; pendiente de revisión y cierre de criterios específicos.\nResponsable sin asignar. Etiquetas personales heredadas; no acreditan autoría.",
+          "members": [],
+          "labels": [
+            "David"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111d5",
+          "name": "RS-04 · 3.2 Technical Stories",
+          "url": "https://trello.com/c/tvDLMzjR/30-rs-04-32-technical-stories",
+          "description": "CRITERIO RÚBRICA : User Stories — 2.5\nDEPENDE DE       : RS-02\nBLOQUEA A        : RS-06\nESTIMACIÓN       : 5\n\nActualización TP1 (10/10/2026): Contenido disponible en el informe corregido; pendiente de revisión y cierre de criterios específicos.\nResponsable sin asignar. Etiquetas personales heredadas; no acreditan autoría.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d111d8",
+          "name": "RS-05 · 3.3 Impact Mapping",
+          "url": "https://trello.com/c/6HaHQonD/31-rs-05-33-impact-mapping",
+          "description": "CRITERIO RÚBRICA : Impact Map — 1.0\nDEPENDE DE       : RA-09, RS-03\nARTEFACTOS       : /report/assets/chapter-03/impact-maps/\\*\\*\nESTIMACIÓN       : 3\n\nActualización TP1 (10/10/2026): Contenido disponible en el informe corregido; pendiente de revisión y cierre de criterios específicos.\nResponsable sin asignar. Etiquetas personales heredadas; no acreditan autoría.",
+          "members": [],
+          "labels": [
+            "David"
+          ]
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d1117e",
+          "name": "RS-06 · 3.4 Product Backlog",
+          "url": "https://trello.com/c/YE4Swfbd/1-rs-06-34-product-backlog",
+          "description": "CRITERIO RÚBRICA : User Stories — 2.5\nDEPENDE DE       : RS-03, RS-04\nESTIMACIÓN       : 5\n\nActualización TP1 (10/10/2026): Contenido disponible en el informe corregido; pendiente de revisión y cierre de criterios específicos.\nResponsable sin asignar. Etiquetas personales heredadas; no acreditan autoría.",
+          "members": [],
+          "labels": [
+            "Alessandro"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "✅ Terminado",
+      "count": 4,
+      "cards": [
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd9ef9376ab675474480",
+          "name": "S1-T04 · Contratos OpenAPI y Swagger",
+          "url": "https://trello.com/c/k6IEvom6/13-s1-t04-contratos-openapi-y-swagger",
+          "description": "Contratos obtenidos de los tres servicios ejecutados. 21 operaciones públicas documentadas; Swagger local Monitoring :18083, Alert :18084, Reports :18085. Se conservaron contratos JSON y captura real.\nFuente: https://github.com/Veltis-Software/coldtrace-report-service/tree/feature/add-stories-completion\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd9bd1eacd7a73447dfd",
+          "name": "S1-T03 · Despliegue y ensayo local reproducible",
+          "url": "https://trello.com/c/ulzh63Y5/12-s1-t03-despliegue-y-ensayo-local-reproducible",
+          "description": "Docker Compose: MySQL, emulador Pub/Sub, Gateway, Monitoring, Alert y Reports; backend IAM/Asset y cliente Angular. Ensayo local de 8 lecturas aceptadas y 8 duplicados descartados al repetir lote. Recuperación Edge: 1650 aceptadas, cero duplicados.\nFuente: https://github.com/Veltis-Software/coldtrace-infrastructure/tree/feature/add-stories-completion\nEste cierre corresponde al entorno local, no a Google Cloud.\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd9717b8157a2efac458",
+          "name": "S1-T02 · Configuración de repositorios y CI",
+          "url": "https://trello.com/c/kD9bHhGv/11-s1-t02-configuraci%C3%B3n-de-repositorios-y-ci",
+          "description": "Repositorios de Veltis-Software, ramas feature/add-stories-completion, pruebas y empaquetado Docker en GitHub Actions. Backend conserva IAM/Asset durante la migración; servicios extraídos tienen ciclos propios.\nCI backend: https://github.com/Veltis-Software/coldtrace-backend/actions/runs/38025753579\nCI Infrastructure: https://github.com/Veltis-Software/coldtrace-infrastructure/actions/runs/38025745108\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        },
+        {
+          "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6ac9cd94a9f73fb846180189",
+          "name": "S1-T01 · Pruebas automatizadas del incremento",
+          "url": "https://trello.com/c/OenFhJrj/10-s1-t01-pruebas-automatizadas-del-incremento",
+          "description": "Resultados publicados: Monitoring 25 pruebas Java (5 escenarios Gherkin), Alert 10, Report 4, Gateway 5, biblioteca técnica 2, backend 3, Web 19, Edge 6. Las cifras corresponden a ejecuciones del incremento y no acreditan el benchmark de rendimiento ni el estudio de usabilidad del ADD.\nEvidencias: https://github.com/Veltis-Software/coldtrace-monitoring-service/actions/runs/38014137323\nhttps://github.com/Veltis-Software/coldtrace-web-app/actions/runs/38014335588\n\nResponsable: sin asignar. Horas: no estimadas.\nActualización de estado: 10/10/2026.",
+          "members": [],
+          "labels": []
+        }
+      ]
+    }
+  ]
+}
