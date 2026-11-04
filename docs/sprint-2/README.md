@@ -3,14 +3,14 @@
 ## Objetivo y backlog
 
 Incorporar fuentes compatibles conservando identidad, significado e historial por
-activo. El primer incremento implementa perfiles y adaptadores de Edge; US03,
-US29 y US30 continúan hasta integrar administración y consulta de asociaciones.
+activo. El incremento incorpora perfiles y adaptadores Edge, administración y
+consulta de asociaciones, y validación de revisiones efectivas en Monitoring.
 
 | Task | Alcance | Estado |
 |---|---|---|
 | S2-01 | Perfiles MQTT/HTTP y normalización Edge | En revisión |
 | S2-02 | Contrato canónico y trazabilidad persistente en Monitoring | En revisión |
-| S2-03 | Asociación/sustitución autorizada e historial | En revisión; distribución integrada en curso |
+| S2-03 | Asociación/sustitución autorizada e historial | En revisión; recorrido local verificado |
 | S2-04 | Consulta y vista de configuración de fuente | En revisión |
 | S2-05 | Despliegue incremental cloud | En progreso |
 | S2-06 | Informe y evidencias | En revisión |
@@ -42,9 +42,15 @@ La API publica un documento compatible con SourceRegistry para aprovisionamiento
 de Edge. Se cargó la exportación real con el SourceRegistry existente: 39,2 °F
 se convirtió a 4 °C y el identificador anterior fue rechazado.
 [Verificación](evidence/source-export-edge-verification.json).
-La administración y su outbox están implementados; la distribución remota
-y el rechazo de una fuente retirada en el recorrido completo siguen formando parte
-de la integración. Registrar una configuración no actualiza un agente en ejecución.
+Edge `cffe2e0` revalida el archivo de perfiles y aplica la sustitución sin alterar
+SQLite ni sus lotes. [PR #4](https://github.com/Veltis-Software/coldtrace-edge-gateway/pull/4).
+Monitoring `fac3875` proyecta revisiones consecutivas, deduplica eventos y comprueba
+la asociación efectiva en la fecha de captura. [PR #5](https://github.com/Veltis-Software/coldtrace-monitoring-service/pull/5).
+Infrastructure `75fc818` configura el tópico y la suscripción local de fuente.
+[PR #5](https://github.com/Veltis-Software/coldtrace-infrastructure/pull/5).
+La distribución por archivo utiliza reemplazo atómico del perfil exportado en un
+directorio de configuración montado en solo lectura. El despliegue cloud conserva
+su autenticación y aprovisionamiento específicos.
 
 ## Pruebas
 
@@ -73,6 +79,25 @@ Auditoría de dependencias del cliente: cero vulnerabilidades altas/críticas y
 [Auditoría](evidence/source-web-audit.txt).
 
 ## Ejecución
+
+El recorrido real por el emulador de Google Pub/Sub entregó dos revisiones a
+Monitoring ejecutado contra MySQL 8.0.40. Reenviar el primer evento no creó otra
+revisión. La ingesta aceptó dos lecturas, incluida una capturada antes del cambio;
+un lote que incluía la fuente retirada devolvió 409 sin alterar lecturas, lotes ni
+Outbox. El reintento del lote válido confirmó dos duplicados.
+[Resultado del recorrido](evidence/source-flow-pubsub-verification.json).
+
+La recarga de Edge se ejecutó también en su imagen Docker: lectura inicial con
+secuencia 1, reemplazo HTTP en °F con secuencia 2 y rechazo 400 del identificador
+retirado. Ambas lecturas quedaron en SQLite y el lote inicial mantuvo su payload.
+[Resultado Docker](evidence/source-reload-docker-verification.json).
+
+La suite de Monitoring alcanza 40 pruebas sin fallos sobre H2 y sobre MySQL,
+incluida la recepción por el adaptador push local; se aplicaron nueve migraciones.
+Edge ejecuta 18 pruebas en Python 3.12/Linux y el bootstrap de infraestructura
+dos pruebas de contrato. Las ejecuciones anteriores se conservan como evidencia
+histórica del incremento; los resultados actuales están en `source-sync-*`,
+`source-reload-linux-tests.txt` y `source-routing-tests.txt`.
 
 La colección Postman del repositorio Edge ejecutó cuatro peticiones y seis
 aserciones con Newman, sin fallos. Ver [resultado](evidence/newman-source-input.json).
@@ -114,10 +139,14 @@ cuando se producen; no se asignan retroactivamente.
 
 ## Kanban
 
-[Tablero del equipo](https://trello.com/b/3tf7nnux/fundamentos). S2-01 y el informe
-se revisan; las siguientes tareas están en backlog y el despliegue está en progreso.
+[Tablero del equipo](https://trello.com/b/3tf7nnux/fundamentos). Los incrementos
+funcionales y el informe están en revisión; el despliegue está en progreso.
 El archivo de evidencia conserva la consulta del corte y sus enlaces de tarjeta.
 El 4 de noviembre se sincronizaron S2-02, S2-03 y S2-04 a revisión, sin asignar
-responsables ni horas. S2-05 continúa en progreso. El Word del Avance 3 conserva
-su corte documental anterior; estos resultados posteriores se registran aquí y
-en el plan para incorporarlos al siguiente corte del informe.
+responsables ni horas. S2-05 continúa en progreso. El informe del Avance 3 incorpora
+el recorrido local, las ocho subsecciones del sprint, pruebas y capturas. Conserva
+102 tablas y cinco secciones; su índice contiene 124 entradas actualizadas.
+La auditoría de preservación verifica que los estilos, fuentes, numeración,
+capturas anteriores y contenido previo al Sprint 2 se mantienen, salvo la fila
+de versión y los números de página del índice.
+[Auditoría](evidence/sprint2-document-preservation-final.json).

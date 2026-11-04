@@ -1,0 +1,20 @@
+{
+  "source": "C:\\Users\\david\\Downloads\\upc-pre-202602-si657-9199-veltis-report-av3-actualizado.docx",
+  "sourceSha256": "0363b64beca2524f852c1452f6d88b80e23bceb84e246d87643a19dc5c0c3f5f",
+  "documentSha256": "2d3adcb1bb40741ebbe0c9520ad749b3dcc1642d088a606d9e0ff80847b5e005",
+  "pdfSha256": "4166bdbfbb497fe904703d988fd1a77b79dbd03f79c67fee64620951e545fbe5",
+  "pages": 157,
+  "tables": 102,
+  "sections": 5,
+  "globalFormattingPreserved": true,
+  "existingPackagePartsPreserved": true,
+  "originalCapturesPreserved": true,
+  "bodyBeforeSprint2PreservedExceptSingleVersionRowAndToc": true,
+  "tocParagraphsChanged": 1,
+  "tocEntries": 124,
+  "duplicateFigureLabels": false,
+  "newFigures": [
+    "Figura 31",
+    "Figura 32"
+  ]
+}

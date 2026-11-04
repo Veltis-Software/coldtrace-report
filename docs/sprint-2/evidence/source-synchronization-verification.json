@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-11-04T06:52:37.7287888Z",
+  "infrastructure": {
+    "commit": "75fc818",
+    "ciStatus": "success",
+    "pullRequest": "https://github.com/Veltis-Software/coldtrace-infrastructure/pull/5",
+    "ci": "https://github.com/Veltis-Software/coldtrace-infrastructure/actions/runs/41780611150",
+    "tests": 2
+  },
+  "report": "sprint2-document-preservation-final.json",
+  "pubsubFlow": "source-flow-pubsub-verification.json",
+  "monitoring": {
+    "ci": "https://github.com/Veltis-Software/coldtrace-monitoring-service/actions/runs/41780654166",
+    "commit": "fac3875",
+    "suites": [
+      {
+        "tests": 1,
+        "skipped": 0,
+        "errors": 0,
+        "failures": 0,
+        "name": "com.acme.coldtrace.platform.monitoring.ArchitectureTest"
+      },
+      {
+        "tests": 1,
+        "skipped": 0,
+        "errors": 0,
+        "failures": 0,
+        "name": "com.acme.coldtrace.platform.monitoring.OutboxRelayTest"
+      },
+      {
+        "tests": 5,
+        "skipped": 0,
+        "errors": 0,
+        "failures": 0,
+        "name": "com.acme.coldtrace.platform.monitoring.RunCucumberTest"
+      },
+      {
+        "tests": 33,
+        "skipped": 0,
+        "errors": 0,
+        "failures": 0,
+        "name": "com.acme.coldtrace.platform.monitoring.TelemetryIntegrationTest"
+      }
+    ],
+    "databases": [
+      "H2",
+      "isolated MySQL 8.0.40"
+    ],
+    "ciStatus": "success",
+    "pullRequest": "https://github.com/Veltis-Software/coldtrace-monitoring-service/pull/5",
+    "migrations": 9,
+    "tests": 40
+  },
+  "cloudDeployment": false,
+  "backend": {
+    "commit": "2124404",
+    "ciStatus": "success",
+    "servicesCiStatus": "success",
+    "ci": "https://github.com/Veltis-Software/coldtrace-backend/actions/runs/41787595410",
+    "servicesCi": "https://github.com/Veltis-Software/coldtrace-backend/actions/runs/41787595414"
+  },
+  "edge": {
+    "pullRequest": "https://github.com/Veltis-Software/coldtrace-edge-gateway/pull/4",
+    "ciStatus": "success",
+    "ci": "https://github.com/Veltis-Software/coldtrace-edge-gateway/actions/runs/41780599790",
+    "commit": "cffe2e0",
+    "tests": 18,
+    "runtime": "Python 3.12/Linux",
+    "dockerReload": "source-reload-docker-verification.json"
+  }
+}
