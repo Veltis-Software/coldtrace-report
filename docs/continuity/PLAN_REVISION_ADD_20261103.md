@@ -38,7 +38,7 @@ Revisar y corregir el último informe TP1 con un relato académico coherente: ga
 - [x] Renderizar con runtime empaquetado y revisar cada página; comparar con línea base para detectar cambios de formato, cortes, tablas, captions, TOC, referencias y figuras. No entregar sin QA visual.
 - [x] Auditoría final semántica y estructural: driver consistente en todo informe; ningún resultado inventado; Sprint 1 fiel a código; ningún residuo de usabilidad como tercer driver prioritario; usabilidad funcional preservada.
 - [x] Entregar DOCX corregido. Registrar cambios técnicos en este plan, fuera del documento.
-- [ ] Después: proponer Sprint 2 y evidencias (Avance 3/S10); despliegue incremental según indicación docente. Actualizar repos/documentación después de cerrar revisión, con remotos verificados.
+- [x] Después: proponer Sprint 2 y evidencias (Avance 3/S10); despliegue incremental según indicación docente. Actualizar repos/documentación después de cerrar revisión, con remotos verificados.
 
 ## Herramientas y recuperación
 
@@ -76,12 +76,12 @@ Resolver runtime con herramienta load_workspace_dependencies; fallback conocido 
 
 Solicitud: corregir diagramas como evolución acumulativa de las iteraciones anteriores, recuperar pantallas finales de exposición, auditar/cerrar Sprint 1 y después comenzar Sprint 2 en repos y documentación.
 
-- [ ] Localizar fuentes Structurizr originales y cotejar elementos/relaciones de iteraciones 1, 2 y 3; conservar identidad y estilo; renderizar evolución, no reemplazar arquitectura por un esquema aislado.
-- [ ] Recuperar imágenes finales de pantallas/prototipos de la presentación y reemplazar las antiguas en informe, conservando formato y verificando correspondencia.
-- [ ] Auditar Sprint 1 contra ocho subsecciones, pruebas, historias y estado real de ramas/remotos. No asumir cierre por texto del informe.
+- [x] Localizar fuentes Structurizr originales y cotejar elementos/relaciones de iteraciones 1, 2 y 3; conservar identidad y estilo; renderizar evolución, no reemplazar arquitectura por un esquema aislado.
+- [x] Recuperar imágenes finales de pantallas/prototipos de la presentación y reemplazar las antiguas en informe, conservando formato y verificando correspondencia.
+- [x] Auditar Sprint 1 contra ocho subsecciones, pruebas, historias y estado real de ramas/remotos. No asumir cierre por texto del informe.
 - [ ] Cerrar brechas verificables de Sprint 1 antes de nuevas funcionalidades; registrar bloqueos externos reales sin inventar evidencias.
-- [ ] Definir e iniciar Sprint 2 conforme cronograma, backlog y ADD actualizado; código, pruebas y documentación trazables en Veltis-Software exclusivamente.
-- [ ] Renderizar y revisar informe actualizado; registrar commits, pruebas, entregables y siguiente paso aquí.
+- [x] Definir e iniciar Sprint 2 conforme cronograma, backlog y ADD actualizado; código, pruebas y documentación trazables en Veltis-Software exclusivamente.
+- [x] Renderizar y revisar informe actualizado; registrar commits, pruebas, entregables y siguiente paso aquí.
 
 Orden vigente: revisión gráfica/documental -> auditoría y cierre Sprint 1 -> Sprint 2. La indicación anterior de no iniciar Sprint 2 queda sustituida por esta autorización.
 
@@ -125,3 +125,11 @@ Siguiente orden: completar sección 5.3.2 con hechos actuales y backlog real, si
 3. S2-04: consulta de configuración y evolución de la interfaz existente, conservando diseño restaurado y fuentes de datos.
 4. S2-05: publicar/recibir Pub/Sub con autenticación real, identidades/Secret Manager, base MySQL y despliegue funcional. Preparar costos concretos y límite autorizado antes de aprovisionar Cloud SQL/instancias continuas; no prometer que Cloud SQL pertenece al free tier.
 5. Registrar evidencia real de equipo/video/aceptación y actualizar el informe sobre la copia vigente con el mismo procedimiento localizado y QA. Mantener plan, Trello y commits trazables.
+
+
+## Publicación verificada
+
+- Informe y evidencias publicados en `feature/architecture-continuity`, commit inicial `0701ba2`, PR https://github.com/Veltis-Software/coldtrace-report/pull/2 sobre `feature/tp1-evidence` (PR1 previa conservada). Documento del repositorio y copia Downloads tienen el mismo SHA256 final.
+- Revisiones publicadas: Edge PR3, Infrastructure PR4, Backend PR6 y Report PR2. Ninguna subida a la organización anterior. Autenticación GitHub David-std2.
+- Las verificaciones de CI de Edge, Infrastructure y Backend concluyeron satisfactoriamente. El repositorio del informe conserva auditorías de formato, índice, continuidad, hashes de capturas y ejecuciones verificadas.
+- Las PR quedan abiertas para revisión; no se forzó ninguna mezcla de ramas ni se reescribió historial. El cierre pendiente del checklist se refiere a evidencias académicas de Sprint1 que requieren registro y aceptación reales del equipo.
