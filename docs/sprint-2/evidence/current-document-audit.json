@@ -1,9 +1,9 @@
 {
   "tables": 102,
   "sections": 5,
-  "sprint2Sections": 8,
   "globalFormattingUnchanged": true,
-  "earlierMediaPreserved": true,
   "tocEntries": 124,
-  "docxSha256": "15fe24576b2de03d13f2bbc0714ea83674deaa788b52e33255102cc8a5f4eef6"
+  "sprint2Sections": 8,
+  "docxSha256": "61fdb9cdc579d92e18e06832018953dd65e314d7425ffd568725f209fecab111",
+  "monitoringDiagramIncludesSourceHistory": true
 }

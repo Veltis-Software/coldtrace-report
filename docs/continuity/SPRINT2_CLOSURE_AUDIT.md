@@ -24,3 +24,27 @@ Fuente normativa: FAS/Trabajo Final_1ASI0657_202620.docx, Sprint 2 → Avance 3.
 - La importación con adaptación de gateways se ejecutó correctamente:29 activos,16 dispositivos,3255 lecturas. No se cambiaron datos reales8080/3306.
 - ReplicaProvisioning aún debe contrastarse con las revisiones de fuente existentes: importar solo dispositivo/rangos no demuestra recuperación de su historial. Cualquier corrección requiere prueba de réplica nueva, entrega duplicada y rollback.
 - Build Docker activo sesión61518, log full-stack-build.log. No reiniciar por un timeout de observación: consultar el mismo proceso.
+
+## Estado verificado posterior
+
+| Requisito | Evidencia actual | Resultado |
+|---|---|---|
+| Recorrido real | integrated-ui-results.json; cuatro rutas vía Gateway | Pasa: sesión, HTTP y JS; sin overflow de página |
+| Capturas completas | integrated-*-desktop.png y Monitoreo móvil | Revisadas; Alertas corregida, Monitoreo capturado tras carga |
+| Datos del trabajo original | legacy-fixture-import.json | 29 activos,16 dispositivos,3255 lecturas adaptadas; datos aislados |
+| Configuración y sustitución | API/Postman y UI; historial MQTT/HTTP | Implementada y probada |
+| Recuperación de historial | history-bootstrap-runtime.json | Dos llamadas reales de provisioning conservan exactamente revisiones1/2 |
+| Pruebas servicios | source-history-recovery-java21.log |42 Monitoring+2shared pasan;40MySQL/H2 de corte anterior |
+| Frontend | ui-review-tests.log; ui-review-build.log |32 pruebas+build pasan; CI41894117893 success |
+| CI Monitoring | GitHubActions41894273975 |Success con commit a12388f |
+| C4 | DSL validado CLI; tres PNGIt3 regenerados | ExportaciónporStructurizr; rutasajustadas; conservarlayoutfuente |
+| Word | current-document-audit.json; PDFfinal |102 tablas,5secciones,124TOC; estilos/fuentes/numeraciónintactos;157p |
+| Publicación | Report b4ac7dd; Backend0f7d03d; Web094b4f4; Monitoring a12388f |Solo Veltis-Software |
+| Kanban | Lectura real Trello04nov |S2-01/02/03/04/06 en revisión;S2-05 en progreso |
+
+## Trabajo que impide afirmar cierre integral
+
+- La prueba adicional de rollback transaccional sigue en ejecución Java21 (history-rollback-tests.log); no se suma al resultado aprobado de42 hasta observar el resultado.
+- Cloud fue pospuesto por el usuario, quien autoriza únicamente recursos gratuitos. El informe describe configuración objetivo y ejecución local; no acredita revisionesCloudRun inexistentes.
+- La lectura del tablero no acredita aceptación del equipo. No se inventan responsables, horas, revisiones humanas ni video.
+- Verificar las páginas C4 del último PDF al tamaño de lectura y comparar las secuencias con la operación completa de administración de perfiles antes de declarar la revisión final terminada.
