@@ -1,0 +1,26 @@
+{
+  "prior_views": [
+    {
+      "view": "It1_Componentes_Monitoring",
+      "prior_elements_preserved": true
+    },
+    {
+      "view": "It2_Componentes_Monitoring",
+      "prior_elements_preserved": true
+    },
+    {
+      "view": "It0_Contenedores",
+      "prior_elements_preserved": true
+    },
+    {
+      "view": "It1_Contenedores",
+      "prior_elements_preserved": true
+    },
+    {
+      "view": "It2_Contenedores",
+      "prior_elements_preserved": true
+    }
+  ],
+  "containers_iter2_retained_in_iter3": true,
+  "monitoring_iter2_retained_in_iter3": true
+}

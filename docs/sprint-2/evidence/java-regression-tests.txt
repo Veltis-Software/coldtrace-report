@@ -1,0 +1,23 @@
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 s -- in com.acme.coldtrace.shared.CorrelationIdsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.423 s -- in com.acme.coldtrace.platform.monitoring.ArchitectureTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.040 s -- in com.acme.coldtrace.platform.monitoring.OutboxRelayTest
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.54 s -- in com.acme.coldtrace.platform.monitoring.TelemetryIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.287 s -- in com.acme.coldtrace.platform.monitoring.RunCucumberTest
+[INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.288 s -- in com.acme.coldtrace.alerts.AlertWorkflowTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.160 s -- in com.acme.coldtrace.alerts.IncidentConsumerTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.80 s -- in com.acme.coldtrace.gateway.GatewayRoutingTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.414 s -- in com.acme.coldtrace.reports.TraceabilityTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Reactor Summary for coldtrace-sprint1 0.1.0-SNAPSHOT:
+[INFO] coldtrace-shared ................................... SUCCESS [  3.359 s]
+[INFO] coldtrace-monitoring-service ....................... SUCCESS [01:13 min]
+[INFO] coldtrace-alert-service ............................ SUCCESS [ 19.016 s]
+[INFO] coldtrace-api-gateway .............................. SUCCESS [ 36.530 s]
+[INFO] coldtrace-report-service ........................... SUCCESS [ 12.244 s]
+[INFO] coldtrace-sprint1 .................................. SUCCESS [  0.000 s]
+[INFO] BUILD SUCCESS
+[INFO] Finished at: 2026-11-03T19:08:00-05:00

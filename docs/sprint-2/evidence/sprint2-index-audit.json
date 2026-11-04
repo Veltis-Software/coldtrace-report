@@ -1,0 +1,502 @@
+{
+  "updated": [
+    {
+      "title": "Student Outcome",
+      "page": 8
+    },
+    {
+      "title": "Capítulo I: Introducción",
+      "page": 9
+    },
+    {
+      "title": "1.1. Startup Profile",
+      "page": 9
+    },
+    {
+      "title": "1.1.1. Descripción de la Startup",
+      "page": 9
+    },
+    {
+      "title": "1.1.2. Perfiles de integrantes del equipo",
+      "page": 10
+    },
+    {
+      "title": "1.2. Solution Profile",
+      "page": 11
+    },
+    {
+      "title": "1.2.1. Nombre del Producto",
+      "page": 11
+    },
+    {
+      "title": "1.2.2. Antecedentes y Problemática",
+      "page": 11
+    },
+    {
+      "title": "1.2.3. Lean UX Process",
+      "page": 13
+    },
+    {
+      "title": "1.2.3.1. Lean UX Problem Statement",
+      "page": 13
+    },
+    {
+      "title": "1.2.3.2. Lean UX Assumptions",
+      "page": 15
+    },
+    {
+      "title": "1.2.3.3. Lean UX Hypothesis",
+      "page": 16
+    },
+    {
+      "title": "1.2.3.4. Lean UX Canvas",
+      "page": 17
+    },
+    {
+      "title": "1.3. Segmentos Objetivos",
+      "page": 18
+    },
+    {
+      "title": "Capítulo II: Requirements Elicitation & Analysis",
+      "page": 20
+    },
+    {
+      "title": "2.1. Competidores",
+      "page": 20
+    },
+    {
+      "title": "2.1.1. Análisis Competitivo",
+      "page": 20
+    },
+    {
+      "title": "2.1.2. Estrategias y tácticas frente a competidores",
+      "page": 23
+    },
+    {
+      "title": "2.2. Entrevistas",
+      "page": 24
+    },
+    {
+      "title": "2.2.1. Diseño de Entrevistas",
+      "page": 24
+    },
+    {
+      "title": "2.2.2. Registro de Entrevistas",
+      "page": 26
+    },
+    {
+      "title": "2.2.3. Análisis de Entrevistas",
+      "page": 31
+    },
+    {
+      "title": "2.3. NeedFinding",
+      "page": 36
+    },
+    {
+      "title": "2.3.1. User Personas",
+      "page": 37
+    },
+    {
+      "title": "2.3.2. User Task Matrix",
+      "page": 38
+    },
+    {
+      "title": "2.3.3. Empathy Maps",
+      "page": 39
+    },
+    {
+      "title": "2.3.4. As-Is Scenario Mapping",
+      "page": 42
+    },
+    {
+      "title": "Capítulo III: Requirements Specification",
+      "page": 46
+    },
+    {
+      "title": "3.1. To-Be Scenario Mapping",
+      "page": 46
+    },
+    {
+      "title": "3.2. User Stories",
+      "page": 49
+    },
+    {
+      "title": "3.3. Impact Map",
+      "page": 60
+    },
+    {
+      "title": "3.4. Product Backlog",
+      "page": 65
+    },
+    {
+      "title": "Capítulo IV: Product Architecture Design",
+      "page": 73
+    },
+    {
+      "title": "4.1. Design Concepts, ViewPoints & ER Diagrams",
+      "page": 73
+    },
+    {
+      "title": "4.1.1. Principles Statements",
+      "page": 73
+    },
+    {
+      "title": "4.1.2. Approaches Statements, Architectural Styles & Patterns",
+      "page": 74
+    },
+    {
+      "title": "Approaches Statements",
+      "page": 74
+    },
+    {
+      "title": "Architectural Styles",
+      "page": 74
+    },
+    {
+      "title": "Architectural Patterns",
+      "page": 74
+    },
+    {
+      "title": "4.1.3. Context Diagram",
+      "page": 76
+    },
+    {
+      "title": "4.1.4. Approach Driven ViewPoints Diagrams",
+      "page": 77
+    },
+    {
+      "title": "4.1.5. Relational/Non Relational Database Diagram",
+      "page": 79
+    },
+    {
+      "title": "4.1.6. Design Patterns",
+      "page": 79
+    },
+    {
+      "title": "4.1.7. Tactics",
+      "page": 80
+    },
+    {
+      "title": "4.2. Architectural Drivers",
+      "page": 82
+    },
+    {
+      "title": "4.2.1. Design Purpose",
+      "page": 82
+    },
+    {
+      "title": "4.2.2. Primary Functionality (Primary User Stories)",
+      "page": 82
+    },
+    {
+      "title": "4.2.3. Quality Attribute Scenarios",
+      "page": 83
+    },
+    {
+      "title": "Priorización de atributos de calidad",
+      "page": 83
+    },
+    {
+      "title": "QA-01. Disponibilidad",
+      "page": 85
+    },
+    {
+      "title": "QA-02. Rendimiento",
+      "page": 85
+    },
+    {
+      "title": "QA-03. Interoperabilidad",
+      "page": 86
+    },
+    {
+      "title": "4.2.4. Constraints",
+      "page": 86
+    },
+    {
+      "title": "4.2.5. Architectural Concerns",
+      "page": 87
+    },
+    {
+      "title": "4.3. ADD Iterations",
+      "page": 88
+    },
+    {
+      "title": "4.3.1. Iteration 0: Estructuración general del sistema (Diagrama de contenedores)",
+      "page": 89
+    },
+    {
+      "title": "4.3.1.1. Architectural Design Backlog 0",
+      "page": 89
+    },
+    {
+      "title": "4.3.1.2. Establish Iteration Goal by Selecting Drivers",
+      "page": 90
+    },
+    {
+      "title": "4.3.1.3. Choose One or More Elements of the System to Refine",
+      "page": 90
+    },
+    {
+      "title": "4.3.1.4. Choose One or More Design Concepts That Satisfy the Selected Drivers",
+      "page": 90
+    },
+    {
+      "title": "4.3.1.5. Instantiate Architectural Elements, Allocate Responsibilities, and Define Interfaces",
+      "page": 92
+    },
+    {
+      "title": "4.3.1.6. Sketch Views (C4 & UML) and Record Design Decisions",
+      "page": 94
+    },
+    {
+      "title": "4.3.1.7. Analysis of Current Design and Review Iteration Goal (Kanban Board)",
+      "page": 95
+    },
+    {
+      "title": "4.3.2. Iteration 1: Disponibilidad",
+      "page": 95
+    },
+    {
+      "title": "4.3.2.1. Architectural Design Backlog 1",
+      "page": 95
+    },
+    {
+      "title": "4.3.2.2. Establish Iteration Goal by Selecting Drivers",
+      "page": 96
+    },
+    {
+      "title": "4.3.2.3. Choose One or More Elements of the System to Refine",
+      "page": 96
+    },
+    {
+      "title": "4.3.2.4. Choose One or More Design Concepts That Satisfy the Selected Drivers",
+      "page": 97
+    },
+    {
+      "title": "4.3.2.5. Instantiate Architectural Elements, Allocate Responsibilities, and Define Interfaces",
+      "page": 98
+    },
+    {
+      "title": "4.3.2.6. Sketch Views (C4 & UML) and Record Design Decisions",
+      "page": 100
+    },
+    {
+      "title": "4.3.2.7. Analysis of Current Design and Review Iteration Goal (Kanban Board)",
+      "page": 103
+    },
+    {
+      "title": "4.3.3. Iteration 2: Rendimiento",
+      "page": 103
+    },
+    {
+      "title": "4.3.3.1. Architectural Design Backlog 2",
+      "page": 103
+    },
+    {
+      "title": "4.3.3.2. Establish Iteration Goal by Selecting Drivers",
+      "page": 104
+    },
+    {
+      "title": "4.3.3.3. Choose One or More Elements of the System to Refine",
+      "page": 104
+    },
+    {
+      "title": "4.3.3.4. Choose One or More Design Concepts That Satisfy the Selected Drivers",
+      "page": 104
+    },
+    {
+      "title": "4.3.3.5. Instantiate Architectural Elements, Allocate Responsibilities, and Define Interfaces",
+      "page": 106
+    },
+    {
+      "title": "4.3.3.6. Sketch Views (C4 & UML) and Record Design Decisions",
+      "page": 107
+    },
+    {
+      "title": "4.3.3.7. Analysis of Current Design and Review Iteration Goal (Kanban Board)",
+      "page": 109
+    },
+    {
+      "title": "4.3.4. Iteration 3: Interoperabilidad",
+      "page": 110
+    },
+    {
+      "title": "4.3.4.1. Architectural Design Backlog 3",
+      "page": 110
+    },
+    {
+      "title": "4.3.4.2. Establish Iteration Goal by Selecting Drivers",
+      "page": 110
+    },
+    {
+      "title": "4.3.4.3. Choose One or More Elements of the System to Refine",
+      "page": 111
+    },
+    {
+      "title": "4.3.4.4. Choose One or More Design Concepts That Satisfy the Selected Drivers",
+      "page": 111
+    },
+    {
+      "title": "4.3.4.5. Instantiate Architectural Elements, Allocate Responsibilities, and Define Interfaces",
+      "page": 112
+    },
+    {
+      "title": "4.3.4.6. Sketch Views (C4 & UML) and Record Design Decisions",
+      "page": 114
+    },
+    {
+      "title": "4.3.4.7. Analysis of Current Design and Review Iteration Goal (Kanban Board)",
+      "page": 119
+    },
+    {
+      "title": "Capítulo V: Product Implementation, Validation & Deployment",
+      "page": 120
+    },
+    {
+      "title": "5.1. Testing Suites & General Patterns",
+      "page": 120
+    },
+    {
+      "title": "5.1.1. Backend Application Core Testing Suite",
+      "page": 120
+    },
+    {
+      "title": "5.1.2. Pattern Based Backend Application(s)",
+      "page": 121
+    },
+    {
+      "title": "5.1.3. Pattern Based Custom Software Library",
+      "page": 122
+    },
+    {
+      "title": "5.1.4. Framework Pattern Driven Refactoring Report",
+      "page": 122
+    },
+    {
+      "title": "5.2. Software Configuration Management",
+      "page": 123
+    },
+    {
+      "title": "5.2.1. Software Development Environment Configuration",
+      "page": 123
+    },
+    {
+      "title": "5.2.2. Source Code Management",
+      "page": 124
+    },
+    {
+      "title": "5.2.3. Source Code Style Guide & Conventions",
+      "page": 126
+    },
+    {
+      "title": "Convenciones generales",
+      "page": 126
+    },
+    {
+      "title": "Java y Spring Boot",
+      "page": 87
+    },
+    {
+      "title": "TypeScript y Angular",
+      "page": 127
+    },
+    {
+      "title": "Gherkin",
+      "page": 120
+    },
+    {
+      "title": "5.2.4. Software Deployment Configuration",
+      "page": 127
+    },
+    {
+      "title": "Entornos",
+      "page": 127
+    },
+    {
+      "title": "Variables de entorno principales",
+      "page": 128
+    },
+    {
+      "title": "Pipeline de despliegue de microservicios (GitHub Actions)",
+      "page": 128
+    },
+    {
+      "title": "5.3. Microservices Implementation",
+      "page": 131
+    },
+    {
+      "title": "5.3.1. Sprint 1",
+      "page": 131
+    },
+    {
+      "title": "5.3.1.1. Sprint Backlog 1",
+      "page": 131
+    },
+    {
+      "title": "5.3.1.2. Development Evidence for Sprint Review",
+      "page": 134
+    },
+    {
+      "title": "5.3.1.3. Testing Suite Evidence for Sprint Review",
+      "page": 135
+    },
+    {
+      "title": "5.3.1.4. Execution Evidence for Sprint Review",
+      "page": 138
+    },
+    {
+      "title": "5.3.1.5. Microservices Documentation Evidence for Sprint Review",
+      "page": 140
+    },
+    {
+      "title": "5.3.1.6. Software Deployment Evidence for Sprint Review",
+      "page": 144
+    },
+    {
+      "title": "5.3.1.7. Team Collaboration Insights during Sprint",
+      "page": 145
+    },
+    {
+      "title": "5.3.1.8. Kanban Board",
+      "page": 147
+    },
+    {
+      "title": "5.3.2. Sprint 2",
+      "page": 148
+    },
+    {
+      "title": "5.3.2.1. Sprint Backlog 2",
+      "page": 148
+    },
+    {
+      "title": "5.3.2.2. Development Evidence for Sprint Review",
+      "page": 150
+    },
+    {
+      "title": "5.3.2.3. Testing Suite Evidence for Sprint Review",
+      "page": 150
+    },
+    {
+      "title": "5.3.2.4. Execution Evidence for Sprint Review",
+      "page": 152
+    },
+    {
+      "title": "5.3.2.5. Microservices Documentation Evidence for Sprint Review",
+      "page": 154
+    },
+    {
+      "title": "5.3.2.6. Software Deployment Evidence for Sprint Review",
+      "page": 155
+    },
+    {
+      "title": "5.3.2.7. Team Collaboration Insights during Sprint",
+      "page": 156
+    },
+    {
+      "title": "5.3.2.8. Kanban Board",
+      "page": 157
+    }
+  ],
+  "missing": [],
+  "pages": 157
+}

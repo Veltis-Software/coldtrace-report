@@ -1,0 +1,46 @@
+{
+  "pending": 2,
+  "readings": [
+    {
+      "deviceUuid": "375a362a-6397-4566-9d97-a4097767446c",
+      "sequenceNumber": 1,
+      "recordedAt": "2026-11-04T00:00:00.000000+00:00",
+      "temperature": 4.0,
+      "humidity": 60,
+      "sourceId": "camara-lacteos",
+      "profileVersion": 1,
+      "schemaVersion": 1,
+      "temperatureUnit": "C",
+      "humidityUnit": "%RH"
+    },
+    {
+      "deviceUuid": "375a362a-6397-4566-9d97-a4097767446c",
+      "sequenceNumber": 2,
+      "recordedAt": "2026-11-04T00:00:01.000000+00:00",
+      "temperature": 4.000000000000002,
+      "humidity": 60,
+      "sourceId": "camara-lacteos-repuesto",
+      "profileVersion": 1,
+      "schemaVersion": 1,
+      "temperatureUnit": "C",
+      "humidityUnit": "%RH"
+    }
+  ],
+  "stableOriginalBatch": {
+    "gatewayUuid": "11111111-1111-1111-1111-111111111111",
+    "readings": [
+      {
+        "deviceUuid": "375a362a-6397-4566-9d97-a4097767446c",
+        "sequenceNumber": 1,
+        "recordedAt": "2026-11-04T00:00:00.000000+00:00",
+        "temperature": 4.0,
+        "humidity": 60,
+        "sourceId": "camara-lacteos",
+        "profileVersion": 1,
+        "schemaVersion": 1,
+        "temperatureUnit": "C",
+        "humidityUnit": "%RH"
+      }
+    ]
+  }
+}

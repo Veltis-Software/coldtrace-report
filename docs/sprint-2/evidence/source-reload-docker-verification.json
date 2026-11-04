@@ -1,0 +1,12 @@
+{
+  "retiredSourceStatus": 400,
+  "apiDelivery": "unavailable by design, unconfirmed readings retained",
+  "checkedAt": "2026-11-04T05:38:56.7539557Z",
+  "originalSourceAccepted": 1,
+  "replacementSequence": 2,
+  "image": "coldtrace-edge-gateway:source-refresh",
+  "durablePending": 2,
+  "databaseVolume": "persistent writable",
+  "replacementAccepted": 1,
+  "configurationMount": "directory read-only, host atomic replacement"
+}

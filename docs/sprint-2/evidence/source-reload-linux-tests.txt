@@ -1,0 +1,27 @@
+Unable to find image 'python:3.12-slim' locally
+3.12-slim: Pulling from library/python
+Digest: sha256:b18b261e1b4974b4f321451ad5251ded85abb22c2b8b262da527dda1d031ab30
+Status: Downloaded newer image for python:3.12-slim
+test_batch_size_is_bounded_at_500 (test_edge_agent.StoreAndForwardTests.test_batch_size_is_bounded_at_500) ... ok
+test_duplicate_confirmation_clears_only_confirmed_batch (test_edge_agent.StoreAndForwardTests.test_duplicate_confirmation_clears_only_confirmed_batch) ... ok
+test_five_minute_outage_preserves_all_fifty_sensor_readings (test_edge_agent.StoreAndForwardTests.test_five_minute_outage_preserves_all_fifty_sensor_readings) ... ok
+test_partial_confirmation_never_deletes_readings (test_edge_agent.StoreAndForwardTests.test_partial_confirmation_never_deletes_readings) ... ok
+test_sequence_survives_confirmations_and_restart (test_edge_agent.StoreAndForwardTests.test_sequence_survives_confirmations_and_restart) ... ok
+test_unconfirmed_batch_survives_restart_and_preserves_key (test_edge_agent.StoreAndForwardTests.test_unconfirmed_batch_survives_restart_and_preserves_key) ... ok
+test_device_identity_comes_from_configuration (test_source_profiles.SourceIntegrationTests.test_device_identity_comes_from_configuration) ... ok
+test_duplicate_sources_devices_and_unsupported_configuration_are_rejected (test_source_profiles.SourceIntegrationTests.test_duplicate_sources_devices_and_unsupported_configuration_are_rejected) ... ok
+test_http_adapter_persists_canonical_reading (test_source_profiles.SourceIntegrationTests.test_http_adapter_persists_canonical_reading) ... ok
+test_http_rejections_never_persist (test_source_profiles.SourceIntegrationTests.test_http_rejections_never_persist) ... ok
+test_http_requires_a_separate_strong_token (test_source_profiles.SourceIntegrationTests.test_http_requires_a_separate_strong_token) ... ok
+test_invalid_or_missing_reload_keeps_the_last_complete_registry (test_source_profiles.SourceIntegrationTests.test_invalid_or_missing_reload_keeps_the_last_complete_registry) ... ok
+test_invalid_topics_and_json_are_rejected (test_source_profiles.SourceIntegrationTests.test_invalid_topics_and_json_are_rejected) ... ok
+test_provenance_and_retry_payload_survive_restart (test_source_profiles.SourceIntegrationTests.test_provenance_and_retry_payload_survive_restart) ... ok
+test_rejected_readings_do_not_write_or_advance_sequence (test_source_profiles.SourceIntegrationTests.test_rejected_readings_do_not_write_or_advance_sequence) ... ok
+test_source_reload_rejects_retired_input_without_rewriting_durable_batches (test_source_profiles.SourceIntegrationTests.test_source_reload_rejects_retired_input_without_rewriting_durable_batches) ... ok
+test_two_profiles_normalize_one_hundred_measurements_each (test_source_profiles.SourceIntegrationTests.test_two_profiles_normalize_one_hundred_measurements_each) ... ok
+test_unknown_sources_and_wrong_transports_are_rejected (test_source_profiles.SourceIntegrationTests.test_unknown_sources_and_wrong_transports_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 5.674s
+
+OK

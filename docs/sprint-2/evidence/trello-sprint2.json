@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-11-04T00:40:52.0687961Z",
+  "board": "https://trello.com/b/3tf7nnux/fundamentos",
+  "tasks": [
+    {
+      "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6aea7b3d97fd67280ebe4f20",
+      "name": "S2-01 · US03 · Perfiles y adaptadores de fuentes MQTT/HTTP",
+      "url": "https://trello.com/c/TrJV31md/20-s2-01-us03-perfiles-y-adaptadores-de-fuentes-mqtt-http",
+      "status": "🔍 En revisión",
+      "listId": "ari:cloud:trello::list/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11174",
+      "description": "Registro local versionado, normalización a °C/%RH/UTC y almacenamiento durable implementados. 16 pruebas Python; 100 casos por perfil; Postman/Newman: cuatro peticiones y seis aserciones sin fallos. Revisión: https://github.com/Veltis-Software/coldtrace-edge-gateway/pull/3 . La historia US03 incluye además la administración de asociaciones del activo.\n\nResponsable: sin asignar. Horas: no estimadas."
+    },
+    {
+      "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6aea7b3fd89ded7cb786a57a",
+      "name": "S2-02 · QA-03 · Validación y trazabilidad canónica en Monitoring",
+      "url": "https://trello.com/c/X29I4pyV/21-s2-02-qa-03-validaci%C3%B3n-y-trazabilidad-can%C3%B3nica-en-monitoring",
+      "status": "📋 Backlog (Por hacer)",
+      "listId": "ari:cloud:trello::list/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11171",
+      "description": "Validar versión/unidades/contexto y persistir sourceId y profileVersion en Monitoring. Probar rechazo sin efectos y que el segundo perfil no modifica la evaluación del rango. Dependencia: S2-01.\n\nResponsable: sin asignar. Horas: no estimadas."
+    },
+    {
+      "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6aea7b40c5e77368dd0ef011",
+      "name": "S2-03 · US03 / US29 · Asociación y sustitución de fuentes con historial",
+      "url": "https://trello.com/c/HBZEkVQ8/22-s2-03-us03-us29-asociaci%C3%B3n-y-sustituci%C3%B3n-de-fuentes-con-historial",
+      "status": "📋 Backlog (Por hacer)",
+      "listId": "ari:cloud:trello::list/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11171",
+      "description": "API autorizada por organización, una asociación activa por fuente/dispositivo, reemplazo sin reasignar el historial y publicación de configuración versionada. Aprovechar Asset Management existente; extraer incrementalmente.\n\nResponsable: sin asignar. Horas: no estimadas."
+    },
+    {
+      "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6aea7b421a9f35097ca88374",
+      "name": "S2-04 · US30 · Consulta de configuración de la fuente",
+      "url": "https://trello.com/c/WKuYKBaC/23-s2-04-us30-consulta-de-configuraci%C3%B3n-de-la-fuente",
+      "status": "📋 Backlog (Por hacer)",
+      "listId": "ari:cloud:trello::list/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11171",
+      "description": "Exponer y presentar identidad, activo asociado, perfil/versiones, unidades y estado. Reutilizar la interfaz existente. Dependencias: S2-02 y S2-03.\n\nResponsable: sin asignar. Horas: no estimadas."
+    },
+    {
+      "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6aea7b439879351ae0321ac5",
+      "name": "S2-05 · Despliegue incremental en Google Cloud",
+      "url": "https://trello.com/c/NunxR4uU/24-s2-05-despliegue-incremental-en-google-cloud",
+      "status": "🔨 En progreso",
+      "listId": "ari:cloud:trello::list/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11172",
+      "description": "Proyecto verificado: veltis-coldtrace-dev / 311618880556, activo y con facturación vinculada. Región objetivo southamerica-west1. Preflight/configuración: https://github.com/Veltis-Software/coldtrace-infrastructure/pull/4 . Integrar autenticación Pub/Sub/OIDC, base de datos y secretos antes de desplegar servicios funcionales; dimensionar costo de MySQL.\n\nResponsable: sin asignar. Horas: no estimadas."
+    },
+    {
+      "id": "ari:cloud:trello::card/workspace/6ac9c686f852b6d963ad90f3/6aea7b444d567140e49ff77c",
+      "name": "S2-06 · Informe y evidencias del Avance 3",
+      "url": "https://trello.com/c/fS3p9hTS/25-s2-06-informe-y-evidencias-del-avance-3",
+      "status": "🔍 En revisión",
+      "listId": "ari:cloud:trello::list/workspace/6ac9c686f852b6d963ad90f3/6ac9cc384b9d019d27d11174",
+      "description": "Vistas Structurizr acumulativas, capturas operativas restauradas y sección 5.3.2 con backlog, desarrollo, pruebas, ejecución, contratos, configuración de despliegue, colaboración y Kanban. Conservar los formatos del informe y separar resultados observados de criterios de aceptación.\n\nResponsable: sin asignar. Horas: no estimadas."
+    }
+  ]
+}

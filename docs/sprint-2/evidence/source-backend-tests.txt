@@ -1,0 +1,138 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.acme:coldtrace-platform >---------------------
+[INFO] Building ColdTrace Platform 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ coldtrace-platform ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ coldtrace-platform ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 664 source files with javac [debug parameters release 26] to target\classes
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by lombok.permit.Permit
+WARNING: Please consider reporting this to the maintainers of class lombok.permit.Permit
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ coldtrace-platform ---
+[INFO] skip non existing resourceDirectory C:\Users\david\IdeaProjects\coldtrace-services\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ coldtrace-platform ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 5 source files with javac [debug parameters release 26] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.5:test (default-test) @ coldtrace-platform ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.acme.coldtrace.platform.assetmanagement.IoTDeviceManagedSourceTest
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\david\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+00:14:52.369 [main] INFO com.acme.coldtrace.platform.assetmanagement.application.internal.commandservices.IoTDeviceCommandServiceImpl -- IoT device updated: id=10, organizationId=7, uuid=e846df25-9981-4911-9552-4143bf79f596
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.081 s -- in com.acme.coldtrace.platform.assetmanagement.IoTDeviceManagedSourceTest
+[INFO] Running com.acme.coldtrace.platform.assetmanagement.SourceConfigurationIntegrationTest
+00:14:52.767 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.acme.coldtrace.platform.assetmanagement.SourceConfigurationIntegrationTest]: SourceConfigurationIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:14:52.946 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.acme.coldtrace.platform.ColdtracePlatformApplication for test class com.acme.coldtrace.platform.assetmanagement.SourceConfigurationIntegrationTest
+00:14:53.026 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.acme.coldtrace.platform.assetmanagement.SourceConfigurationIntegrationTest]: SourceConfigurationIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:14:53.028 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.acme.coldtrace.platform.ColdtracePlatformApplication for test class com.acme.coldtrace.platform.assetmanagement.SourceConfigurationIntegrationTest
+00:14:53.114 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.6)
+
+2026-11-04T00:14:53.307-05:00  INFO 22564 --- [ColdTrace Platform] [           main] c.p.a.SourceConfigurationIntegrationTest : Starting SourceConfigurationIntegrationTest using Java 26.0.1 with PID 22564 (started by david in C:\Users\david\IdeaProjects\coldtrace-services)
+2026-11-04T00:14:53.308-05:00  INFO 22564 --- [ColdTrace Platform] [           main] c.p.a.SourceConfigurationIntegrationTest : No active profile set, falling back to 1 default profile: "dev"
+2026-11-04T00:14:54.569-05:00  INFO 22564 --- [ColdTrace Platform] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-04T00:14:54.872-05:00  INFO 22564 --- [ColdTrace Platform] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 295 ms. Found 20 JPA repository interfaces.
+2026-11-04T00:14:55.515-05:00  INFO 22564 --- [ColdTrace Platform] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-04T00:14:55.571-05:00  INFO 22564 --- [ColdTrace Platform] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-11-04T00:14:55.842-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-04T00:14:55.872-05:00  INFO 22564 --- [ColdTrace Platform] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-04T00:14:56.136-05:00  INFO 22564 --- [ColdTrace Platform] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58f259bd
+2026-11-04T00:14:56.138-05:00  INFO 22564 --- [ColdTrace Platform] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-04T00:14:56.218-05:00  INFO 22564 --- [ColdTrace Platform] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3308/coldtrace-source-tests]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.40
+	Default catalog/schema: coldtrace-source-tests/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-04T00:14:57.187-05:00  INFO 22564 --- [ColdTrace Platform] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-04T00:14:57.365-05:00  INFO 22564 --- [ColdTrace Platform] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-04T00:14:57.451-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-04T00:14:58.736-05:00  INFO 22564 --- [ColdTrace Platform] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-11-04T00:14:58.736-05:00  WARN 22564 --- [ColdTrace Platform] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-11-04T00:14:59.637-05:00  INFO 22564 --- [ColdTrace Platform] [           main] c.p.a.SourceConfigurationIntegrationTest : Started SourceConfigurationIntegrationTest in 6.538 seconds (process running for 8.899)
+2026-11-04T00:14:59.639-05:00  WARN 22564 --- [ColdTrace Platform] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-04T00:14:59.640-05:00  WARN 22564 --- [ColdTrace Platform] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-04T00:14:59.640-05:00  INFO 22564 --- [ColdTrace Platform] [           main] .i.e.BillingApplicationReadyEventHandler : Starting to verify if subscription plan seeding is needed for ColdTrace Platform at 2026-11-04 00:14:59.64
+2026-11-04T00:14:59.870-05:00  INFO 22564 --- [ColdTrace Platform] [           main] .i.e.BillingApplicationReadyEventHandler : Subscription plan seeding verification finished for ColdTrace Platform at 2026-11-04 00:14:59.87
+2026-11-04T00:14:59.870-05:00  INFO 22564 --- [ColdTrace Platform] [           main] c.p.i.a.i.e.ApplicationReadyEventHandler : Starting to verify if roles seeding is needed for ColdTrace Platform at 2026-11-04 00:14:59.87
+2026-11-04T00:14:59.899-05:00  INFO 22564 --- [ColdTrace Platform] [           main] c.p.i.a.i.e.ApplicationReadyEventHandler : Roles seeding verification finished for ColdTrace Platform at 2026-11-04 00:14:59.899
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.102 s -- in com.acme.coldtrace.platform.assetmanagement.SourceConfigurationIntegrationTest
+[INFO] Running com.acme.coldtrace.platform.assetmanagement.SourceConfigurationsControllerTest
+2026-11-04T00:15:01.581-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-04T00:15:01.581-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-04T00:15:01.583-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-11-04T00:15:01.682-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [2] in public com.acme.coldtrace.platform.assetmanagement.domain.model.valueobjects.SourceConfiguration com.acme.coldtrace.platform.assetmanagement.interfaces.rest.SourceConfigurationsController.configure(long,long,com.acme.coldtrace.platform.assetmanagement.interfaces.rest.SourceConfigurationsController$ConfigurationRequest,org.springframework.security.core.Authentication): [Field error in object 'configurationRequest' on field 'profileVersion': rejected value [0]; codes [Positive.configurationRequest.profileVersion,Positive.profileVersion,Positive.java.lang.Integer,Positive]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [configurationRequest.profileVersion,profileVersion]; arguments []; default message [profileVersion]]; default message [must be greater than 0]] ]
+2026-11-04T00:15:01.837-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [2] in public com.acme.coldtrace.platform.assetmanagement.domain.model.valueobjects.SourceConfiguration com.acme.coldtrace.platform.assetmanagement.interfaces.rest.SourceConfigurationsController.configure(long,long,com.acme.coldtrace.platform.assetmanagement.interfaces.rest.SourceConfigurationsController$ConfigurationRequest,org.springframework.security.core.Authentication): [Field error in object 'configurationRequest' on field 'expectedVersion': rejected value [null]; codes [NotNull.configurationRequest.expectedVersion,NotNull.expectedVersion,NotNull.java.lang.Long,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [configurationRequest.expectedVersion,expectedVersion]; arguments []; default message [expectedVersion]]; default message [must not be null]] ]
+2026-11-04T00:15:01.842-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-04T00:15:01.842-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-04T00:15:01.843-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-04T00:15:01.845-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: An integer JSON number is required]
+2026-11-04T00:15:01.846-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: An integer JSON number is required]
+2026-11-04T00:15:01.847-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: An integer JSON number is required]
+2026-11-04T00:15:01.847-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Numeric value (2147483648) out of range of `int` (-2147483648 - 2147483647)]
+2026-11-04T00:15:01.848-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: An integer JSON number is required]
+2026-11-04T00:15:01.848-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: An integer JSON number is required]
+2026-11-04T00:15:01.849-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: An integer JSON number is required]
+2026-11-04T00:15:01.849-05:00  WARN 22564 --- [ColdTrace Platform] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Numeric value (9223372036854775808) out of range of `long` (-9223372036854775808 - 9223372036854775807)]
+2026-11-04T00:15:01.853-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-04T00:15:01.854-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-04T00:15:01.854-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-04T00:15:01.927-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-04T00:15:01.927-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-04T00:15:01.927-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-04T00:15:01.943-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-11-04T00:15:01.943-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-04T00:15:01.943-05:00  INFO 22564 --- [ColdTrace Platform] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.456 s -- in com.acme.coldtrace.platform.assetmanagement.SourceConfigurationsControllerTest
+[INFO] Running com.acme.coldtrace.platform.ColdtracePlatformApplicationTests
+2026-11-04T00:15:01.951-05:00  INFO 22564 --- [ColdTrace Platform] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.acme.coldtrace.platform.ColdtracePlatformApplicationTests]: ColdtracePlatformApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-04T00:15:02.010-05:00  INFO 22564 --- [ColdTrace Platform] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.acme.coldtrace.platform.ColdtracePlatformApplication for test class com.acme.coldtrace.platform.ColdtracePlatformApplicationTests
+2026-11-04T00:15:02.011-05:00  INFO 22564 --- [ColdTrace Platform] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.acme.coldtrace.platform.ColdtracePlatformApplicationTests]: ColdtracePlatformApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-04T00:15:02.011-05:00  INFO 22564 --- [ColdTrace Platform] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.acme.coldtrace.platform.ColdtracePlatformApplication for test class com.acme.coldtrace.platform.ColdtracePlatformApplicationTests
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s -- in com.acme.coldtrace.platform.ColdtracePlatformApplicationTests
+[INFO] Running com.acme.coldtrace.platform.iam.interfaces.rest.SessionContextControllerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s -- in com.acme.coldtrace.platform.iam.interfaces.rest.SessionContextControllerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  22.041 s
+[INFO] Finished at: 2026-11-04T00:15:02-05:00
+[INFO] ------------------------------------------------------------------------
