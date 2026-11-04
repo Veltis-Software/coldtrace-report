@@ -48,3 +48,16 @@ Fuente normativa: FAS/Trabajo Final_1ASI0657_202620.docx, Sprint 2 → Avance 3.
 - Cloud fue pospuesto por el usuario, quien autoriza únicamente recursos gratuitos. El informe describe configuración objetivo y ejecución local; no acredita revisionesCloudRun inexistentes.
 - La lectura del tablero no acredita aceptación del equipo. No se inventan responsables, horas, revisiones humanas ni video.
 - Verificar las páginas C4 del último PDF al tamaño de lectura y comparar las secuencias con la operación completa de administración de perfiles antes de declarar la revisión final terminada.
+
+## Verificación de publicación
+
+El CI final de Monitoring 41895849374 terminó SUCCESS sobre9f560a3: Maven verify
+y construcción Docker aprobados. Backend41895914505 y Web41894117893 también
+terminaron SUCCESS. ReportPR2 contiene la entrega en c168e8a, con sus diagramas
+editables y SVG. Las PR permanecen abiertas para revisión del equipo.
+
+La operación cloud sigue pospuesta por la instrucción del usuario. Está pendiente
+su respuesta sobre mantener esa postergación o continuar exclusivamente con una
+prueba gratuita. No existe evidencia de revisionesCloudRun desplegadas. Esto
+impide acreditar el cierre cloud solicitado; el informe describe el objetivo cloud
+y las ejecuciones locales que sí se verificaron.
