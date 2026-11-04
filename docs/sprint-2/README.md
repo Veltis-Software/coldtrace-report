@@ -10,12 +10,14 @@ US29 y US30 continúan hasta integrar administración y consulta de asociaciones
 |---|---|---|
 | S2-01 | Perfiles MQTT/HTTP y normalización Edge | En revisión |
 | S2-02 | Contrato canónico y trazabilidad persistente en Monitoring | En revisión |
-| S2-03 | Asociación/sustitución autorizada e historial | Backlog |
-| S2-04 | Consulta y vista de configuración de fuente | Backlog |
+| S2-03 | Asociación/sustitución autorizada e historial | En revisión; distribución integrada en curso |
+| S2-04 | Consulta y vista de configuración de fuente | En revisión |
 | S2-05 | Despliegue incremental cloud | En progreso |
 | S2-06 | Informe y evidencias | En revisión |
 
 Tarjetas y enlaces verificables: [trello-sprint2.json](evidence/trello-sprint2.json).
+Sincronización posterior de asociaciones y consulta:
+[trello-source-configuration.json](evidence/trello-source-configuration.json).
 
 ## Desarrollo
 
@@ -27,6 +29,22 @@ Arquitectura acumulativa y ADR-0016:
 [Backend PR #6](https://github.com/Veltis-Software/coldtrace-backend/pull/6).
 Monitoring `7492a48`: contrato canónico, migración V8, contexto persistido y
 eventos compatibles. [PR #4](https://github.com/Veltis-Software/coldtrace-monitoring-service/pull/4).
+
+Asset Management conserva sus agregados y reglas de organización/ubicación. La
+continuación añade configuración versionada de fuentes, sustitución con historial,
+control de concurrencia y outbox transaccional, sin reescribir los CRUD existentes.
+[Backend PR #7](https://github.com/Veltis-Software/coldtrace-backend/pull/7).
+La pantalla restaurada de Activos / Dispositivos IoT integra consulta y edición
+de perfiles, unidades, campos e historial, con los mismos permisos de la aplicación.
+[Web PR #3](https://github.com/Veltis-Software/coldtrace-web-app/pull/3).
+
+La API publica un documento compatible con SourceRegistry para aprovisionamiento
+de Edge. Se cargó la exportación real con el SourceRegistry existente: 39,2 °F
+se convirtió a 4 °C y el identificador anterior fue rechazado.
+[Verificación](evidence/source-export-edge-verification.json).
+La administración y su outbox están implementados; la distribución remota
+y el rechazo de una fuente retirada en el recorrido completo siguen formando parte
+de la integración. Registrar una configuración no actualiza un agente en ejecución.
 
 ## Pruebas
 
@@ -43,6 +61,17 @@ lecturas por perfil. La última validación REST estricta también rechaza versi
 decimales, cadenas, booleanos y desbordamientos. Resultados:
 [monitoring-canonical-verification.json](evidence/monitoring-canonical-verification.json).
 
+La continuación de asociaciones ejecuta 21 pruebas backend sobre MySQL 8.0.40:
+historial, bloqueo de ediciones concurrentes, rollback conjunto de dispositivo,
+configuración, historial y outbox, permisos, organización y contrato REST estricto.
+El cliente ejecuta 28 pruebas y compila para producción. La colección Postman de
+configuración ejecuta cinco peticiones y ocho aserciones sin fallos contra la API
+real autenticada; verifica consulta, historial, conflicto, aislamiento y exportación.
+[Resultado Newman](evidence/newman-source-configuration.json).
+Auditoría de dependencias del cliente: cero vulnerabilidades altas/críticas y
+16 moderadas; Vite y Undici se fijan en parches compatibles mediante overrides.
+[Auditoría](evidence/source-web-audit.txt).
+
 ## Ejecución
 
 La colección Postman del repositorio Edge ejecutó cuatro peticiones y seis
@@ -51,6 +80,14 @@ aserciones con Newman, sin fallos. Ver [resultado](evidence/newman-source-input.
 ingreso confirma almacenamiento en Edge; el envío cloud tiene confirmación propia.
 
 ## Documentación
+
+Capturas reales del flujo de reemplazo en escritorio y móvil, con datos de prueba
+de una organización frigorífica en una base aislada:
+[escritorio](evidence/source-configuration-desktop.png),
+[móvil](evidence/source-configuration-mobile.png).
+Se verificó MQTT/°C → HTTP/°F con identidad de dispositivo y activo conservadas.
+El backend documenta API, esquema aditivo y límites de integración en
+`docs/source-configuration.md` y conserva su colección Postman bajo `tests/`.
 
 Edge contiene `contracts/source-input.openapi.json`,
 `tests/source-input.postman_collection.json` y `docs/source-integration.md`.
@@ -80,7 +117,7 @@ cuando se producen; no se asignan retroactivamente.
 [Tablero del equipo](https://trello.com/b/3tf7nnux/fundamentos). S2-01 y el informe
 se revisan; las siguientes tareas están en backlog y el despliegue está en progreso.
 El archivo de evidencia conserva la consulta del corte y sus enlaces de tarjeta.
-La continuación técnica de S2-02 queda en revisión en GitHub; el estado del tablero
-se sincroniza cuando el conector está disponible. El Word del Avance 3 conserva
+El 4 de noviembre se sincronizaron S2-02, S2-03 y S2-04 a revisión, sin asignar
+responsables ni horas. S2-05 continúa en progreso. El Word del Avance 3 conserva
 su corte documental anterior; estos resultados posteriores se registran aquí y
 en el plan para incorporarlos al siguiente corte del informe.

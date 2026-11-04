@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-04",
+  "configuration": "real authenticated Asset API export loaded by existing Edge SourceRegistry",
+  "temperatureInputF": 39.2,
+  "temperatureOutputC": 4.000000000000002,
+  "retiredSourceRejected": true,
+  "canonicalReading": {
+    "device": "e846df25-9981-4911-9552-4143bf79f596",
+    "temperature": 4.000000000000002,
+    "humidity": 68,
+    "recorded_at": "2026-11-04T05:30:00.000000+00:00",
+    "source_context": {
+      "sourceId": "sonda-camara-lacteos-02",
+      "profileVersion": 1,
+      "schemaVersion": 1,
+      "temperatureUnit": "C",
+      "humidityUnit": "%RH"
+    }
+  }
+}

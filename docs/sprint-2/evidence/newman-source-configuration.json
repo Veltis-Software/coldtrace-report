@@ -1,0 +1,115 @@
+{
+  "at": "2026-11-04T05:15:14.608Z",
+  "stats": {
+    "iterations": {
+      "total": 1,
+      "pending": 0,
+      "failed": 0
+    },
+    "items": {
+      "total": 5,
+      "pending": 0,
+      "failed": 0
+    },
+    "scripts": {
+      "total": 5,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequests": {
+      "total": 5,
+      "pending": 0,
+      "failed": 0
+    },
+    "requests": {
+      "total": 5,
+      "pending": 0,
+      "failed": 0
+    },
+    "tests": {
+      "total": 5,
+      "pending": 0,
+      "failed": 0
+    },
+    "assertions": {
+      "total": 8,
+      "pending": 0,
+      "failed": 0
+    },
+    "testScripts": {
+      "total": 5,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequestScripts": {
+      "total": 0,
+      "pending": 0,
+      "failed": 0
+    }
+  },
+  "failures": [],
+  "requests": [
+    {
+      "name": "Current source configuration",
+      "status": 200,
+      "assertions": [
+        {
+          "name": "Current configuration exists",
+          "failed": false
+        },
+        {
+          "name": "Canonical contract and immutable device are present",
+          "failed": false
+        }
+      ]
+    },
+    {
+      "name": "Immutable replacement history",
+      "status": 200,
+      "assertions": [
+        {
+          "name": "History can be queried",
+          "failed": false
+        },
+        {
+          "name": "Revisions are ordered and preserve the same asset",
+          "failed": false
+        }
+      ]
+    },
+    {
+      "name": "Stale version cannot overwrite replacement",
+      "status": 409,
+      "assertions": [
+        {
+          "name": "Stale version returns conflict",
+          "failed": false
+        }
+      ]
+    },
+    {
+      "name": "Another organization cannot be queried",
+      "status": 403,
+      "assertions": [
+        {
+          "name": "Tenant isolation rejects foreign organization",
+          "failed": false
+        }
+      ]
+    },
+    {
+      "name": "Export compatible Edge profile document",
+      "status": 200,
+      "assertions": [
+        {
+          "name": "Gateway export exists",
+          "failed": false
+        },
+        {
+          "name": "Export uses Edge schema and source profile",
+          "failed": false
+        }
+      ]
+    }
+  ]
+}
