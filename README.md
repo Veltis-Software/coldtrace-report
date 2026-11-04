@@ -1,3 +1,11 @@
+# ColdTrace
+
+- [Informe vigente del Avance 3](docs/av3/upc-pre-202602-si657-9199-veltis-report-av3.docx)
+- [Arquitectura y vistas ADD](docs/architecture/README.md)
+- [Verificación del Sprint 1](docs/sprint-1/review.md)
+- [Primer incremento del Sprint 2](docs/sprint-2/README.md)
+- [Plan e historial de continuidad](docs/continuity/PLAN_REVISION_ADD_20261103.md)
+
 <h2 style="text-align: center;"> Universidad Peruana de Ciencias Aplicadas </h2>
 
 <div style="text-align: center;">
@@ -16,7 +24,7 @@
 
 <h3 style="text-align: center;"> Informe del Trabajo Final </h3>
 
-<h4 style="text-align: center"> Startup: ICEQ </h4>
+<h4 style="text-align: center"> Startup: Veltis Software </h4>
 
 <h4 style="text-align: center"> Producto: Cold Trace </h4>
 
