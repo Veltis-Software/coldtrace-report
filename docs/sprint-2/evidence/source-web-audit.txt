@@ -5,7 +5,7 @@ Severity: moderate
 Glob: AbortSignal cancellation bypass allows post-timeout filesystem traversal - https://github.com/advisories/GHSA-3g3m-2fjr-6pw4
 Depends on vulnerable versions of minimatch
 fix available via `npm audit fix --force`
-Will install @angular/cli@17.3.17, which is a breaking change
+Will install @angular/cli@16.2.16, which is a breaking change
 node_modules/glob
   @npmcli/package-json  >=3.1.0
   Depends on vulnerable versions of glob
@@ -21,7 +21,7 @@ node_modules/glob
       Depends on vulnerable versions of npm-registry-fetch
       Depends on vulnerable versions of sigstore
       node_modules/pacote
-        @angular/cli  18.0.0-next.0 - 22.1.0-rc.0
+        @angular/cli  17.0.0-next.0 - 22.1.0-rc.0
         Depends on vulnerable versions of pacote
         node_modules/@angular/cli
   cacache  >=17.0.5
@@ -52,7 +52,7 @@ minimatch  <11.0.1
 Severity: moderate
 minimatch has potential denial of service via globparts amplification - https://github.com/advisories/GHSA-g3hv-75wg-m249
 fix available via `npm audit fix --force`
-Will install @angular/cli@17.3.17, which is a breaking change
+Will install @angular/cli@16.2.16, which is a breaking change
 node_modules/minimatch
   @tufjs/models  *
   Depends on vulnerable versions of minimatch

@@ -7,56 +7,56 @@ Odd numbered Node.js versions will not enter LTS status and should not be used f
 > Building...
 √ Building...
 Initial chunk files | Names                            |  Raw size | Estimated transfer size
-chunk-4XNREYV5.js   | -                                | 228.17 kB |                65.00 kB
-main-5UNN6UJF.js    | main                             |  85.74 kB |                15.94 kB
-chunk-6EMAX3JW.js   | -                                |  76.66 kB |                19.08 kB
-chunk-QNJ3CNF4.js   | -                                |  55.77 kB |                 9.50 kB
-chunk-NK54HJRR.js   | -                                |  47.25 kB |                 9.47 kB
-chunk-W77G3ASN.js   | -                                |  29.62 kB |                 6.59 kB
-chunk-SG33SDMP.js   | -                                |  27.25 kB |                 5.55 kB
-chunk-4G36TJUM.js   | -                                |  15.44 kB |                 2.60 kB
-chunk-UN7YEMYW.js   | -                                |  12.90 kB |                 3.41 kB
-chunk-LLCYPEE7.js   | -                                |  12.46 kB |                 3.81 kB
+chunk-7YFNT35P.js   | -                                | 228.17 kB |                65.00 kB
+main-SNTMZU5L.js    | main                             |  85.74 kB |                15.95 kB
+chunk-KPZ5AFFY.js   | -                                |  76.66 kB |                19.12 kB
+chunk-FRBUXBXM.js   | -                                |  55.77 kB |                 9.52 kB
+chunk-T4MTI477.js   | -                                |  47.25 kB |                 9.46 kB
+chunk-NLZTIMFS.js   | -                                |  29.62 kB |                 6.59 kB
+chunk-UPKQEPQX.js   | -                                |  27.25 kB |                 5.53 kB
+chunk-XL3MHPKX.js   | -                                |  15.44 kB |                 2.60 kB
+chunk-ALZMVVD7.js   | -                                |  12.90 kB |                 3.41 kB
+chunk-V6B2KSA2.js   | -                                |  12.46 kB |                 3.81 kB
 styles-DKGUJBQ5.css | styles                           |  11.45 kB |                 1.22 kB
-chunk-PTPAPR6X.js   | -                                |  10.33 kB |                 1.71 kB
-chunk-4U3JCDKK.js   | -                                |   8.98 kB |                 1.89 kB
-chunk-MTJUADQD.js   | -                                |   7.69 kB |                 1.71 kB
-chunk-7OOSQX6K.js   | -                                |   5.88 kB |                 1.62 kB
-chunk-UIENDCX6.js   | -                                |   2.85 kB |               871 bytes
-chunk-JOLH6ZVA.js   | -                                |   2.13 kB |               837 bytes
-chunk-4JLHYJJA.js   | -                                |   1.78 kB |               801 bytes
-chunk-RAMU3MTD.js   | -                                |   1.21 kB |               480 bytes
-chunk-Z5TLXYHO.js   | -                                |   1.20 kB |               446 bytes
-chunk-S6OC3442.js   | -                                | 751 bytes |               751 bytes
+chunk-M5VX2U4Q.js   | -                                |  10.33 kB |                 1.71 kB
+chunk-E7LZSB3D.js   | -                                |   8.98 kB |                 1.89 kB
+chunk-F2JUKLDZ.js   | -                                |   7.69 kB |                 1.71 kB
+chunk-3IBC3H7B.js   | -                                |   5.88 kB |                 1.62 kB
+chunk-ZX6INV6C.js   | -                                |   2.85 kB |               877 bytes
+chunk-27SMBKUZ.js   | -                                |   2.13 kB |               836 bytes
+chunk-SU5G6MC6.js   | -                                |   1.78 kB |               801 bytes
+chunk-N6GJ62TW.js   | -                                |   1.21 kB |               480 bytes
+chunk-XOA3L34L.js   | -                                |   1.20 kB |               446 bytes
+chunk-G6BKMGU3.js   | -                                | 751 bytes |               751 bytes
 chunk-XYFN3UUP.js   | -                                | 525 bytes |               525 bytes
 chunk-KH7V44CD.js   | -                                | 503 bytes |               503 bytes
 chunk-2NFLSA4Y.js   | -                                | 449 bytes |               449 bytes
-chunk-2RJAFTOL.js   | -                                | 334 bytes |               334 bytes
-chunk-76TRBTUX.js   | -                                | 212 bytes |               212 bytes
+chunk-6CSWKRDA.js   | -                                | 334 bytes |               334 bytes
+chunk-7POBY2AX.js   | -                                | 212 bytes |               212 bytes
 chunk-LUZ7X2FH.js   | -                                | 123 bytes |               123 bytes
 chunk-NDQTYVGT.js   | -                                | 100 bytes |               100 bytes
 
-                    | Initial total                    | 647.76 kB |               155.51 kB
+                    | Initial total                    | 647.76 kB |               155.58 kB
 
 Lazy chunk files    | Names                            |  Raw size | Estimated transfer size
-chunk-SMVV5LLU.js   | -                                | 215.02 kB |                63.95 kB
-chunk-6XL674V4.js   | cold-room-list                   |  95.08 kB |                16.73 kB
-chunk-QURFTYAW.js   | operational-dashboard            |  94.09 kB |                19.71 kB
-chunk-X73Y32ZE.js   | technical-service-tracker        |  37.56 kB |                 7.54 kB
-chunk-2WDA44SW.js   | operational-parameters-settings  |  35.94 kB |                 7.52 kB
-chunk-VGNHWNCY.js   | safety-range-settings            |  35.08 kB |                 7.23 kB
-chunk-3QUKL4WB.js   | ai-guidance                      |  34.50 kB |                 7.11 kB
-chunk-QFLLREVH.js   | preventive-maintenance-scheduler |  34.14 kB |                 7.35 kB
-chunk-ZD4ONX5W.js   | audit-evidence                   |  33.25 kB |                 6.80 kB
-chunk-YFJFMTPA.js   | alert-detail                     |  31.29 kB |                 6.49 kB
-chunk-DIHFICCD.js   | asset-monitoring-dashboard       |  31.18 kB |                 7.54 kB
-chunk-NLXHH4JV.js   | compliance-findings              |  30.86 kB |                 6.27 kB
-chunk-APZ6FNVV.js   | sanitary-compliance              |  29.96 kB |                 6.40 kB
-chunk-JUTG5RDY.js   | monthly-report                   |  27.59 kB |                 5.98 kB
-chunk-FLBEQ43L.js   | daily-log                        |  27.11 kB |                 5.83 kB
+chunk-XQY4UP63.js   | -                                | 216.66 kB |                64.43 kB
+chunk-S4SQSDDV.js   | cold-room-list                   |  95.08 kB |                16.77 kB
+chunk-6SHGYBSZ.js   | operational-dashboard            |  94.09 kB |                19.68 kB
+chunk-GGTXYMJC.js   | technical-service-tracker        |  37.56 kB |                 7.53 kB
+chunk-33DA3TQV.js   | operational-parameters-settings  |  35.94 kB |                 7.51 kB
+chunk-SAM4UVYX.js   | safety-range-settings            |  35.08 kB |                 7.25 kB
+chunk-ZIJKJXCM.js   | ai-guidance                      |  34.50 kB |                 7.12 kB
+chunk-KKS7IABK.js   | preventive-maintenance-scheduler |  34.14 kB |                 7.33 kB
+chunk-YTLXEDSX.js   | audit-evidence                   |  33.25 kB |                 6.80 kB
+chunk-22S6YOC7.js   | alert-detail                     |  31.29 kB |                 6.49 kB
+chunk-5FN2KUP5.js   | asset-monitoring-dashboard       |  31.18 kB |                 7.56 kB
+chunk-EZWBOOPR.js   | compliance-findings              |  30.86 kB |                 6.29 kB
+chunk-NQKTGDAB.js   | sanitary-compliance              |  29.96 kB |                 6.43 kB
+chunk-LZQMAJ7A.js   | monthly-report                   |  27.59 kB |                 5.97 kB
+chunk-CZVA5OSE.js   | daily-log                        |  27.11 kB |                 5.85 kB
 ...and 28 more lazy chunks files. Use "--verbose" to show all the files.
 
-Application bundle generation complete. [4.895 seconds] - 2026-11-04T05:17:29.611Z
+Application bundle generation complete. [25.133 seconds] - 2026-11-04T05:23:48.704Z
 
 ▲ [WARNING] src/app/shared/presentation/components/dashboard-shell/dashboard-shell.css exceeded maximum budget. Budget 12.00 kB was not met by 341 bytes with a total of 12.34 kB.
 
