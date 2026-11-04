@@ -133,3 +133,19 @@ Siguiente orden: completar sección 5.3.2 con hechos actuales y backlog real, si
 - Revisiones publicadas: Edge PR3, Infrastructure PR4, Backend PR6 y Report PR2. Ninguna subida a la organización anterior. Autenticación GitHub David-std2.
 - Las verificaciones de CI de Edge, Infrastructure y Backend concluyeron satisfactoriamente. El repositorio del informe conserva auditorías de formato, índice, continuidad, hashes de capturas y ejecuciones verificadas.
 - Las PR quedan abiertas para revisión; no se forzó ninguna mezcla de ramas ni se reescribió historial. El cierre pendiente del checklist se refiere a evidencias académicas de Sprint1 que requieren registro y aceptación reales del equipo.
+
+## Continuación S2-02
+Inicio: validar metadatos canónicos completos o legado sin metadatos; migración V8 nullable, persistencia y eventos, rechazo atómico, fingerprint legado compatible. Rama Monitoring feature/canonical-reading-contract. No modificar evaluación de rango ni afirmar cierre de asociaciones/US29/US30.
+
+### S2-02 implementado y verificado
+
+2026-11-03: Monitoring commit 7492a48, rama feature/canonical-reading-contract, PR https://github.com/Veltis-Software/coldtrace-monitoring-service/pull/4 (base feature/add-stories-completion; la PR3 anterior sigue separada).
+
+- Se aceptan lecturas legado sin contexto o contexto canónico completo: sourceId, profileVersion, schemaVersion=1, C y %RH. Validación en dominio sin dependencias de infraestructura. Versiones REST estrictas: rechaza decimales, cadenas, booleanos y overflow. Rechazo de todo el lote antes de reclamar clave/escribir lecturas o eventos.
+- V8 agrega cinco columnas nullable; no reescribe historia. Contexto persistido junto con mediciones y propagado en readings.ingested/threshold.breached. Payload de evento aditivo, sin cambiar nombres/envelope.
+- Fingerprint legado conserva exactamente siete campos, orden y nulls de record anterior. Los metadatos canónicos sí participan de la huella; cambiar perfil bajo la misma clave devuelve 409.
+- Verificación: 31 tests Monitoring y 2 de biblioteca compartida pasan en H2; 31 Monitoring sobre MySQL 8.0.40 aislado y ocho migraciones aplicadas. El endurecimiento final de versión REST se verificó sobre H2 después de la corrida MySQL; es lógica de parseo sin cambios SQL. Prueba de equivalencia integrada: cien lecturas por fuente, cincuenta normales y cincuenta fuera de rango para cada una, mismas reglas. Se conservan cinco escenarios Gherkin anteriores y regla ArchUnit.
+- MySQL local de prueba retirado; no datos ni recursos cloud afectados. Logs originales en revision-continuidad-20261103; resumen de suites y logs sin credenciales en report/docs/sprint-2/evidence/monitoring-canonical-*.
+- sourceId es trazabilidad, no identidad autenticada ni asociación validada contra registro remoto. Organización/activo siguen determinados por credencial gateway y device_replica. Asociación/versionado autorizado corresponde a S2-03/S2-04, que siguen pendientes.
+- Documentación de servicio README + docs/canonical-readings.md actualizada; Report/docs/sprint-2 registra continuación. Word av3-actualizado conserva el corte previo de 154 páginas; no afirmar que se actualizó con S2-02 en esta continuación.
+- Conector Trello retirado durante la sesión; no actualizar por vías no autorizadas ni afirmar sincronización. S2-02 en revisión GitHub; sincronizar estado Trello cuando el conector vuelva.

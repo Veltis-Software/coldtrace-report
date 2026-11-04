@@ -9,7 +9,7 @@ US29 y US30 continúan hasta integrar administración y consulta de asociaciones
 | Task | Alcance | Estado |
 |---|---|---|
 | S2-01 | Perfiles MQTT/HTTP y normalización Edge | En revisión |
-| S2-02 | Contrato canónico y trazabilidad persistente en Monitoring | Backlog |
+| S2-02 | Contrato canónico y trazabilidad persistente en Monitoring | En revisión |
 | S2-03 | Asociación/sustitución autorizada e historial | Backlog |
 | S2-04 | Consulta y vista de configuración de fuente | Backlog |
 | S2-05 | Despliegue incremental cloud | En progreso |
@@ -25,6 +25,8 @@ Infrastructure `e94de98`: configuración de proyecto y preflight.
 [PR #4](https://github.com/Veltis-Software/coldtrace-infrastructure/pull/4).
 Arquitectura acumulativa y ADR-0016:
 [Backend PR #6](https://github.com/Veltis-Software/coldtrace-backend/pull/6).
+Monitoring `7492a48`: contrato canónico, migración V8, contexto persistido y
+eventos compatibles. [PR #4](https://github.com/Veltis-Software/coldtrace-monitoring-service/pull/4).
 
 ## Pruebas
 
@@ -32,6 +34,14 @@ Arquitectura acumulativa y ADR-0016:
 perfil. Se verifican unidades y UTC, identidad configurada, rechazo sin secuencia
 ni escritura, HTTP autenticado y estabilidad del lote tras reiniciar. Los contratos
 se prueban con datos simulados; no se atribuyen resultados de dispositivos físicos.
+
+La continuación S2-02 ejecuta 31 pruebas de Monitoring sin fallos sobre H2 y sobre
+una instancia aislada MySQL 8.0.40. Se aplicaron las ocho migraciones, incluida V8.
+Las pruebas verifican persistencia de origen/perfil, contexto en eventos, rechazo
+atómico, reintentos con hashes del Sprint 1 y evaluación equivalente de cien
+lecturas por perfil. La última validación REST estricta también rechaza versiones
+decimales, cadenas, booleanos y desbordamientos. Resultados:
+[monitoring-canonical-verification.json](evidence/monitoring-canonical-verification.json).
 
 ## Ejecución
 
@@ -45,6 +55,9 @@ ingreso confirma almacenamiento en Edge; el envío cloud tiene confirmación pro
 Edge contiene `contracts/source-input.openapi.json`,
 `tests/source-input.postman_collection.json` y `docs/source-integration.md`.
 El diseño del recorrido completo aparece en las vistas C4 y secuencias del informe.
+Monitoring documenta el contrato aditivo y la compatibilidad de reintentos en
+`docs/canonical-readings.md`; OpenAPI se genera desde la aplicación y sus campos
+canónicos se comprueban en la suite de integración.
 
 ## Despliegue
 
@@ -67,3 +80,7 @@ cuando se producen; no se asignan retroactivamente.
 [Tablero del equipo](https://trello.com/b/3tf7nnux/fundamentos). S2-01 y el informe
 se revisan; las siguientes tareas están en backlog y el despliegue está en progreso.
 El archivo de evidencia conserva la consulta del corte y sus enlaces de tarjeta.
+La continuación técnica de S2-02 queda en revisión en GitHub; el estado del tablero
+se sincroniza cuando el conector está disponible. El Word del Avance 3 conserva
+su corte documental anterior; estos resultados posteriores se registran aquí y
+en el plan para incorporarlos al siguiente corte del informe.
