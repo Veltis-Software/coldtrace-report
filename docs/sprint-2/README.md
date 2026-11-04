@@ -150,3 +150,24 @@ La auditoría de preservación verifica que los estilos, fuentes, numeración,
 capturas anteriores y contenido previo al Sprint 2 se mantienen, salvo la fila
 de versión y los números de página del índice.
 [Auditoría](evidence/sprint2-document-preservation-final.json).
+
+## Verificación integrada del incremento
+
+El recorrido por Gateway18080 verificó Activos, Monitoreo, Alertas y Reportes sin
+errores de sesión, servidor o JavaScript y sin desbordamiento horizontal:
+[informe del navegador](evidence/integrated-ui-results.json). Las capturas completas
+están en `integrated-*-desktop.png`; Monitoreo incluye su captura móvil.
+El fixture reutiliza `server/db.json`: 29 activos, 16 dispositivos y 3255 lecturas,
+con adaptación de relaciones, UUID, unidades admitidas y fechas para el entorno
+local. No se importaron credenciales ni aprobaciones del conjunto anterior.
+[Procedencia y transformaciones](evidence/legacy-fixture-import.json).
+
+La ingesta real aceptó 12 lecturas y el aprovisionamiento repetido recuperó las dos
+revisiones de una fuente sin duplicarlas:
+[ingesta](evidence/integrated-telemetry-seed.json),
+[recuperación](evidence/history-bootstrap-runtime.json).
+La suite Java21 pasó 42 pruebas Monitoring y dos de biblioteca compartida;
+Web pasó32 pruebas y build. Estos resultados complementan la ejecución previa
+de40 pruebas Monitoring en MySQL8.0.40; no representan una prueba cloud.
+El documento conserva102 tablas,5 secciones y124 entradas de índice:
+[auditoría](evidence/current-document-audit.json).

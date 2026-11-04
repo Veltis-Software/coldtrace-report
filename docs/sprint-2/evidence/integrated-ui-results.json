@@ -1,0 +1,27 @@
+{
+  "views": [
+    {
+      "name": "assets",
+      "path": "/asset-management/assets",
+      "horizontalOverflow": false
+    },
+    {
+      "name": "monitoring",
+      "path": "/monitoring/assets",
+      "horizontalOverflow": false
+    },
+    {
+      "name": "alerts",
+      "path": "/alerts/incidents",
+      "horizontalOverflow": false
+    },
+    {
+      "name": "reports",
+      "path": "/reports/daily-log",
+      "horizontalOverflow": false
+    }
+  ],
+  "failures": [],
+  "runtimeErrors": [],
+  "api": "real Gateway18080 and owning services"
+}

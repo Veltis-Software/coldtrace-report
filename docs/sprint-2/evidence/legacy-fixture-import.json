@@ -1,0 +1,42 @@
+{
+  "sourceSha256": "3e13ef177ead4e485b3beb3af58b3b653d93c6a2081c6ceaacabb3132cb920bb",
+  "sourceOrganizationId": 1,
+  "targetOrganizationId": 1,
+  "locations": 27,
+  "legacyGateways": 5,
+  "gateways": 16,
+  "assets": 29,
+  "devices": 16,
+  "readings": 3255,
+  "readingStates": {
+    "False": 2801,
+    "True": 454
+  },
+  "unsupportedLegacyMeasurementsOmitted": {
+    "humidity": 6,
+    "temperature": 61
+  },
+  "legacyDeviceAliases": {
+    "SN-001": "a25bd094-fab1-5667-8a94-83b7dfc011d8",
+    "SN-002": "7b80670e-e331-59da-b029-7a90ca85c086",
+    "SN-003": "244b80c4-bbb6-5a41-a946-5ad6f0561213",
+    "SN-004": "a1e611a6-f1ae-502c-a6d2-0be786fabb1b",
+    "SN-005": "31084b5a-ec65-5789-9313-e69cb2819b3a",
+    "SN-006": "4b171dcd-eb04-553b-8960-7c8aa1cd5fbf",
+    "SN-007": "55c3439a-2812-5956-9f9e-c5c6f3c54207",
+    "SN-008": "a72cd47e-eb90-5061-8fd2-2c0d36f557da",
+    "SN-009": "333c924e-3684-5fe5-af77-cc2601776f09",
+    "SN-010": "b582d9f9-2063-5120-9373-5c8dd8a72c93",
+    "SN-011": "cb6ae9ba-7679-522e-adcd-9fe2890db8e9",
+    "SN-012": "1cdcc63a-e6c6-5317-9f67-94b1ec8b7012",
+    "SN-013": "ae075ab7-6192-576c-a7c9-ef08b7037a67",
+    "SN-014": "a58bcaae-1d13-595f-8186-80928da99d28",
+    "SN-015": "8ea71305-4d28-5095-a82d-9f64da4e9127",
+    "SN-016": "303aa79c-6c94-5833-9769-0e346192f6ff"
+  },
+  "timestamps": "Relative intervals preserved; newest reading shifted to import time",
+  "missingCalibrationDates": "Fixture defaults: 30 days before and 150 days after import",
+  "target": "local REST API",
+  "computedFlags": "Evaluated by the backend",
+  "excluded": "Legacy authentication, approvals, offline devices and readings outside the selected device/asset relationships"
+}
