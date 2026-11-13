@@ -1,0 +1,38 @@
+[
+  {
+    "run": {
+      "conclusion": "success",
+      "headSha": "733f19d2c5f8c1d1e8539a88b698634268d96fc6",
+      "status": "completed",
+      "url": "https://github.com/Veltis-Software/coldtrace-alert-service/actions/runs/43354395353"
+    },
+    "repository": "coldtrace-alert-service"
+  },
+  {
+    "run": {
+      "conclusion": "success",
+      "headSha": "7a3426ef9a422dd399352209a80f85c39440a59b",
+      "status": "completed",
+      "url": "https://github.com/Veltis-Software/coldtrace-monitoring-service/actions/runs/43354390655"
+    },
+    "repository": "coldtrace-monitoring-service"
+  },
+  {
+    "run": {
+      "conclusion": "success",
+      "headSha": "f7101afd8622d68b11bfcde1ccb60d86b67465ad",
+      "status": "completed",
+      "url": "https://github.com/Veltis-Software/coldtrace-report-service/actions/runs/43354404347"
+    },
+    "repository": "coldtrace-report-service"
+  },
+  {
+    "run": {
+      "conclusion": "success",
+      "headSha": "0ef708ce3e781d86123dd332f8696fd8edd55bd0",
+      "status": "completed",
+      "url": "https://github.com/Veltis-Software/coldtrace-api-gateway/actions/runs/43354408932"
+    },
+    "repository": "coldtrace-api-gateway"
+  }
+]

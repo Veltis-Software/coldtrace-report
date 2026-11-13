@@ -39,3 +39,4 @@ El informe incluye los ocho apartados del Sprint 3 y el registro AV4.
 El índice nativo de Word se regeneró con 142 entradas y la exportación tiene 167 páginas.
 La prueba cloud aprobada comprende cierre, autor, acciones, filtros, consulta vacía y CSV.
 Las sesiones de evaluación de uso con participantes no se han realizado.
+La comprobación de integración continua concluyó correctamente para Alert, Monitoring, Report y API Gateway. Las cuatro ejecuciones verificaron pruebas y construcción Docker contra el commit fijado de coldtrace-shared. Los identificadores y enlaces se registran en evidence/shared-owner-ci.json.
