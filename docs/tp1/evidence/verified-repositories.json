@@ -1,0 +1,106 @@
+[
+  {
+    "repo": "coldtrace-backend",
+    "branch": "feature/add-stories-completion",
+    "sha": "5020c6cdf389dc1283d04a4c346387d09287c63b",
+    "message": "feat(backend): publish asset settings events and align extracted services",
+    "date": "2026-10-10T02:22:19Z",
+    "author": "David Joel Morales Venegas",
+    "run": {
+      "conclusion": "success",
+      "headSha": "5020c6cdf389dc1283d04a4c346387d09287c63b",
+      "url": "https://github.com/Veltis-Software/coldtrace-backend/actions/runs/38017621750"
+    }
+  },
+  {
+    "repo": "coldtrace-monitoring-service",
+    "branch": "feature/add-stories-completion",
+    "sha": "debb19e5289f90d8a87dc0d16fb5a53903c7a0a0",
+    "message": "feat: apply versioned ranges and sustained deviation tolerance",
+    "date": "2026-10-10T01:40:54Z",
+    "author": "David Joel Morales Venegas",
+    "run": {
+      "conclusion": "success",
+      "headSha": "debb19e5289f90d8a87dc0d16fb5a53903c7a0a0",
+      "url": "https://github.com/Veltis-Software/coldtrace-monitoring-service/actions/runs/38014137323"
+    }
+  },
+  {
+    "repo": "coldtrace-alert-service",
+    "branch": "feature/add-stories-completion",
+    "sha": "1933e5b3cf0a3d8a98a14d728731409bd847d230",
+    "message": "feat: implement incident acknowledgement follow-up and durable updates",
+    "date": "2026-10-10T01:40:57Z",
+    "author": "David Joel Morales Venegas",
+    "run": {
+      "conclusion": "success",
+      "headSha": "1933e5b3cf0a3d8a98a14d728731409bd847d230",
+      "url": "https://github.com/Veltis-Software/coldtrace-alert-service/actions/runs/38014139616"
+    }
+  },
+  {
+    "repo": "coldtrace-api-gateway",
+    "branch": "feature/add-stories-completion",
+    "sha": "746f9bd637b9f80b511e736933c15be8b6a6d4b3",
+    "message": "fix: deduplicate brownfield CORS response headers",
+    "date": "2026-10-10T01:44:28Z",
+    "author": "David Joel Morales Venegas",
+    "run": {
+      "conclusion": "success",
+      "headSha": "746f9bd637b9f80b511e736933c15be8b6a6d4b3",
+      "url": "https://github.com/Veltis-Software/coldtrace-api-gateway/actions/runs/38014340322"
+    }
+  },
+  {
+    "repo": "coldtrace-report-service",
+    "branch": "feature/add-stories-completion",
+    "sha": "30f2c98d00ba9e2fbb32523887921cc53bc68631",
+    "message": "feat: isolate report access and accept historical incident events",
+    "date": "2026-10-10T01:43:17Z",
+    "author": "David Joel Morales Venegas",
+    "run": {
+      "conclusion": "success",
+      "headSha": "30f2c98d00ba9e2fbb32523887921cc53bc68631",
+      "url": "https://github.com/Veltis-Software/coldtrace-report-service/actions/runs/38014294592"
+    }
+  },
+  {
+    "repo": "coldtrace-web-app",
+    "branch": "feature/add-stories-completion",
+    "sha": "0df5146cfcd868b4a05d95c0f0870763c3ca16a4",
+    "message": "feat: connect ADD incident monitoring and traceability views",
+    "date": "2026-10-10T01:44:13Z",
+    "author": "David Joel Morales Venegas",
+    "run": {
+      "conclusion": "success",
+      "headSha": "0df5146cfcd868b4a05d95c0f0870763c3ca16a4",
+      "url": "https://github.com/Veltis-Software/coldtrace-web-app/actions/runs/38014335588"
+    }
+  },
+  {
+    "repo": "coldtrace-infrastructure",
+    "branch": "feature/add-stories-completion",
+    "sha": "fcb96541023f0816b8c27067b2ea724776c1c889",
+    "message": "test(infrastructure): add local academic provisioning smoke fixture",
+    "date": "2026-10-10T02:19:01Z",
+    "author": "David Joel Morales Venegas",
+    "run": {
+      "conclusion": "success",
+      "headSha": "fcb96541023f0816b8c27067b2ea724776c1c889",
+      "url": "https://github.com/Veltis-Software/coldtrace-infrastructure/actions/runs/38017587356"
+    }
+  },
+  {
+    "repo": "coldtrace-edge-gateway",
+    "branch": "develop",
+    "sha": "2f3b9b80ac8c814840358b8c18475807c2c06f7c",
+    "message": "feat(tp1): import verified coldtrace-edge-gateway increment",
+    "date": "2026-10-09T23:50:55Z",
+    "author": "David Joel Morales Venegas",
+    "run": {
+      "conclusion": "success",
+      "headSha": "3b57c4a661d29015c263639fca40ce4a4cee4ddf",
+      "url": "https://github.com/Veltis-Software/coldtrace-edge-gateway/actions/runs/38007937955"
+    }
+  }
+]

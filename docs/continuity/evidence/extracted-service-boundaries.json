@@ -1,0 +1,84 @@
+{
+  "verifiedAt": "2026-11-05T00:59:59.4344554+00:00",
+  "identityUrl": "http://127.0.0.1:18101",
+  "assetUrl": "http://127.0.0.1:18102",
+  "subscriptionUrl": "http://127.0.0.1:18107",
+  "checks": [
+    {
+      "name": "organization-registration",
+      "passed": true
+    },
+    {
+      "name": "owner-sign-in",
+      "passed": true
+    },
+    {
+      "name": "authenticated-organization-scope",
+      "passed": true
+    },
+    {
+      "name": "eventual-base-subscription",
+      "passed": true
+    },
+    {
+      "name": "asset-location-created",
+      "passed": true
+    },
+    {
+      "name": "base-plan-limit-preserved",
+      "passed": true
+    },
+    {
+      "name": "asset-created-in-owner-schema",
+      "passed": true
+    },
+    {
+      "name": "gateway-created-in-owner-schema",
+      "passed": true
+    },
+    {
+      "name": "device-created-in-owner-schema",
+      "passed": true
+    },
+    {
+      "name": "source-configuration-preserves-actor-session",
+      "passed": true
+    },
+    {
+      "name": "source-replacement-increments-version",
+      "passed": true
+    },
+    {
+      "name": "stale-source-write-rejected",
+      "passed": true
+    },
+    {
+      "name": "immutable-source-history-preserved",
+      "passed": true
+    },
+    {
+      "name": "edge-profile-export-preserved",
+      "passed": true
+    },
+    {
+      "name": "cross-organization-read-denied",
+      "passed": true
+    },
+    {
+      "name": "cross-organization-billing-denied",
+      "passed": true
+    },
+    {
+      "name": "browser-token-is-not-workload-identity",
+      "passed": true
+    },
+    {
+      "name": "anonymous-asset-read-denied",
+      "passed": true
+    },
+    {
+      "name": "browser-cors-preflight",
+      "passed": true
+    }
+  ]
+}

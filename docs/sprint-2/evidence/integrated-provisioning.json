@@ -1,0 +1,66 @@
+[
+  {
+    "devices": 1,
+    "gatewayId": 1
+  },
+  {
+    "devices": 1,
+    "gatewayId": 2
+  },
+  {
+    "devices": 0,
+    "gatewayId": 3
+  },
+  {
+    "devices": 0,
+    "gatewayId": 4
+  },
+  {
+    "devices": 0,
+    "gatewayId": 5
+  },
+  {
+    "devices": 2,
+    "gatewayId": 6
+  },
+  {
+    "devices": 2,
+    "gatewayId": 7
+  },
+  {
+    "devices": 1,
+    "gatewayId": 8
+  },
+  {
+    "devices": 1,
+    "gatewayId": 9
+  },
+  {
+    "devices": 1,
+    "gatewayId": 10
+  },
+  {
+    "devices": 1,
+    "gatewayId": 11
+  },
+  {
+    "devices": 2,
+    "gatewayId": 12
+  },
+  {
+    "devices": 1,
+    "gatewayId": 13
+  },
+  {
+    "devices": 1,
+    "gatewayId": 14
+  },
+  {
+    "devices": 1,
+    "gatewayId": 15
+  },
+  {
+    "devices": 1,
+    "gatewayId": 16
+  }
+]

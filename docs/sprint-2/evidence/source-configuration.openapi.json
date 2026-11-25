@@ -1,0 +1,4825 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ColdTrace Platform API",
+    "description": "ColdTrace Platform is a RESTful API for cold-chain monitoring, incident management, compliance reporting, and maintenance workflows. It uses Domain-Driven Design, Spring Boot, JPA persistence, localized REST errors, and OpenAPI documentation.\n### Swagger authentication workflow\n\n1. Execute `POST /api/v1/authentication/sign-in` with an existing ColdTrace user.\n2. Copy the `token` value returned by the response.\n3. Click **Authorize** and paste only the token value in `bearerAuth`.\n4. Use the returned `organizationId` when testing organization-scoped endpoints.\n\nProtected endpoints return `401` when the Bearer token is missing, expired, or invalid.\nPublic endpoints such as authentication, Swagger/OpenAPI, subscription plans, and Stripe\nwebhooks do not require authorization.\n",
+    "contact": {
+      "name": "ICEQ ColdTrace Team",
+      "url": "https://github.com/ICEQ2026/coldtrace-platform"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/license/mit"
+    },
+    "version": "0.0.1-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "ColdTrace backend README",
+    "url": "https://github.com/ICEQ2026/coldtrace-platform#readme"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8088",
+      "description": "Local verification runtime"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Reports",
+      "description": "Endpoints for generated operational reports"
+    },
+    {
+      "name": "Technical Service Requests",
+      "description": "Endpoints for corrective maintenance service requests"
+    },
+    {
+      "name": "Notifications",
+      "description": "Endpoints for incident notification read models"
+    },
+    {
+      "name": "Gateways",
+      "description": "Endpoints for edge gateways"
+    },
+    {
+      "name": "Asset Settings",
+      "description": "Endpoints for asset safety and telemetry settings"
+    },
+    {
+      "name": "Organization Subscriptions",
+      "description": "Endpoints for organization subscription and entitlements"
+    },
+    {
+      "name": "Locations",
+      "description": "Endpoints for operational locations"
+    },
+    {
+      "name": "Incidents",
+      "description": "Endpoints for organization-scoped incidents"
+    },
+    {
+      "name": "Subscription Plans",
+      "description": "Endpoints for public plan and pricing catalog"
+    },
+    {
+      "name": "Maintenance Schedules",
+      "description": "Endpoints for preventive maintenance planning"
+    },
+    {
+      "name": "Billing Checkout Sessions",
+      "description": "Endpoints for provider-hosted billing checkout"
+    },
+    {
+      "name": "Organizations",
+      "description": "Endpoints for organizations"
+    },
+    {
+      "name": "Billing Stripe Webhooks",
+      "description": "Endpoint for signed Stripe billing webhook synchronization"
+    },
+    {
+      "name": "Billing Customer Portal Sessions",
+      "description": "Endpoints for provider-hosted billing management"
+    },
+    {
+      "name": "AI Assistance",
+      "description": "Endpoints for structured AI-assisted operational guidance"
+    },
+    {
+      "name": "Password Reset Requests",
+      "description": "Password recovery request endpoints"
+    },
+    {
+      "name": "Users",
+      "description": "Endpoints for users"
+    },
+    {
+      "name": "Roles",
+      "description": "Endpoints for roles and permissions"
+    },
+    {
+      "name": "IoT Devices",
+      "description": "Endpoints for IoT devices connected to gateways"
+    },
+    {
+      "name": "Sensor Readings",
+      "description": "Endpoints for persisted telemetry readings"
+    },
+    {
+      "name": "Authentication",
+      "description": "Authentication endpoints"
+    },
+    {
+      "name": "Assets",
+      "description": "Endpoints for cold-chain assets"
+    },
+    {
+      "name": "Organization Sign-Ups",
+      "description": "Endpoints for organization sign-up"
+    }
+  ],
+  "paths": {
+    "/api/v1/organizations/{organizationId}/iot-devices/{deviceId}/source-configuration/history": {
+      "get": {
+        "tags": [
+          "source-configurations-controller"
+        ],
+        "description": "Executes GET /api/v1/organizations/{organizationId}/iot-devices/{deviceId}/source-configuration/history.",
+        "operationId": "history",
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          },
+          {
+            "name": "deviceId",
+            "in": "path",
+            "description": "Device Id value used by the ColdTrace API.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SourceConfiguration"
+                  }
+                },
+                "example": [
+                  {
+                    "organizationId": 1,
+                    "deviceId": 1,
+                    "deviceUuid": 1,
+                    "gatewayId": 1,
+                    "assetId": 1,
+                    "configurationVersion": "example",
+                    "profile": "example",
+                    "changedBy": "example",
+                    "changedAt": "2026-06-20T09:00:00Z",
+                    "reason": "Temperature remained above the configured threshold."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/organizations/{organizationId}/gateways/{gatewayId}/source-profiles": {
+      "get": {
+        "tags": [
+          "source-configurations-controller"
+        ],
+        "description": "Executes GET /api/v1/organizations/{organizationId}/gateways/{gatewayId}/source-profiles.",
+        "operationId": "export",
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          },
+          {
+            "name": "gatewayId",
+            "in": "path",
+            "description": "Gateway Id value used by the ColdTrace API.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {}
+                },
+                "example": "example"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/organizations/{organizationId}/iot-devices/{deviceId}/source-configuration": {
+      "get": {
+        "tags": [
+          "source-configurations-controller"
+        ],
+        "description": "Executes GET /api/v1/organizations/{organizationId}/iot-devices/{deviceId}/source-configuration.",
+        "operationId": "current",
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          },
+          {
+            "name": "deviceId",
+            "in": "path",
+            "description": "Device Id value used by the ColdTrace API.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SourceConfiguration"
+                },
+                "example": {
+                  "organizationId": 1,
+                  "deviceId": 1,
+                  "deviceUuid": 1,
+                  "gatewayId": 1,
+                  "assetId": 1,
+                  "configurationVersion": "example",
+                  "profile": "example",
+                  "changedBy": "example",
+                  "changedAt": "2026-06-20T09:00:00Z",
+                  "reason": "Temperature remained above the configured threshold."
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "source-configurations-controller"
+        ],
+        "description": "Executes PUT /api/v1/organizations/{organizationId}/iot-devices/{deviceId}/source-configuration.",
+        "operationId": "configure",
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          },
+          {
+            "name": "deviceId",
+            "in": "path",
+            "description": "Device Id value used by the ColdTrace API.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 1
+          }
+        ],
+        "requestBody": {
+          "description": "Request payload for PUT /api/v1/organizations/{organizationId}/iot-devices/{deviceId}/source-configuration.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfigurationRequest"
+              },
+              "example": {
+                "assetId": 1,
+                "expectedVersion": "example",
+                "sourceId": 1,
+                "transport": "example",
+                "profileVersion": "example",
+                "schemaVersion": "example",
+                "fields": "example",
+                "temperatureUnit": 5.2,
+                "humidityUnit": 48.0,
+                "reason": "Temperature remained above the configured threshold."
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SourceConfiguration"
+                },
+                "example": {
+                  "organizationId": 1,
+                  "deviceId": 1,
+                  "deviceUuid": 1,
+                  "gatewayId": 1,
+                  "assetId": 1,
+                  "configurationVersion": "example",
+                  "profile": "example",
+                  "changedBy": "example",
+                  "changedAt": "2026-06-20T09:00:00Z",
+                  "reason": "Temperature remained above the configured threshold."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UpdateLocationRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for updating an organization-scoped operational location",
+        "example": {
+          "name": "Freezer A1",
+          "type": "FREEZER",
+          "address": "example",
+          "description": "Cold-chain monitoring asset used for temperature-sensitive inventory.",
+          "status": "active"
+        },
+        "properties": {
+          "name": {
+            "type": "string",
+            "default": "",
+            "description": "Human-readable location name",
+            "example": "Main Warehouse",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "default": "",
+            "description": "Operational location type",
+            "example": "WAREHOUSE",
+            "minLength": 1
+          },
+          "address": {
+            "type": "string",
+            "default": "",
+            "description": "Optional physical address",
+            "example": "Av. Industrial 123, Lima"
+          },
+          "description": {
+            "type": "string",
+            "default": "",
+            "description": "Optional location notes",
+            "example": "Cold storage area for vaccines"
+          },
+          "status": {
+            "type": "string",
+            "default": "",
+            "description": "Operational location status",
+            "example": "active",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "type"
+        ]
+      },
+      "LocationResource": {
+        "type": "object",
+        "description": "Example payload for Location Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "name": "Freezer A1",
+          "type": "FREEZER",
+          "address": "example",
+          "description": "Cold-chain monitoring asset used for temperature-sensitive inventory.",
+          "status": "active"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "address": {
+            "type": "string",
+            "description": "Address value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description value used by the ColdTrace API.",
+            "example": "Cold-chain monitoring asset used for temperature-sensitive inventory."
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          }
+        }
+      },
+      "ProblemDetail": {
+        "type": "object",
+        "description": "Example payload for Problem Detail.",
+        "example": {
+          "type": "https://coldtrace.app/problems/validation-error",
+          "title": "Request validation failed",
+          "status": 400,
+          "detail": "The request payload contains invalid or missing fields.",
+          "instance": "/api/v1/organizations/1/assets",
+          "properties": {
+            "field": "name"
+          }
+        },
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri",
+            "description": "Type value used by the ColdTrace API.",
+            "example": "https://coldtrace.app/problems/validation-error"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title value used by the ColdTrace API.",
+            "example": "Request validation failed"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Status value used by the ColdTrace API.",
+            "example": 400
+          },
+          "detail": {
+            "type": "string",
+            "description": "Detail value used by the ColdTrace API.",
+            "example": "The request payload contains invalid or missing fields."
+          },
+          "instance": {
+            "type": "string",
+            "format": "uri",
+            "description": "Instance value used by the ColdTrace API.",
+            "example": "/api/v1/organizations/1/assets"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {},
+            "description": "Properties value used by the ColdTrace API.",
+            "example": {
+              "field": "name"
+            }
+          }
+        }
+      },
+      "UpdateIoTDeviceResource": {
+        "type": "object",
+        "description": "Example payload for Update Io TDevice Resource.",
+        "example": {
+          "gatewayId": 1,
+          "uuid": 1,
+          "deviceType": "FREEZER",
+          "model": "example",
+          "measurementType": "FREEZER",
+          "measurementParameters": [
+            "example"
+          ],
+          "readingFrequencySeconds": 10,
+          "assetId": 1,
+          "status": "active",
+          "calibrationStatus": "active",
+          "lastCalibrationDate": "2026-06-20T09:00:00Z",
+          "nextCalibrationDate": "2026-06-20T09:00:00Z"
+        },
+        "properties": {
+          "gatewayId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Gateway Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "deviceType": {
+            "type": "string",
+            "description": "Device Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "measurementType": {
+            "type": "string",
+            "description": "Measurement Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "measurementParameters": {
+            "type": "array",
+            "description": "Measurement Parameters value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "readingFrequencySeconds": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Reading Frequency Seconds value used by the ColdTrace API.",
+            "example": 10
+          },
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "calibrationStatus": {
+            "type": "string",
+            "description": "Calibration Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "lastCalibrationDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Last Calibration Date value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "nextCalibrationDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Next Calibration Date value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          }
+        }
+      },
+      "IoTDeviceResource": {
+        "type": "object",
+        "description": "Example payload for Io TDevice Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "gatewayId": 1,
+          "uuid": 1,
+          "deviceType": "FREEZER",
+          "model": "example",
+          "measurementType": "FREEZER",
+          "measurementParameters": [
+            "example"
+          ],
+          "readingFrequencySeconds": 10,
+          "assetId": 1,
+          "status": "active",
+          "calibrationStatus": "active",
+          "lastCalibrationDate": "2026-06-20T09:00:00Z",
+          "nextCalibrationDate": "2026-06-20T09:00:00Z"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "gatewayId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Gateway Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "deviceType": {
+            "type": "string",
+            "description": "Device Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "measurementType": {
+            "type": "string",
+            "description": "Measurement Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "measurementParameters": {
+            "type": "array",
+            "description": "Measurement Parameters value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "readingFrequencySeconds": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Reading Frequency Seconds value used by the ColdTrace API.",
+            "example": 10
+          },
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "calibrationStatus": {
+            "type": "string",
+            "description": "Calibration Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "lastCalibrationDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Last Calibration Date value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "nextCalibrationDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Next Calibration Date value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          }
+        }
+      },
+      "ConfigurationRequest": {
+        "type": "object",
+        "description": "Example payload for Configuration Request.",
+        "example": {
+          "assetId": 1,
+          "expectedVersion": "example",
+          "sourceId": 1,
+          "transport": "example",
+          "profileVersion": "example",
+          "schemaVersion": "example",
+          "fields": "example",
+          "temperatureUnit": 5.2,
+          "humidityUnit": 48.0,
+          "reason": "Temperature remained above the configured threshold."
+        },
+        "properties": {
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "expectedVersion": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Expected Version value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "sourceId": {
+            "type": "string",
+            "description": "Source Id value used by the ColdTrace API.",
+            "example": 1,
+            "minLength": 1
+          },
+          "transport": {
+            "type": "string",
+            "description": "Transport value used by the ColdTrace API.",
+            "example": "example",
+            "minLength": 1
+          },
+          "profileVersion": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Profile Version value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "schemaVersion": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Schema Version value used by the ColdTrace API.",
+            "example": "example",
+            "maximum": 1,
+            "minimum": 1
+          },
+          "fields": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Fields value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "temperatureUnit": {
+            "type": "string",
+            "description": "Temperature Unit value used by the ColdTrace API.",
+            "example": 5.2,
+            "minLength": 1
+          },
+          "humidityUnit": {
+            "type": "string",
+            "description": "Humidity Unit value used by the ColdTrace API.",
+            "example": 48.0,
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "description": "Reason value used by the ColdTrace API.",
+            "example": "Temperature remained above the configured threshold.",
+            "maxLength": 500,
+            "minLength": 0
+          }
+        },
+        "required": [
+          "assetId",
+          "expectedVersion",
+          "fields",
+          "humidityUnit",
+          "profileVersion",
+          "reason",
+          "schemaVersion",
+          "sourceId",
+          "temperatureUnit",
+          "transport"
+        ]
+      },
+      "SourceConfiguration": {
+        "type": "object",
+        "description": "Example payload for Source Configuration.",
+        "example": {
+          "organizationId": 1,
+          "deviceId": 1,
+          "deviceUuid": 1,
+          "gatewayId": 1,
+          "assetId": 1,
+          "configurationVersion": "example",
+          "profile": "example",
+          "changedBy": "example",
+          "changedAt": "2026-06-20T09:00:00Z",
+          "reason": "Temperature remained above the configured threshold."
+        },
+        "properties": {
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "deviceId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Device Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "deviceUuid": {
+            "type": "string",
+            "description": "Device Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "gatewayId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Gateway Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "configurationVersion": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Configuration Version value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "profile": {
+            "$ref": "#/components/schemas/SourceProfile",
+            "description": "Profile value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "changedBy": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Changed By value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "changedAt": {
+            "type": "string",
+            "description": "Changed At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "reason": {
+            "type": "string",
+            "description": "Reason value used by the ColdTrace API.",
+            "example": "Temperature remained above the configured threshold."
+          }
+        }
+      },
+      "SourceProfile": {
+        "type": "object",
+        "description": "Example payload for Source Profile.",
+        "example": {
+          "sourceId": 1,
+          "transport": "example",
+          "profileVersion": "example",
+          "schemaVersion": "example",
+          "fields": "example",
+          "temperatureUnit": 5.2,
+          "humidityUnit": 48.0
+        },
+        "properties": {
+          "sourceId": {
+            "type": "string",
+            "description": "Source Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "transport": {
+            "type": "string",
+            "description": "Transport value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "profileVersion": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Profile Version value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "schemaVersion": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Schema Version value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "fields": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Fields value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "temperatureUnit": {
+            "type": "string",
+            "description": "Temperature Unit value used by the ColdTrace API.",
+            "example": 5.2
+          },
+          "humidityUnit": {
+            "type": "string",
+            "description": "Humidity Unit value used by the ColdTrace API.",
+            "example": 48.0
+          }
+        }
+      },
+      "UpdateGatewayRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for updating an organization-scoped edge gateway",
+        "example": {
+          "locationId": 1,
+          "uuid": 1,
+          "name": "Freezer A1",
+          "network": "example",
+          "status": "active"
+        },
+        "properties": {
+          "locationId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Organization location where the gateway is installed",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "default": "",
+            "description": "Gateway business UUID unique inside the organization",
+            "example": "GW-LIM-001",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "default": "",
+            "description": "Human-readable gateway name",
+            "example": "Warehouse Gateway 1",
+            "minLength": 1
+          },
+          "network": {
+            "type": "string",
+            "default": "",
+            "description": "Gateway network name or identifier",
+            "example": "cold-chain-net",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "default": "",
+            "description": "Operational gateway status",
+            "example": "online",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "locationId",
+          "name",
+          "network",
+          "status",
+          "uuid"
+        ]
+      },
+      "GatewayResource": {
+        "type": "object",
+        "description": "Example payload for Gateway Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "locationId": 1,
+          "uuid": 1,
+          "name": "Freezer A1",
+          "network": "example",
+          "status": "active"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Location Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "network": {
+            "type": "string",
+            "description": "Network value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          }
+        }
+      },
+      "UpdateAssetRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for updating an organization-scoped cold-chain asset",
+        "example": {
+          "locationId": 1,
+          "uuid": 1,
+          "type": "FREEZER",
+          "name": "Freezer A1",
+          "capacity": 450.0,
+          "description": "Cold-chain monitoring asset used for temperature-sensitive inventory.",
+          "status": "active"
+        },
+        "properties": {
+          "locationId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Organization location identifier where the asset is placed",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "default": "",
+            "description": "Asset business UUID unique inside the organization",
+            "example": "AST-FRZ-001",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "default": "",
+            "description": "Business asset type",
+            "example": "FREEZER",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "default": "",
+            "description": "Human-readable asset name",
+            "example": "Freezer A1",
+            "minLength": 1
+          },
+          "capacity": {
+            "type": "number",
+            "format": "double",
+            "default": "",
+            "description": "Asset storage or transport capacity",
+            "example": 450.0
+          },
+          "description": {
+            "type": "string",
+            "default": "",
+            "description": "Optional operational notes",
+            "example": "Main freezer for vaccines"
+          },
+          "status": {
+            "type": "string",
+            "default": "",
+            "description": "Operational asset status",
+            "example": "active",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "locationId",
+          "name",
+          "status",
+          "type",
+          "uuid"
+        ]
+      },
+      "AssetResource": {
+        "type": "object",
+        "description": "Example payload for Asset Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "locationId": 1,
+          "uuid": 1,
+          "type": "FREEZER",
+          "name": "Freezer A1",
+          "capacity": 450.0,
+          "description": "Cold-chain monitoring asset used for temperature-sensitive inventory.",
+          "status": "active"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Location Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "type": {
+            "type": "string",
+            "description": "Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "capacity": {
+            "type": "number",
+            "format": "double",
+            "description": "Capacity value used by the ColdTrace API.",
+            "example": 450.0
+          },
+          "description": {
+            "type": "string",
+            "description": "Description value used by the ColdTrace API.",
+            "example": "Cold-chain monitoring asset used for temperature-sensitive inventory."
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          }
+        }
+      },
+      "SaveAssetSettingsRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for creating or updating safety thresholds and operational settings",
+        "example": {
+          "uuid": 1,
+          "assetTypes": [
+            "FREEZER",
+            "COLD_ROOM"
+          ],
+          "iotDeviceTypes": [
+            "TEMPERATURE_SENSOR"
+          ],
+          "minimumTemperature": 5.2,
+          "maximumTemperature": 5.2,
+          "minimumHumidity": 48.0,
+          "maximumHumidity": 48.0,
+          "calibrationFrequencyDays": 10,
+          "temperatureUnit": 5.2,
+          "humidityUnit": 48.0,
+          "weightUnit": "C",
+          "readingFrequencySeconds": 10,
+          "alertThresholdMinutes": "example"
+        },
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "default": "",
+            "description": "Optional settings code",
+            "example": "DEFAULT-COLD-CHAIN"
+          },
+          "assetTypes": {
+            "type": "array",
+            "default": "",
+            "description": "Asset types covered by these settings",
+            "example": [
+              "FREEZER",
+              "COLD_ROOM"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "iotDeviceTypes": {
+            "type": "array",
+            "default": "",
+            "description": "IoT device types covered by these settings",
+            "example": [
+              "TEMPERATURE_SENSOR"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "minimumTemperature": {
+            "type": "number",
+            "format": "double",
+            "default": "",
+            "description": "Lower safe temperature threshold",
+            "example": 2.0
+          },
+          "maximumTemperature": {
+            "type": "number",
+            "format": "double",
+            "default": "",
+            "description": "Upper safe temperature threshold",
+            "example": 8.0
+          },
+          "minimumHumidity": {
+            "type": "number",
+            "format": "double",
+            "default": "",
+            "description": "Lower safe humidity threshold",
+            "example": 30.0
+          },
+          "maximumHumidity": {
+            "type": "number",
+            "format": "double",
+            "default": "",
+            "description": "Upper safe humidity threshold",
+            "example": 65.0
+          },
+          "calibrationFrequencyDays": {
+            "type": "integer",
+            "format": "int32",
+            "default": "",
+            "description": "Calibration frequency in days",
+            "example": 30
+          },
+          "temperatureUnit": {
+            "type": "string",
+            "default": "",
+            "description": "Temperature unit",
+            "example": "C",
+            "minLength": 1
+          },
+          "humidityUnit": {
+            "type": "string",
+            "default": "",
+            "description": "Humidity unit",
+            "example": "%",
+            "minLength": 1
+          },
+          "weightUnit": {
+            "type": "string",
+            "default": "",
+            "description": "Weight unit",
+            "example": "kg",
+            "minLength": 1
+          },
+          "readingFrequencySeconds": {
+            "type": "integer",
+            "format": "int32",
+            "default": "",
+            "description": "Telemetry reading frequency in seconds",
+            "example": 300
+          },
+          "alertThresholdMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "default": "",
+            "description": "Delay threshold before alert escalation in minutes",
+            "example": 15
+          }
+        },
+        "required": [
+          "humidityUnit",
+          "maximumHumidity",
+          "maximumTemperature",
+          "minimumTemperature",
+          "temperatureUnit",
+          "weightUnit"
+        ]
+      },
+      "AssetSettingsResource": {
+        "type": "object",
+        "description": "Example payload for Asset Settings Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "assetId": 1,
+          "uuid": 1,
+          "assetTypes": [
+            "FREEZER"
+          ],
+          "iotDeviceTypes": [
+            "FREEZER"
+          ],
+          "minimumTemperature": 5.2,
+          "maximumTemperature": 5.2,
+          "minimumHumidity": 48.0,
+          "maximumHumidity": 48.0,
+          "calibrationFrequencyDays": 10,
+          "temperatureUnit": 5.2,
+          "humidityUnit": 48.0,
+          "weightUnit": "C",
+          "readingFrequencySeconds": 10,
+          "alertThresholdMinutes": "example"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetTypes": {
+            "type": "array",
+            "description": "Asset Types value used by the ColdTrace API.",
+            "example": [
+              "FREEZER"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "iotDeviceTypes": {
+            "type": "array",
+            "description": "Iot Device Types value used by the ColdTrace API.",
+            "example": [
+              "FREEZER"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "minimumTemperature": {
+            "type": "number",
+            "format": "double",
+            "description": "Minimum Temperature value used by the ColdTrace API.",
+            "example": 5.2
+          },
+          "maximumTemperature": {
+            "type": "number",
+            "format": "double",
+            "description": "Maximum Temperature value used by the ColdTrace API.",
+            "example": 5.2
+          },
+          "minimumHumidity": {
+            "type": "number",
+            "format": "double",
+            "description": "Minimum Humidity value used by the ColdTrace API.",
+            "example": 48.0
+          },
+          "maximumHumidity": {
+            "type": "number",
+            "format": "double",
+            "description": "Maximum Humidity value used by the ColdTrace API.",
+            "example": 48.0
+          },
+          "calibrationFrequencyDays": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Calibration Frequency Days value used by the ColdTrace API.",
+            "example": 10
+          },
+          "temperatureUnit": {
+            "type": "string",
+            "description": "Temperature Unit value used by the ColdTrace API.",
+            "example": 5.2
+          },
+          "humidityUnit": {
+            "type": "string",
+            "description": "Humidity Unit value used by the ColdTrace API.",
+            "example": 48.0
+          },
+          "weightUnit": {
+            "type": "string",
+            "description": "Weight Unit value used by the ColdTrace API.",
+            "example": "C"
+          },
+          "readingFrequencySeconds": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Reading Frequency Seconds value used by the ColdTrace API.",
+            "example": 10
+          },
+          "alertThresholdMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Alert Threshold Minutes value used by the ColdTrace API.",
+            "example": "example"
+          }
+        }
+      },
+      "CreatePasswordResetRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Password reset request payload",
+        "example": {
+          "email": "operations@coldtrace.test"
+        },
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "default": "",
+            "description": "User email address",
+            "example": "david@coldtrace.example",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "email"
+        ]
+      },
+      "PasswordResetRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Password reset request acceptance response",
+        "example": {
+          "accepted": true,
+          "requestedAt": "2026-06-20T09:00:00Z",
+          "expiresAt": "2026-06-20T09:00:00Z",
+          "deliveryStatus": "active"
+        },
+        "properties": {
+          "accepted": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether the request was accepted",
+            "example": true
+          },
+          "requestedAt": {
+            "type": "string",
+            "format": "date-time",
+            "default": "",
+            "description": "Timestamp when the request was accepted",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "default": "",
+            "description": "Timestamp when the reset request expires",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "deliveryStatus": {
+            "type": "string",
+            "default": "",
+            "description": "Delivery state for the reset email integration",
+            "example": "EMAIL_DELIVERY_NOT_CONFIGURED"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "default": null,
+        "description": "Standard error response returned by ColdTrace REST endpoints",
+        "example": {
+          "code": "CT-OPS",
+          "message": "Temperature exceeded configured safe range.",
+          "details": "example"
+        },
+        "properties": {
+          "code": {
+            "type": "string",
+            "default": "",
+            "description": "Stable application error code",
+            "example": "ASSET_NOT_FOUND"
+          },
+          "message": {
+            "type": "string",
+            "default": "",
+            "description": "Human-readable localized error message",
+            "example": "Asset was not found"
+          },
+          "details": {
+            "type": "string",
+            "default": "",
+            "description": "Additional error details or request context",
+            "example": "asset-management.asset.error.asset-not-found"
+          }
+        }
+      },
+      "CreateOrganizationResource": {
+        "type": "object",
+        "description": "Example payload for Create Organization Resource.",
+        "example": {
+          "legalName": "Freezer A1",
+          "commercialName": "Freezer A1",
+          "taxId": 1,
+          "contactEmail": "operations@coldtrace.test"
+        },
+        "properties": {
+          "legalName": {
+            "type": "string",
+            "description": "Legal Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "commercialName": {
+            "type": "string",
+            "description": "Commercial Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "taxId": {
+            "type": "string",
+            "description": "Tax Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "contactEmail": {
+            "type": "string",
+            "description": "Contact Email value used by the ColdTrace API.",
+            "example": "operations@coldtrace.test"
+          }
+        }
+      },
+      "OrganizationResource": {
+        "type": "object",
+        "description": "Example payload for Organization Resource.",
+        "example": {
+          "id": 1,
+          "legalName": "Freezer A1",
+          "commercialName": "Freezer A1",
+          "taxId": 1,
+          "contactEmail": "operations@coldtrace.test"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "legalName": {
+            "type": "string",
+            "description": "Legal Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "commercialName": {
+            "type": "string",
+            "description": "Commercial Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "taxId": {
+            "type": "string",
+            "description": "Tax Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "contactEmail": {
+            "type": "string",
+            "description": "Contact Email value used by the ColdTrace API.",
+            "example": "operations@coldtrace.test"
+          }
+        }
+      },
+      "CreateUserRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for creating a user inside an organization",
+        "example": {
+          "firstName": "Freezer A1",
+          "lastName": "Freezer A1",
+          "email": "operations@coldtrace.test",
+          "password": "ColdTrace123",
+          "roleId": 1
+        },
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "default": "",
+            "description": "User first name",
+            "example": "Maria",
+            "minLength": 1
+          },
+          "lastName": {
+            "type": "string",
+            "default": "",
+            "description": "Optional user last name",
+            "example": "Torres"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "default": "",
+            "description": "User email address",
+            "example": "maria@coldtrace.test",
+            "minLength": 1
+          },
+          "password": {
+            "type": "string",
+            "default": "",
+            "description": "Password used to create credentials for sign-in",
+            "example": "ColdTrace123",
+            "maxLength": 2147483647,
+            "minLength": 8
+          },
+          "roleId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Role identifier assigned to the user",
+            "example": 2
+          }
+        },
+        "required": [
+          "email",
+          "firstName",
+          "password",
+          "roleId"
+        ]
+      },
+      "UserResource": {
+        "type": "object",
+        "description": "Example payload for User Resource.",
+        "example": {
+          "id": 1,
+          "uuid": 1,
+          "organizationUserId": 1,
+          "firstName": "Freezer A1",
+          "lastName": "Freezer A1",
+          "email": "operations@coldtrace.test",
+          "organizationId": 1,
+          "roleId": 1
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationUserId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization User Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "firstName": {
+            "type": "string",
+            "description": "First Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Last Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email value used by the ColdTrace API.",
+            "example": "operations@coldtrace.test"
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "roleId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Role Id value used by the ColdTrace API.",
+            "example": 1
+          }
+        }
+      },
+      "CreateTechnicalServiceRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for opening corrective technical service",
+        "example": {
+          "assetId": 1,
+          "incidentId": 1,
+          "issueDescription": "Cold-chain monitoring asset used for temperature-sensitive inventory.",
+          "priority": "high",
+          "requestedBy": "example"
+        },
+        "properties": {
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Maintained asset identifier",
+            "example": 1
+          },
+          "incidentId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Optional related incident identifier",
+            "example": 3
+          },
+          "issueDescription": {
+            "type": "string",
+            "default": "",
+            "description": "Issue description",
+            "example": "Compressor does not keep target temperature",
+            "minLength": 1
+          },
+          "priority": {
+            "type": "string",
+            "default": "",
+            "description": "Service priority",
+            "example": "high",
+            "minLength": 1
+          },
+          "requestedBy": {
+            "type": "string",
+            "default": "",
+            "description": "Requester name or email",
+            "example": "operator@coldtrace.test"
+          }
+        },
+        "required": [
+          "assetId",
+          "issueDescription",
+          "priority"
+        ]
+      },
+      "TechnicalServiceRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Corrective technical service request resource",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "uuid": 1,
+          "assetId": 1,
+          "assetLocationId": 1,
+          "assetName": "Freezer A1",
+          "incidentId": 1,
+          "issueDescription": "Cold-chain monitoring asset used for temperature-sensitive inventory.",
+          "priority": "high",
+          "status": "active",
+          "requestedBy": "example",
+          "requestedAt": "2026-06-20T09:00:00Z",
+          "closedAt": "2026-06-20T09:00:00Z",
+          "closureSummary": "Temperature recovered after inventory transfer and device verification.",
+          "evidence": "30 minutes of stable readings and technician notes.",
+          "closedBy": "example"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetLocationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Location Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetName": {
+            "type": "string",
+            "description": "Asset Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "incidentId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Incident Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "issueDescription": {
+            "type": "string",
+            "description": "Issue Description value used by the ColdTrace API.",
+            "example": "Cold-chain monitoring asset used for temperature-sensitive inventory."
+          },
+          "priority": {
+            "type": "string",
+            "description": "Priority value used by the ColdTrace API.",
+            "example": "high"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "requestedBy": {
+            "type": "string",
+            "description": "Requested By value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "requestedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Requested At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "closedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Closed At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "closureSummary": {
+            "type": "string",
+            "description": "Closure Summary value used by the ColdTrace API.",
+            "example": "Temperature recovered after inventory transfer and device verification."
+          },
+          "evidence": {
+            "type": "string",
+            "description": "Evidence value used by the ColdTrace API.",
+            "example": "30 minutes of stable readings and technician notes."
+          },
+          "closedBy": {
+            "type": "string",
+            "description": "Closed By value used by the ColdTrace API.",
+            "example": "example"
+          }
+        }
+      },
+      "CreateSensorReadingRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for recording backend-owned telemetry",
+        "example": {
+          "assetId": 1,
+          "iotDeviceId": 1,
+          "temperature": 5.2,
+          "humidity": 48.0,
+          "recordedAt": "2026-06-20T09:00:00Z",
+          "motionDetected": "example",
+          "imageCaptured": "example",
+          "batteryLevel": "example",
+          "signalStrength": "example"
+        },
+        "properties": {
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Monitored asset identifier",
+            "example": 1
+          },
+          "iotDeviceId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "IoT device identifier that produced the reading",
+            "example": 1
+          },
+          "temperature": {
+            "type": "number",
+            "format": "double",
+            "default": "",
+            "description": "Temperature value",
+            "example": 5.2
+          },
+          "humidity": {
+            "type": "number",
+            "format": "double",
+            "default": "",
+            "description": "Humidity value",
+            "example": 48.0
+          },
+          "recordedAt": {
+            "type": "string",
+            "format": "date-time",
+            "default": "",
+            "description": "Reading timestamp; current time is used when omitted",
+            "example": "2026-06-10T12:30:00Z"
+          },
+          "motionDetected": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether motion was detected",
+            "example": false
+          },
+          "imageCaptured": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether an image was captured",
+            "example": false
+          },
+          "batteryLevel": {
+            "type": "integer",
+            "format": "int32",
+            "default": "",
+            "description": "Battery level percentage",
+            "example": 92,
+            "maximum": 100,
+            "minimum": 0
+          },
+          "signalStrength": {
+            "type": "integer",
+            "format": "int32",
+            "default": "",
+            "description": "Signal strength percentage",
+            "example": 87,
+            "maximum": 100,
+            "minimum": 0
+          }
+        },
+        "required": [
+          "assetId",
+          "iotDeviceId"
+        ]
+      },
+      "SensorReadingResource": {
+        "type": "object",
+        "description": "Example payload for Sensor Reading Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "assetId": 1,
+          "iotDeviceId": 1,
+          "gatewayId": 1,
+          "locationId": 1,
+          "temperature": 5.2,
+          "humidity": 48.0,
+          "outOfRange": "example",
+          "isOutOfRange": true,
+          "recordedAt": "2026-06-20T09:00:00Z",
+          "motionDetected": "example",
+          "imageCaptured": "example",
+          "batteryLevel": "example",
+          "signalStrength": "example"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "iotDeviceId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Iot Device Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "gatewayId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Gateway Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Location Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "temperature": {
+            "type": "number",
+            "format": "double",
+            "description": "Temperature value used by the ColdTrace API.",
+            "example": 5.2
+          },
+          "humidity": {
+            "type": "number",
+            "format": "double",
+            "description": "Humidity value used by the ColdTrace API.",
+            "example": 48.0
+          },
+          "outOfRange": {
+            "type": "boolean",
+            "description": "Out Of Range value used by the ColdTrace API.",
+            "example": false
+          },
+          "isOutOfRange": {
+            "type": "boolean",
+            "description": "Is Out Of Range value used by the ColdTrace API.",
+            "example": true
+          },
+          "recordedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Recorded At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "motionDetected": {
+            "type": "boolean",
+            "description": "Motion Detected value used by the ColdTrace API.",
+            "example": false
+          },
+          "imageCaptured": {
+            "type": "boolean",
+            "description": "Image Captured value used by the ColdTrace API.",
+            "example": false
+          },
+          "batteryLevel": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Battery Level value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "signalStrength": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Signal Strength value used by the ColdTrace API.",
+            "example": "example"
+          }
+        }
+      },
+      "GenerateDemoSensorReadingsRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for backend-owned demo telemetry generation",
+        "example": {
+          "assetId": 1,
+          "count": 10
+        },
+        "properties": {
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Optional asset filter",
+            "example": 1
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32",
+            "default": "",
+            "description": "Number of demo readings to generate",
+            "example": 10,
+            "maximum": 50,
+            "minimum": 1
+          }
+        }
+      },
+      "GenerateReportRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for generating a backend-owned operational report",
+        "example": {
+          "type": "FREEZER",
+          "title": "Request validation failed",
+          "periodStart": "2026-06-20T09:00:00Z",
+          "periodEnd": "2026-06-20T09:00:00Z"
+        },
+        "properties": {
+          "type": {
+            "type": "string",
+            "default": "",
+            "description": "Report type",
+            "example": "COMPLIANCE",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "default": "",
+            "description": "Human-readable report title",
+            "example": "June compliance summary",
+            "minLength": 1
+          },
+          "periodStart": {
+            "type": "string",
+            "format": "date-time",
+            "default": "",
+            "description": "Inclusive lower date-time bound",
+            "example": "2026-06-01T00:00:00Z"
+          },
+          "periodEnd": {
+            "type": "string",
+            "format": "date-time",
+            "default": "",
+            "description": "Inclusive upper date-time bound",
+            "example": "2026-06-30T23:59:59Z"
+          }
+        },
+        "required": [
+          "periodEnd",
+          "periodStart",
+          "title",
+          "type"
+        ]
+      },
+      "ReportResource": {
+        "type": "object",
+        "description": "Example payload for Report Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "uuid": 1,
+          "type": "FREEZER",
+          "title": "Request validation failed",
+          "periodDate": "2026-06-20T09:00:00Z",
+          "periodStart": "2026-06-20T09:00:00Z",
+          "periodEnd": "2026-06-20T09:00:00Z",
+          "generatedAt": "2026-06-20T09:00:00Z",
+          "assetCount": "Freezer A1",
+          "readingCount": 10,
+          "outOfRangeReadingCount": 10,
+          "incidentCount": 10,
+          "openIncidentCount": 10,
+          "averageTemperature": 5.2,
+          "averageHumidity": 48.0,
+          "compliancePercentage": 92.5
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "type": {
+            "type": "string",
+            "description": "Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title value used by the ColdTrace API.",
+            "example": "Request validation failed"
+          },
+          "periodDate": {
+            "type": "string",
+            "description": "Period Date value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "periodStart": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Period Start value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "periodEnd": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Period End value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Generated At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "assetCount": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Asset Count value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "readingCount": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Reading Count value used by the ColdTrace API.",
+            "example": 10
+          },
+          "outOfRangeReadingCount": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Out Of Range Reading Count value used by the ColdTrace API.",
+            "example": 10
+          },
+          "incidentCount": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Incident Count value used by the ColdTrace API.",
+            "example": 10
+          },
+          "openIncidentCount": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Open Incident Count value used by the ColdTrace API.",
+            "example": 10
+          },
+          "averageTemperature": {
+            "type": "number",
+            "format": "double",
+            "description": "Average Temperature value used by the ColdTrace API.",
+            "example": 5.2
+          },
+          "averageHumidity": {
+            "type": "number",
+            "format": "double",
+            "description": "Average Humidity value used by the ColdTrace API.",
+            "example": 48.0
+          },
+          "compliancePercentage": {
+            "type": "number",
+            "format": "double",
+            "description": "Compliance Percentage value used by the ColdTrace API.",
+            "example": 92.5
+          }
+        }
+      },
+      "ReportAiSummaryFindingResource": {
+        "type": "object",
+        "description": "Example payload for Report Ai Summary Finding Resource.",
+        "example": {
+          "area": "Thermal compliance",
+          "status": "active",
+          "evidence": "30 minutes of stable readings and technician notes.",
+          "recommendation": "Review the affected asset and confirm corrective evidence."
+        },
+        "properties": {
+          "area": {
+            "type": "string",
+            "description": "Area value used by the ColdTrace API.",
+            "example": "Thermal compliance"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "evidence": {
+            "type": "string",
+            "description": "Evidence value used by the ColdTrace API.",
+            "example": "30 minutes of stable readings and technician notes."
+          },
+          "recommendation": {
+            "type": "string",
+            "description": "Recommendation value used by the ColdTrace API.",
+            "example": "Review the affected asset and confirm corrective evidence."
+          }
+        }
+      },
+      "ReportAiSummaryResource": {
+        "type": "object",
+        "description": "Example payload for Report Ai Summary Resource.",
+        "example": {
+          "organizationId": 1,
+          "reportId": 1,
+          "reportUuid": 1,
+          "reportType": "FREEZER",
+          "reportTitle": "June compliance summary",
+          "summaryGeneratedAt": "Temperature recovered after inventory transfer and device verification.",
+          "sourceReport": "example",
+          "executiveSummary": "Temperature recovered after inventory transfer and device verification.",
+          "findings": [
+            "example"
+          ],
+          "evidenceGaps": [
+            "30 minutes of stable readings and technician notes."
+          ],
+          "recommendedActions": [
+            "Move inventory to backup freezer and inspect the sensor."
+          ],
+          "uncertaintyNotes": [
+            "example"
+          ],
+          "modelProvider": "openai",
+          "modelName": "gpt-4o-mini"
+        },
+        "properties": {
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "reportId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Report Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "reportUuid": {
+            "type": "string",
+            "description": "Report Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "reportType": {
+            "type": "string",
+            "description": "Report Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "reportTitle": {
+            "type": "string",
+            "description": "Report Title value used by the ColdTrace API.",
+            "example": "June compliance summary"
+          },
+          "summaryGeneratedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Summary Generated At value used by the ColdTrace API.",
+            "example": "Temperature recovered after inventory transfer and device verification."
+          },
+          "sourceReport": {
+            "$ref": "#/components/schemas/ReportResource",
+            "description": "Source Report value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "executiveSummary": {
+            "type": "string",
+            "description": "Executive Summary value used by the ColdTrace API.",
+            "example": "Temperature recovered after inventory transfer and device verification."
+          },
+          "findings": {
+            "type": "array",
+            "description": "Findings value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ReportAiSummaryFindingResource"
+            }
+          },
+          "evidenceGaps": {
+            "type": "array",
+            "description": "Evidence Gaps value used by the ColdTrace API.",
+            "example": [
+              "30 minutes of stable readings and technician notes."
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "recommendedActions": {
+            "type": "array",
+            "description": "Recommended Actions value used by the ColdTrace API.",
+            "example": [
+              "Move inventory to backup freezer and inspect the sensor."
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "uncertaintyNotes": {
+            "type": "array",
+            "description": "Uncertainty Notes value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "modelProvider": {
+            "type": "string",
+            "description": "Model Provider value used by the ColdTrace API.",
+            "example": "openai"
+          },
+          "modelName": {
+            "type": "string",
+            "description": "Model Name value used by the ColdTrace API.",
+            "example": "gpt-4o-mini"
+          }
+        }
+      },
+      "CreateMaintenanceScheduleRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for scheduling preventive maintenance for an organization asset",
+        "example": {
+          "assetId": 1,
+          "scheduledDate": "2026-06-20T09:00:00Z",
+          "frequencyDays": 10,
+          "responsibleUserId": 1,
+          "observations": "example",
+          "status": "active"
+        },
+        "properties": {
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Asset identifier owned by the organization",
+            "example": 1
+          },
+          "scheduledDate": {
+            "type": "string",
+            "format": "date-time",
+            "default": "",
+            "description": "Planned maintenance date and time",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "frequencyDays": {
+            "type": "integer",
+            "format": "int32",
+            "default": "",
+            "description": "Optional recurrence cadence in days",
+            "example": 30
+          },
+          "responsibleUserId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Optional responsible user identifier",
+            "example": 1
+          },
+          "observations": {
+            "type": "string",
+            "default": "",
+            "description": "Optional planning observations",
+            "example": "Inspect compressor and thermal seals"
+          },
+          "status": {
+            "type": "string",
+            "default": "",
+            "description": "Initial lifecycle status",
+            "example": "scheduled",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "assetId",
+          "scheduledDate",
+          "status"
+        ]
+      },
+      "MaintenanceScheduleResource": {
+        "type": "object",
+        "description": "Example payload for Maintenance Schedule Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "uuid": 1,
+          "assetId": 1,
+          "scheduledDate": "2026-06-20T09:00:00Z",
+          "frequencyDays": 10,
+          "responsibleUserId": 1,
+          "observations": "example",
+          "status": "active",
+          "createdAt": "2026-06-20T09:00:00Z"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "scheduledDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Scheduled Date value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "frequencyDays": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Frequency Days value used by the ColdTrace API.",
+            "example": 10
+          },
+          "responsibleUserId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Responsible User Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "observations": {
+            "type": "string",
+            "description": "Observations value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Created At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          }
+        }
+      },
+      "CreateLocationRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for creating an organization-scoped operational location",
+        "example": {
+          "name": "Freezer A1",
+          "type": "FREEZER",
+          "address": "example",
+          "description": "Cold-chain monitoring asset used for temperature-sensitive inventory.",
+          "status": "active"
+        },
+        "properties": {
+          "name": {
+            "type": "string",
+            "default": "",
+            "description": "Human-readable location name",
+            "example": "Main Warehouse",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "default": "",
+            "description": "Operational location type",
+            "example": "WAREHOUSE",
+            "minLength": 1
+          },
+          "address": {
+            "type": "string",
+            "default": "",
+            "description": "Optional physical address",
+            "example": "Av. Industrial 123, Lima"
+          },
+          "description": {
+            "type": "string",
+            "default": "",
+            "description": "Optional location notes",
+            "example": "Cold storage area for vaccines"
+          },
+          "status": {
+            "type": "string",
+            "default": "",
+            "description": "Operational location status",
+            "example": "active",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "type"
+        ]
+      },
+      "CreateIoTDeviceResource": {
+        "type": "object",
+        "description": "Example payload for Create Io TDevice Resource.",
+        "example": {
+          "gatewayId": 1,
+          "uuid": 1,
+          "deviceType": "FREEZER",
+          "model": "example",
+          "measurementType": "FREEZER",
+          "measurementParameters": [
+            "example"
+          ],
+          "readingFrequencySeconds": 10,
+          "assetId": 1,
+          "status": "active",
+          "calibrationStatus": "active",
+          "lastCalibrationDate": "2026-06-20T09:00:00Z",
+          "nextCalibrationDate": "2026-06-20T09:00:00Z"
+        },
+        "properties": {
+          "gatewayId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Gateway Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "description": "Uuid value used by the ColdTrace API.",
+            "example": 1
+          },
+          "deviceType": {
+            "type": "string",
+            "description": "Device Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "measurementType": {
+            "type": "string",
+            "description": "Measurement Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "measurementParameters": {
+            "type": "array",
+            "description": "Measurement Parameters value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "readingFrequencySeconds": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Reading Frequency Seconds value used by the ColdTrace API.",
+            "example": 10
+          },
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "calibrationStatus": {
+            "type": "string",
+            "description": "Calibration Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "lastCalibrationDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Last Calibration Date value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "nextCalibrationDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Next Calibration Date value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          }
+        }
+      },
+      "CreateIncidentRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for manually registering a thermal or operational incident",
+        "example": {
+          "assetId": 1,
+          "deviceId": 1,
+          "readingId": 1,
+          "assetName": "Freezer A1",
+          "deviceName": "Freezer A1",
+          "type": "FREEZER",
+          "severity": "critical",
+          "value": "10.5 C"
+        },
+        "properties": {
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Optional asset identifier linked to the incident",
+            "example": 1
+          },
+          "deviceId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Optional IoT device identifier linked to the incident",
+            "example": 1
+          },
+          "readingId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Optional sensor reading identifier that triggered the incident",
+            "example": 1
+          },
+          "assetName": {
+            "type": "string",
+            "default": "",
+            "description": "Optional asset display name snapshot",
+            "example": "Freezer A1"
+          },
+          "deviceName": {
+            "type": "string",
+            "default": "",
+            "description": "Optional device display name snapshot",
+            "example": "Temperature Sensor A1"
+          },
+          "type": {
+            "type": "string",
+            "default": "",
+            "description": "Incident type",
+            "example": "TEMPERATURE_OUT_OF_RANGE",
+            "minLength": 1
+          },
+          "severity": {
+            "type": "string",
+            "default": "",
+            "description": "Incident severity",
+            "example": "critical",
+            "minLength": 1
+          },
+          "value": {
+            "type": "string",
+            "default": "",
+            "description": "Detected or reported value",
+            "example": "10.5 C"
+          }
+        },
+        "required": [
+          "severity",
+          "type"
+        ]
+      },
+      "IncidentResource": {
+        "type": "object",
+        "description": "Example payload for Incident Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "assetId": 1,
+          "deviceId": 1,
+          "readingId": 1,
+          "assetName": "Freezer A1",
+          "deviceName": "Freezer A1",
+          "type": "FREEZER",
+          "severity": "critical",
+          "status": "active",
+          "value": "10.5 C",
+          "detectedAt": "2026-06-20T09:00:00Z",
+          "acknowledgedAt": "2026-06-20T09:00:00Z",
+          "acknowledgedBy": "example",
+          "escalatedAt": "2026-06-20T09:00:00Z",
+          "escalatedBy": "example",
+          "escalationReason": "Temperature remained above the configured threshold.",
+          "correctiveActionRegisteredAt": "Move inventory to backup freezer and inspect the sensor.",
+          "correctiveActionRegisteredBy": "Move inventory to backup freezer and inspect the sensor.",
+          "correctiveAction": "Move inventory to backup freezer and inspect the sensor.",
+          "resolvedAt": "2026-06-20T09:00:00Z",
+          "resolvedBy": "example",
+          "resolutionNotes": "Operator confirmed the corrective action and stable readings.",
+          "lastNotificationStatus": "active",
+          "lastNotificationAt": "2026-06-20T09:00:00Z",
+          "notificationCount": 10
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Asset Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "deviceId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Device Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "readingId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Reading Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "assetName": {
+            "type": "string",
+            "description": "Asset Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "deviceName": {
+            "type": "string",
+            "description": "Device Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "severity": {
+            "type": "string",
+            "description": "Severity value used by the ColdTrace API.",
+            "example": "critical"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "value": {
+            "type": "string",
+            "description": "Value value used by the ColdTrace API.",
+            "example": "10.5 C"
+          },
+          "detectedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Detected At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "acknowledgedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Acknowledged At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "acknowledgedBy": {
+            "type": "string",
+            "description": "Acknowledged By value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "escalatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Escalated At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "escalatedBy": {
+            "type": "string",
+            "description": "Escalated By value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "escalationReason": {
+            "type": "string",
+            "description": "Escalation Reason value used by the ColdTrace API.",
+            "example": "Temperature remained above the configured threshold."
+          },
+          "correctiveActionRegisteredAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Corrective Action Registered At value used by the ColdTrace API.",
+            "example": "Move inventory to backup freezer and inspect the sensor."
+          },
+          "correctiveActionRegisteredBy": {
+            "type": "string",
+            "description": "Corrective Action Registered By value used by the ColdTrace API.",
+            "example": "Move inventory to backup freezer and inspect the sensor."
+          },
+          "correctiveAction": {
+            "type": "string",
+            "description": "Corrective Action value used by the ColdTrace API.",
+            "example": "Move inventory to backup freezer and inspect the sensor."
+          },
+          "resolvedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Resolved At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "resolvedBy": {
+            "type": "string",
+            "description": "Resolved By value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "resolutionNotes": {
+            "type": "string",
+            "description": "Resolution Notes value used by the ColdTrace API.",
+            "example": "Operator confirmed the corrective action and stable readings."
+          },
+          "lastNotificationStatus": {
+            "type": "string",
+            "description": "Last Notification Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "lastNotificationAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last Notification At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "notificationCount": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Notification Count value used by the ColdTrace API.",
+            "example": 10
+          }
+        }
+      },
+      "ResolveIncidentRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for resolving an incident with corrective action notes",
+        "example": {
+          "resolvedBy": "example",
+          "resolutionNotes": "Operator confirmed the corrective action and stable readings."
+        },
+        "properties": {
+          "resolvedBy": {
+            "type": "string",
+            "default": "",
+            "description": "Actor that resolves the incident",
+            "example": "operations.manager@coldtrace.test",
+            "minLength": 1
+          },
+          "resolutionNotes": {
+            "type": "string",
+            "default": "",
+            "description": "Corrective action or resolution notes",
+            "example": "Moved inventory and recalibrated the freezer.",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "resolutionNotes",
+          "resolvedBy"
+        ]
+      },
+      "AiResolutionPlanResource": {
+        "type": "object",
+        "description": "Example payload for Ai Resolution Plan Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "incidentId": 1,
+          "status": "active",
+          "summary": "Temperature recovered after inventory transfer and device verification.",
+          "probableCause": "example",
+          "recommendedSteps": [
+            true
+          ],
+          "correctiveActionDraft": "Move inventory to backup freezer and inspect the sensor.",
+          "resolutionNotesDraft": "Operator confirmed the corrective action and stable readings.",
+          "escalationRecommended": true,
+          "escalationUrgency": "example",
+          "escalationReason": "Temperature remained above the configured threshold.",
+          "requiredEvidence": [
+            "30 minutes of stable readings and technician notes."
+          ],
+          "uncertaintyNotes": [
+            "example"
+          ],
+          "modelProvider": "openai",
+          "modelName": "gpt-4o-mini",
+          "providerMetadata": "provider=test;model=gpt-4o-mini",
+          "generatedAt": "2026-06-20T09:00:00Z",
+          "approvedAt": "2026-06-20T09:00:00Z",
+          "approvedBy": "example",
+          "rejectedAt": "2026-06-20T09:00:00Z",
+          "rejectedBy": "example",
+          "rejectionReason": "Temperature remained above the configured threshold.",
+          "finalCorrectiveAction": "Move inventory to backup freezer and inspect the sensor.",
+          "finalResolutionNotes": "Operator confirmed the corrective action and stable readings."
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "incidentId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Incident Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Summary value used by the ColdTrace API.",
+            "example": "Temperature recovered after inventory transfer and device verification."
+          },
+          "probableCause": {
+            "type": "string",
+            "description": "Probable Cause value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "recommendedSteps": {
+            "type": "array",
+            "description": "Recommended Steps value used by the ColdTrace API.",
+            "example": [
+              true
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AiResolutionPlanStepResource"
+            }
+          },
+          "correctiveActionDraft": {
+            "type": "string",
+            "description": "Corrective Action Draft value used by the ColdTrace API.",
+            "example": "Move inventory to backup freezer and inspect the sensor."
+          },
+          "resolutionNotesDraft": {
+            "type": "string",
+            "description": "Resolution Notes Draft value used by the ColdTrace API.",
+            "example": "Operator confirmed the corrective action and stable readings."
+          },
+          "escalationRecommended": {
+            "type": "boolean",
+            "description": "Escalation Recommended value used by the ColdTrace API.",
+            "example": true
+          },
+          "escalationUrgency": {
+            "type": "string",
+            "description": "Escalation Urgency value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "escalationReason": {
+            "type": "string",
+            "description": "Escalation Reason value used by the ColdTrace API.",
+            "example": "Temperature remained above the configured threshold."
+          },
+          "requiredEvidence": {
+            "type": "array",
+            "description": "Required Evidence value used by the ColdTrace API.",
+            "example": [
+              "30 minutes of stable readings and technician notes."
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "uncertaintyNotes": {
+            "type": "array",
+            "description": "Uncertainty Notes value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "modelProvider": {
+            "type": "string",
+            "description": "Model Provider value used by the ColdTrace API.",
+            "example": "openai"
+          },
+          "modelName": {
+            "type": "string",
+            "description": "Model Name value used by the ColdTrace API.",
+            "example": "gpt-4o-mini"
+          },
+          "providerMetadata": {
+            "type": "string",
+            "description": "Provider Metadata value used by the ColdTrace API.",
+            "example": "provider=test;model=gpt-4o-mini"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Generated At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "approvedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Approved At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "approvedBy": {
+            "type": "string",
+            "description": "Approved By value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "rejectedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Rejected At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "rejectedBy": {
+            "type": "string",
+            "description": "Rejected By value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "rejectionReason": {
+            "type": "string",
+            "description": "Rejection Reason value used by the ColdTrace API.",
+            "example": "Temperature remained above the configured threshold."
+          },
+          "finalCorrectiveAction": {
+            "type": "string",
+            "description": "Final Corrective Action value used by the ColdTrace API.",
+            "example": "Move inventory to backup freezer and inspect the sensor."
+          },
+          "finalResolutionNotes": {
+            "type": "string",
+            "description": "Final Resolution Notes value used by the ColdTrace API.",
+            "example": "Operator confirmed the corrective action and stable readings."
+          }
+        }
+      },
+      "AiResolutionPlanStepResource": {
+        "type": "object",
+        "description": "Example payload for Ai Resolution Plan Step Resource.",
+        "example": {
+          "sequence": 10,
+          "action": "Move inventory to backup freezer and inspect the sensor.",
+          "rationale": "example",
+          "expectedOutcome": "example"
+        },
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Sequence value used by the ColdTrace API.",
+            "example": 10
+          },
+          "action": {
+            "type": "string",
+            "description": "Action value used by the ColdTrace API.",
+            "example": "Move inventory to backup freezer and inspect the sensor."
+          },
+          "rationale": {
+            "type": "string",
+            "description": "Rationale value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "expectedOutcome": {
+            "type": "string",
+            "description": "Expected Outcome value used by the ColdTrace API.",
+            "example": "example"
+          }
+        }
+      },
+      "RejectAiResolutionPlanRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for rejecting an AI plan without changing incident state",
+        "example": {
+          "rejectedBy": "example",
+          "rejectionReason": "Temperature remained above the configured threshold."
+        },
+        "properties": {
+          "rejectedBy": {
+            "type": "string",
+            "default": "",
+            "description": "Actor that rejects the plan",
+            "example": "operations.manager@coldtrace.test",
+            "minLength": 1
+          },
+          "rejectionReason": {
+            "type": "string",
+            "default": "",
+            "description": "Reason recorded for audit history",
+            "example": "Plan requires on-site compressor inspection before closure.",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "rejectedBy",
+          "rejectionReason"
+        ]
+      },
+      "ApproveAiResolutionPlanRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for approving an AI plan and resolving the incident",
+        "example": {
+          "approvedBy": "example",
+          "finalCorrectiveAction": "Move inventory to backup freezer and inspect the sensor.",
+          "finalResolutionNotes": "Operator confirmed the corrective action and stable readings."
+        },
+        "properties": {
+          "approvedBy": {
+            "type": "string",
+            "default": "",
+            "description": "Actor that approves the plan",
+            "example": "operations.manager@coldtrace.test",
+            "minLength": 1
+          },
+          "finalCorrectiveAction": {
+            "type": "string",
+            "default": "",
+            "description": "Final operator-approved corrective action",
+            "example": "Moved inventory to backup freezer and recalibrated the affected sensor",
+            "minLength": 1
+          },
+          "finalResolutionNotes": {
+            "type": "string",
+            "default": "",
+            "description": "Final resolution notes",
+            "example": "Temperature returned to safe range after transfer and recalibration.",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "approvedBy",
+          "finalCorrectiveAction",
+          "finalResolutionNotes"
+        ]
+      },
+      "AcknowledgeIncidentRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for acknowledging an open incident",
+        "example": {
+          "acknowledgedBy": "example"
+        },
+        "properties": {
+          "acknowledgedBy": {
+            "type": "string",
+            "default": "",
+            "description": "Actor that acknowledges the incident",
+            "example": "operations.manager@coldtrace.test",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "acknowledgedBy"
+        ]
+      },
+      "CreateGatewayRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for creating an organization-scoped edge gateway",
+        "example": {
+          "locationId": 1,
+          "uuid": 1,
+          "name": "Freezer A1",
+          "network": "example",
+          "status": "active"
+        },
+        "properties": {
+          "locationId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Organization location where the gateway is installed",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "default": "",
+            "description": "Gateway business UUID unique inside the organization",
+            "example": "GW-LIM-001",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "default": "",
+            "description": "Human-readable gateway name",
+            "example": "Warehouse Gateway 1",
+            "minLength": 1
+          },
+          "network": {
+            "type": "string",
+            "default": "",
+            "description": "Gateway network name or identifier",
+            "example": "cold-chain-net",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "default": "",
+            "description": "Operational gateway status",
+            "example": "online",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "locationId",
+          "name",
+          "network",
+          "status",
+          "uuid"
+        ]
+      },
+      "GenerateDashboardAiInterpretationResource": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for dashboard AI interpretation",
+        "example": {
+          "question": "What should I review first?",
+          "preferredLanguage": "es"
+        },
+        "properties": {
+          "question": {
+            "type": "string",
+            "default": "",
+            "description": "Optional dashboard question",
+            "example": "What should I review first?",
+            "maxLength": 240,
+            "minLength": 0
+          },
+          "preferredLanguage": {
+            "type": "string",
+            "default": "",
+            "description": "Optional response language preference",
+            "example": "es",
+            "maxLength": 32,
+            "minLength": 0
+          }
+        }
+      },
+      "DashboardAiInterpretationInsightResource": {
+        "type": "object",
+        "description": "Example payload for Dashboard Ai Interpretation Insight Resource.",
+        "example": {
+          "title": "Request validation failed",
+          "metric": "openIncidents",
+          "interpretation": "example",
+          "severity": "critical"
+        },
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title value used by the ColdTrace API.",
+            "example": "Request validation failed"
+          },
+          "metric": {
+            "type": "string",
+            "description": "Metric value used by the ColdTrace API.",
+            "example": "openIncidents"
+          },
+          "interpretation": {
+            "type": "string",
+            "description": "Interpretation value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "severity": {
+            "type": "string",
+            "description": "Severity value used by the ColdTrace API.",
+            "example": "critical"
+          }
+        }
+      },
+      "DashboardAiInterpretationResource": {
+        "type": "object",
+        "description": "Example payload for Dashboard Ai Interpretation Resource.",
+        "example": {
+          "organizationId": 1,
+          "question": "What should I review first?",
+          "generatedAt": "2026-06-20T09:00:00Z",
+          "overallReading": "example",
+          "attentionLevel": "example",
+          "metricInsights": [
+            "openIncidents"
+          ],
+          "risks": [
+            "example"
+          ],
+          "recommendedActions": [
+            "Move inventory to backup freezer and inspect the sensor."
+          ],
+          "uncertaintyNotes": [
+            "example"
+          ],
+          "sourceMetrics": [
+            "openIncidents"
+          ],
+          "modelProvider": "openai",
+          "modelName": "gpt-4o-mini"
+        },
+        "properties": {
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "question": {
+            "type": "string",
+            "description": "Question value used by the ColdTrace API.",
+            "example": "What should I review first?"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Generated At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "overallReading": {
+            "type": "string",
+            "description": "Overall Reading value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "attentionLevel": {
+            "type": "string",
+            "description": "Attention Level value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "metricInsights": {
+            "type": "array",
+            "description": "Metric Insights value used by the ColdTrace API.",
+            "example": [
+              "openIncidents"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/DashboardAiInterpretationInsightResource"
+            }
+          },
+          "risks": {
+            "type": "array",
+            "description": "Risks value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "recommendedActions": {
+            "type": "array",
+            "description": "Recommended Actions value used by the ColdTrace API.",
+            "example": [
+              "Move inventory to backup freezer and inspect the sensor."
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "uncertaintyNotes": {
+            "type": "array",
+            "description": "Uncertainty Notes value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceMetrics": {
+            "type": "array",
+            "description": "Source Metrics value used by the ColdTrace API.",
+            "example": [
+              "openIncidents"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/DashboardAiSourceMetricResource"
+            }
+          },
+          "modelProvider": {
+            "type": "string",
+            "description": "Model Provider value used by the ColdTrace API.",
+            "example": "openai"
+          },
+          "modelName": {
+            "type": "string",
+            "description": "Model Name value used by the ColdTrace API.",
+            "example": "gpt-4o-mini"
+          }
+        }
+      },
+      "DashboardAiSourceMetricResource": {
+        "type": "object",
+        "description": "Example payload for Dashboard Ai Source Metric Resource.",
+        "example": {
+          "name": "Freezer A1",
+          "value": "10.5 C",
+          "unit": "C",
+          "description": "Cold-chain monitoring asset used for temperature-sensitive inventory."
+        },
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "value": {
+            "type": "string",
+            "description": "Value value used by the ColdTrace API.",
+            "example": "10.5 C"
+          },
+          "unit": {
+            "type": "string",
+            "description": "Unit value used by the ColdTrace API.",
+            "example": "C"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description value used by the ColdTrace API.",
+            "example": "Cold-chain monitoring asset used for temperature-sensitive inventory."
+          }
+        }
+      },
+      "BillingPortalSessionResponse": {
+        "type": "object",
+        "default": null,
+        "description": "Provider-hosted customer portal session redirect",
+        "example": {
+          "provider": "STRIPE",
+          "sessionId": 1,
+          "portalUrl": "https://checkout.stripe.com/c/pay/cs_test_a1B2c3",
+          "organizationId": 1
+        },
+        "properties": {
+          "provider": {
+            "type": "string",
+            "default": "",
+            "description": "Billing provider",
+            "example": "STRIPE"
+          },
+          "sessionId": {
+            "type": "string",
+            "default": "",
+            "description": "Provider customer portal session identifier",
+            "example": "bps_test_a1B2c3"
+          },
+          "portalUrl": {
+            "type": "string",
+            "default": "",
+            "description": "Temporary provider-hosted customer portal URL",
+            "example": "https://billing.stripe.com/p/session/test_a1B2c3"
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Organization identifier",
+            "example": 1
+          }
+        }
+      },
+      "CreateBillingCheckoutSessionRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Billing checkout session creation request",
+        "example": {
+          "targetPlanCode": "operations"
+        },
+        "properties": {
+          "targetPlanCode": {
+            "type": "string",
+            "default": "",
+            "description": "Target paid subscription plan code",
+            "example": "operations",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "targetPlanCode"
+        ]
+      },
+      "BillingCheckoutSessionResponse": {
+        "type": "object",
+        "default": null,
+        "description": "Provider-hosted checkout session redirect",
+        "example": {
+          "provider": "STRIPE",
+          "sessionId": 1,
+          "checkoutUrl": "https://checkout.stripe.com/c/pay/cs_test_a1B2c3",
+          "targetPlanCode": "operations"
+        },
+        "properties": {
+          "provider": {
+            "type": "string",
+            "default": "",
+            "description": "Billing provider",
+            "example": "STRIPE"
+          },
+          "sessionId": {
+            "type": "string",
+            "default": "",
+            "description": "Provider checkout session identifier",
+            "example": "cs_test_a1B2c3"
+          },
+          "checkoutUrl": {
+            "type": "string",
+            "default": "",
+            "description": "Temporary provider-hosted checkout URL",
+            "example": "https://checkout.stripe.com/c/pay/cs_test_a1B2c3"
+          },
+          "targetPlanCode": {
+            "type": "string",
+            "default": "",
+            "description": "Target paid subscription plan code",
+            "example": "operations"
+          }
+        }
+      },
+      "CreateAssetRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for creating an organization-scoped cold-chain asset",
+        "example": {
+          "locationId": 1,
+          "uuid": 1,
+          "type": "FREEZER",
+          "name": "Freezer A1",
+          "capacity": 450.0,
+          "description": "Cold-chain monitoring asset used for temperature-sensitive inventory.",
+          "status": "active"
+        },
+        "properties": {
+          "locationId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Organization location identifier where the asset is placed",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "default": "",
+            "description": "Asset business UUID unique inside the organization",
+            "example": "AST-FRZ-001",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "default": "",
+            "description": "Business asset type",
+            "example": "FREEZER",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "default": "",
+            "description": "Human-readable asset name",
+            "example": "Freezer A1",
+            "minLength": 1
+          },
+          "capacity": {
+            "type": "number",
+            "format": "double",
+            "default": "",
+            "description": "Asset storage or transport capacity",
+            "example": 450.0
+          },
+          "description": {
+            "type": "string",
+            "default": "",
+            "description": "Optional operational notes",
+            "example": "Main freezer for vaccines"
+          },
+          "status": {
+            "type": "string",
+            "default": "",
+            "description": "Operational asset status",
+            "example": "active",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "locationId",
+          "name",
+          "status",
+          "type",
+          "uuid"
+        ]
+      },
+      "CreateOrganizationSignUpRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for creating an organization and its first user",
+        "example": {
+          "legalName": "Freezer A1",
+          "commercialName": "Freezer A1",
+          "taxId": 1,
+          "contactEmail": "operations@coldtrace.test",
+          "firstName": "Freezer A1",
+          "lastName": "Freezer A1",
+          "email": "operations@coldtrace.test",
+          "password": "ColdTrace123"
+        },
+        "properties": {
+          "legalName": {
+            "type": "string",
+            "default": "",
+            "description": "Registered organization legal name",
+            "example": "ColdTrace Logistics S.A.C.",
+            "minLength": 1
+          },
+          "commercialName": {
+            "type": "string",
+            "default": "",
+            "description": "Organization commercial name",
+            "example": "ColdTrace Logistics",
+            "minLength": 1
+          },
+          "taxId": {
+            "type": "string",
+            "default": "",
+            "description": "Optional organization tax identifier",
+            "example": "20601234567"
+          },
+          "contactEmail": {
+            "type": "string",
+            "format": "email",
+            "default": "",
+            "description": "Organization contact email",
+            "example": "operations@coldtrace.example",
+            "minLength": 1
+          },
+          "firstName": {
+            "type": "string",
+            "default": "",
+            "description": "First user given name",
+            "example": "David",
+            "minLength": 1
+          },
+          "lastName": {
+            "type": "string",
+            "default": "",
+            "description": "First user family name",
+            "example": "Torres"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "default": "",
+            "description": "First user email address",
+            "example": "david@coldtrace.example",
+            "minLength": 1
+          },
+          "password": {
+            "type": "string",
+            "default": "",
+            "description": "First user password",
+            "example": "ColdTrace123",
+            "maxLength": 2147483647,
+            "minLength": 8
+          }
+        },
+        "required": [
+          "commercialName",
+          "contactEmail",
+          "email",
+          "firstName",
+          "legalName",
+          "password"
+        ]
+      },
+      "OrganizationSignUpResource": {
+        "type": "object",
+        "description": "Example payload for Organization Sign Up Resource.",
+        "example": {
+          "organization": "example",
+          "user": "example"
+        },
+        "properties": {
+          "organization": {
+            "$ref": "#/components/schemas/OrganizationResource",
+            "description": "Organization value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "user": {
+            "$ref": "#/components/schemas/UserResource",
+            "description": "User value used by the ColdTrace API.",
+            "example": "example"
+          }
+        }
+      },
+      "BillingWebhookProcessingResource": {
+        "type": "object",
+        "description": "Example payload for Billing Webhook Processing Resource.",
+        "example": {
+          "provider": "STRIPE",
+          "eventId": 1,
+          "eventType": "FREEZER",
+          "processingStatus": "active",
+          "duplicate": true,
+          "organizationId": 1,
+          "planCode": "operations",
+          "subscriptionStatus": "active"
+        },
+        "properties": {
+          "provider": {
+            "type": "string",
+            "description": "Provider value used by the ColdTrace API.",
+            "example": "STRIPE"
+          },
+          "eventId": {
+            "type": "string",
+            "description": "Event Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "eventType": {
+            "type": "string",
+            "description": "Event Type value used by the ColdTrace API.",
+            "example": "FREEZER"
+          },
+          "processingStatus": {
+            "type": "string",
+            "description": "Processing Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "duplicate": {
+            "type": "boolean",
+            "description": "Duplicate value used by the ColdTrace API.",
+            "example": true
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "planCode": {
+            "type": "string",
+            "description": "Plan Code value used by the ColdTrace API.",
+            "example": "operations"
+          },
+          "subscriptionStatus": {
+            "type": "string",
+            "description": "Subscription Status value used by the ColdTrace API.",
+            "example": "active"
+          }
+        }
+      },
+      "SocialTokenExchangeRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Social authentication payload containing either an ID token or an authorization code",
+        "example": {
+          "idToken": "eyJhbGciOiJSUzI1NiJ9...",
+          "authorizationCode": null,
+          "redirectUri": "https://coldtrace-frontend-liard.vercel.app/identity-access/sign-in",
+          "nonce": "nonce-123"
+        },
+        "properties": {
+          "idToken": {
+            "type": "string",
+            "default": "",
+            "description": "Provider ID token returned by Google or Apple",
+            "example": "eyJhbGciOiJSUzI1NiJ9..."
+          },
+          "authorizationCode": {
+            "type": "string",
+            "default": "",
+            "description": "Provider authorization code to exchange server-side",
+            "example": "4/0AbUR2VN..."
+          },
+          "redirectUri": {
+            "type": "string",
+            "default": "",
+            "description": "Redirect URI used in the OAuth authorization request",
+            "example": "http://localhost:4200"
+          },
+          "nonce": {
+            "type": "string",
+            "default": "",
+            "description": "Nonce expected in the provider ID token",
+            "example": "9c4c9b7d..."
+          }
+        }
+      },
+      "AuthenticatedUserResponse": {
+        "type": "object",
+        "default": null,
+        "description": "Authenticated user information with JWT token",
+        "example": {
+          "id": 1,
+          "uuid": "USR-1",
+          "organizationUserId": 1,
+          "firstName": "Mauricio",
+          "lastName": "Pajes",
+          "email": "operator@coldtrace.test",
+          "organizationId": 2,
+          "roleId": 1,
+          "token": "eyJhbGciOiJIUzUxMiJ9..."
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "User identifier",
+            "example": 1
+          },
+          "uuid": {
+            "type": "string",
+            "default": "",
+            "description": "Generated user code",
+            "example": "USR-1"
+          },
+          "organizationUserId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Organization-scoped user identifier",
+            "example": 1
+          },
+          "firstName": {
+            "type": "string",
+            "default": "",
+            "description": "User first name",
+            "example": "David"
+          },
+          "lastName": {
+            "type": "string",
+            "default": "",
+            "description": "User last name",
+            "example": "Torres"
+          },
+          "email": {
+            "type": "string",
+            "default": "",
+            "description": "User email address",
+            "example": "david@coldtrace.example"
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Organization identifier",
+            "example": 1
+          },
+          "roleId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Role identifier",
+            "example": 1
+          },
+          "token": {
+            "type": "string",
+            "default": "",
+            "description": "JWT Bearer token",
+            "example": "eyJhbGciOiJIUzI1NiJ9..."
+          }
+        }
+      },
+      "SocialIdentityProfile": {
+        "type": "object",
+        "default": null,
+        "description": "Validated social identity profile used to prefill organization onboarding",
+        "example": {
+          "idToken": "eyJhbGciOiJIUzUxMiJ9...",
+          "email": "operations@coldtrace.test",
+          "fullName": "Freezer A1"
+        },
+        "properties": {
+          "idToken": {
+            "type": "string",
+            "default": "",
+            "description": "Provider ID token verified by the backend",
+            "example": "eyJhbGciOiJSUzI1NiJ9..."
+          },
+          "email": {
+            "type": "string",
+            "default": "",
+            "description": "Verified provider email",
+            "example": "david@coldtrace.example"
+          },
+          "fullName": {
+            "type": "string",
+            "default": "",
+            "description": "Suggested full name",
+            "example": "David Chen"
+          }
+        }
+      },
+      "SocialOrganizationSignUpRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for creating an organization and first user through a social provider",
+        "example": {
+          "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ...",
+          "authorizationCode": null,
+          "redirectUri": "https://coldtrace-frontend-liard.vercel.app/identity-access/sign-up",
+          "nonce": "nonce-123",
+          "organizationName": "ColdTrace Market",
+          "fullName": "Jane Smith"
+        },
+        "properties": {
+          "idToken": {
+            "type": "string",
+            "default": "",
+            "description": "Provider ID token",
+            "example": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ..."
+          },
+          "authorizationCode": {
+            "type": "string",
+            "default": "",
+            "description": "Provider authorization code",
+            "example": "4/0AfJohXn..."
+          },
+          "redirectUri": {
+            "type": "string",
+            "default": "",
+            "description": "Redirect URI used during authorization-code flow",
+            "example": "https://coldtrace-frontend-liard.vercel.app/identity-access/sign-up"
+          },
+          "nonce": {
+            "type": "string",
+            "default": "",
+            "description": "Optional nonce expected in the ID token",
+            "example": "nonce-123"
+          },
+          "organizationName": {
+            "type": "string",
+            "default": "",
+            "description": "Organization name",
+            "example": "ColdTrace Market",
+            "minLength": 1
+          },
+          "fullName": {
+            "type": "string",
+            "default": "",
+            "description": "First user full name",
+            "example": "Jane Smith",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "fullName",
+          "organizationName"
+        ]
+      },
+      "SignInRequest": {
+        "type": "object",
+        "default": null,
+        "description": "User sign-in request with credentials",
+        "example": {
+          "email": "operator@coldtrace.test",
+          "password": "ColdTrace123"
+        },
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "default": "",
+            "description": "User email address",
+            "example": "david@coldtrace.example",
+            "minLength": 1
+          },
+          "password": {
+            "type": "string",
+            "default": "",
+            "description": "User password",
+            "example": "ColdTrace123",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      },
+      "AssignUserRoleRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for assigning or replacing an organization user's role",
+        "example": {
+          "roleId": 1
+        },
+        "properties": {
+          "roleId": {
+            "type": "integer",
+            "format": "int64",
+            "default": "",
+            "description": "Target role identifier",
+            "example": 2
+          }
+        },
+        "required": [
+          "roleId"
+        ]
+      },
+      "UpdateTechnicalServiceRequestStatus": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for service status updates and closure",
+        "example": {
+          "status": "active",
+          "closureSummary": "Temperature recovered after inventory transfer and device verification.",
+          "evidence": "30 minutes of stable readings and technician notes.",
+          "closedBy": "example"
+        },
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "",
+            "description": "Requested service status",
+            "example": "closed",
+            "minLength": 1
+          },
+          "closureSummary": {
+            "type": "string",
+            "default": "",
+            "description": "Closure summary required when status is closed",
+            "example": "Replaced relay and verified stable cooling"
+          },
+          "evidence": {
+            "type": "string",
+            "default": "",
+            "description": "Evidence required when status is closed",
+            "example": "Photo reference or technician notes"
+          },
+          "closedBy": {
+            "type": "string",
+            "default": "",
+            "description": "Actor closing the request",
+            "example": "technician@coldtrace.test"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "UpdateMaintenanceScheduleStatusRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for changing the lifecycle status of a maintenance schedule",
+        "example": {
+          "status": "active"
+        },
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "",
+            "description": "Requested lifecycle status",
+            "example": "completed",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "EscalateIncidentRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for escalating an active incident",
+        "example": {
+          "escalatedBy": "example",
+          "escalationReason": "Temperature remained above the configured threshold."
+        },
+        "properties": {
+          "escalatedBy": {
+            "type": "string",
+            "default": "",
+            "description": "Actor that escalates the incident",
+            "example": "supervisor@coldtrace.test",
+            "minLength": 1
+          },
+          "escalationReason": {
+            "type": "string",
+            "default": "",
+            "description": "Reason for escalation",
+            "example": "Temperature remains out of range after acknowledgement",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "escalatedBy",
+          "escalationReason"
+        ]
+      },
+      "RegisterIncidentCorrectiveActionRequest": {
+        "type": "object",
+        "default": null,
+        "description": "Request payload for registering corrective action on an active incident",
+        "example": {
+          "correctiveAction": "Move inventory to backup freezer and inspect the sensor.",
+          "registeredBy": "example"
+        },
+        "properties": {
+          "correctiveAction": {
+            "type": "string",
+            "default": "",
+            "description": "Corrective action applied to the incident",
+            "example": "Moved cargo to backup freezer and recalibrated sensor",
+            "minLength": 1
+          },
+          "registeredBy": {
+            "type": "string",
+            "default": "",
+            "description": "Actor that registers the corrective action",
+            "example": "technician@coldtrace.test",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "correctiveAction",
+          "registeredBy"
+        ]
+      },
+      "SubscriptionPlanFeatureFlagsResource": {
+        "type": "object",
+        "description": "Example payload for Subscription Plan Feature Flags Resource.",
+        "example": {
+          "allowsExports": true,
+          "allowsMaintenance": true,
+          "allowsAiGuidance": true,
+          "allowsAiReportSummary": "Temperature recovered after inventory transfer and device verification."
+        },
+        "properties": {
+          "allowsExports": {
+            "type": "boolean",
+            "description": "Allows Exports value used by the ColdTrace API.",
+            "example": true
+          },
+          "allowsMaintenance": {
+            "type": "boolean",
+            "description": "Allows Maintenance value used by the ColdTrace API.",
+            "example": true
+          },
+          "allowsAiGuidance": {
+            "type": "boolean",
+            "description": "Allows Ai Guidance value used by the ColdTrace API.",
+            "example": true
+          },
+          "allowsAiReportSummary": {
+            "type": "boolean",
+            "description": "Allows Ai Report Summary value used by the ColdTrace API.",
+            "example": false
+          }
+        }
+      },
+      "SubscriptionPlanResource": {
+        "type": "object",
+        "description": "Example payload for Subscription Plan Resource.",
+        "example": {
+          "id": 1,
+          "code": "CT-OPS",
+          "displayName": "Freezer A1",
+          "description": "Cold-chain monitoring asset used for temperature-sensitive inventory.",
+          "monthlyPriceCents": 14900,
+          "currency": "PEN",
+          "stripePriceId": 1,
+          "recommended": true,
+          "recommendedLabel": true,
+          "visible": true,
+          "usageLimits": 10,
+          "featureFlags": "example",
+          "includedFeatures": [
+            "example"
+          ]
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "code": {
+            "type": "string",
+            "description": "Code value used by the ColdTrace API.",
+            "example": "CT-OPS"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Display Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description value used by the ColdTrace API.",
+            "example": "Cold-chain monitoring asset used for temperature-sensitive inventory."
+          },
+          "monthlyPriceCents": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Monthly Price Cents value used by the ColdTrace API.",
+            "example": 14900
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency value used by the ColdTrace API.",
+            "example": "PEN"
+          },
+          "stripePriceId": {
+            "type": "string",
+            "description": "Stripe Price Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "recommended": {
+            "type": "boolean",
+            "description": "Recommended value used by the ColdTrace API.",
+            "example": true
+          },
+          "recommendedLabel": {
+            "type": "string",
+            "description": "Recommended Label value used by the ColdTrace API.",
+            "example": true
+          },
+          "visible": {
+            "type": "boolean",
+            "description": "Visible value used by the ColdTrace API.",
+            "example": true
+          },
+          "usageLimits": {
+            "$ref": "#/components/schemas/SubscriptionPlanUsageLimitsResource",
+            "description": "Usage Limits value used by the ColdTrace API.",
+            "example": 10
+          },
+          "featureFlags": {
+            "$ref": "#/components/schemas/SubscriptionPlanFeatureFlagsResource",
+            "description": "Feature Flags value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "includedFeatures": {
+            "type": "array",
+            "description": "Included Features value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "SubscriptionPlanUsageLimitsResource": {
+        "type": "object",
+        "description": "Example payload for Subscription Plan Usage Limits Resource.",
+        "example": {
+          "maxLocations": "Main Warehouse",
+          "maxAssets": "Freezer A1",
+          "maxIotDevices": "Temperature Sensor A1",
+          "maxUsers": "example",
+          "historyRetentionDays": 10
+        },
+        "properties": {
+          "maxLocations": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Max Locations value used by the ColdTrace API.",
+            "example": "Main Warehouse"
+          },
+          "maxAssets": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Max Assets value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "maxIotDevices": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Max Iot Devices value used by the ColdTrace API.",
+            "example": "Temperature Sensor A1"
+          },
+          "maxUsers": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Max Users value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "historyRetentionDays": {
+            "type": "integer",
+            "format": "int32",
+            "description": "History Retention Days value used by the ColdTrace API.",
+            "example": 10
+          }
+        }
+      },
+      "SessionContext": {
+        "type": "object",
+        "description": "Example payload for Session Context.",
+        "example": {
+          "userId": 1,
+          "organizationId": 1,
+          "fullName": "Freezer A1",
+          "permissions": [
+            "example"
+          ]
+        },
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "User Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "fullName": {
+            "type": "string",
+            "description": "Full Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "permissions": {
+            "type": "array",
+            "description": "Permissions value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PermissionResource": {
+        "type": "object",
+        "description": "Example payload for Permission Resource.",
+        "example": {
+          "id": 1,
+          "resource": "assets",
+          "action": "Move inventory to backup freezer and inspect the sensor.",
+          "description": "Cold-chain monitoring asset used for temperature-sensitive inventory."
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "resource": {
+            "type": "string",
+            "description": "Resource value used by the ColdTrace API.",
+            "example": "assets"
+          },
+          "action": {
+            "type": "string",
+            "description": "Action value used by the ColdTrace API.",
+            "example": "Move inventory to backup freezer and inspect the sensor."
+          },
+          "description": {
+            "type": "string",
+            "description": "Description value used by the ColdTrace API.",
+            "example": "Cold-chain monitoring asset used for temperature-sensitive inventory."
+          }
+        }
+      },
+      "RoleResource": {
+        "type": "object",
+        "description": "Example payload for Role Resource.",
+        "example": {
+          "id": 1,
+          "name": "Freezer A1",
+          "label": "Recommended",
+          "permissions": [
+            "example"
+          ]
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "Name value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "label": {
+            "type": "string",
+            "description": "Label value used by the ColdTrace API.",
+            "example": "Recommended"
+          },
+          "permissions": {
+            "type": "array",
+            "description": "Permissions value used by the ColdTrace API.",
+            "example": [
+              "example"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/PermissionResource"
+            }
+          }
+        }
+      },
+      "OrganizationEntitlementResource": {
+        "type": "object",
+        "description": "Example payload for Organization Entitlement Resource.",
+        "example": {
+          "key": "aiGuidance",
+          "category": "example",
+          "enabled": true,
+          "limit": 10,
+          "used": 10,
+          "remaining": 10,
+          "lockedReason": "Temperature remained above the configured threshold."
+        },
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Key value used by the ColdTrace API.",
+            "example": "aiGuidance"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Enabled value used by the ColdTrace API.",
+            "example": true
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Limit value used by the ColdTrace API.",
+            "example": 10
+          },
+          "used": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Used value used by the ColdTrace API.",
+            "example": 10
+          },
+          "remaining": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Remaining value used by the ColdTrace API.",
+            "example": 10
+          },
+          "lockedReason": {
+            "type": "string",
+            "description": "Locked Reason value used by the ColdTrace API.",
+            "example": "Temperature remained above the configured threshold."
+          }
+        }
+      },
+      "OrganizationSubscriptionResource": {
+        "type": "object",
+        "description": "Example payload for Organization Subscription Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "status": "active",
+          "provider": "STRIPE",
+          "providerCustomerId": 1,
+          "providerSubscriptionId": 1,
+          "currentPeriodStart": "2026-06-20T09:00:00Z",
+          "currentPeriodEnd": "2026-06-20T09:00:00Z",
+          "cancelAtPeriodEnd": true,
+          "metadata": "source=stripe-test",
+          "plan": "Operations",
+          "usage": "example",
+          "entitlements": [
+            "June compliance summary"
+          ]
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "provider": {
+            "type": "string",
+            "description": "Provider value used by the ColdTrace API.",
+            "example": "STRIPE"
+          },
+          "providerCustomerId": {
+            "type": "string",
+            "description": "Provider Customer Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "providerSubscriptionId": {
+            "type": "string",
+            "description": "Provider Subscription Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "currentPeriodStart": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Current Period Start value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "currentPeriodEnd": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Current Period End value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "cancelAtPeriodEnd": {
+            "type": "boolean",
+            "description": "Cancel At Period End value used by the ColdTrace API.",
+            "example": true
+          },
+          "metadata": {
+            "type": "string",
+            "description": "Metadata value used by the ColdTrace API.",
+            "example": "source=stripe-test"
+          },
+          "plan": {
+            "$ref": "#/components/schemas/SubscriptionPlanResource",
+            "description": "Plan value used by the ColdTrace API.",
+            "example": "Operations"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/OrganizationSubscriptionUsageResource",
+            "description": "Usage value used by the ColdTrace API.",
+            "example": "example"
+          },
+          "entitlements": {
+            "type": "array",
+            "description": "Entitlements value used by the ColdTrace API.",
+            "example": [
+              "June compliance summary"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/OrganizationEntitlementResource"
+            }
+          }
+        }
+      },
+      "OrganizationSubscriptionUsageResource": {
+        "type": "object",
+        "description": "Example payload for Organization Subscription Usage Resource.",
+        "example": {
+          "locations": "Main Warehouse",
+          "assets": "Freezer A1",
+          "iotDevices": "Temperature Sensor A1",
+          "users": "example"
+        },
+        "properties": {
+          "locations": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Locations value used by the ColdTrace API.",
+            "example": "Main Warehouse"
+          },
+          "assets": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Assets value used by the ColdTrace API.",
+            "example": "Freezer A1"
+          },
+          "iotDevices": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Iot Devices value used by the ColdTrace API.",
+            "example": "Temperature Sensor A1"
+          },
+          "users": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Users value used by the ColdTrace API.",
+            "example": "example"
+          }
+        }
+      },
+      "NotificationResource": {
+        "type": "object",
+        "description": "Example payload for Notification Resource.",
+        "example": {
+          "id": 1,
+          "organizationId": 1,
+          "incidentId": 1,
+          "channel": "EMAIL",
+          "recipient": "operations@coldtrace.test",
+          "message": "Temperature exceeded configured safe range.",
+          "status": "active",
+          "createdAt": "2026-06-20T09:00:00Z",
+          "deliveredAt": "2026-06-20T09:00:00Z",
+          "failureReason": "Temperature remained above the configured threshold."
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "organizationId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Organization Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "incidentId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Incident Id value used by the ColdTrace API.",
+            "example": 1
+          },
+          "channel": {
+            "type": "string",
+            "description": "Channel value used by the ColdTrace API.",
+            "example": "EMAIL"
+          },
+          "recipient": {
+            "type": "string",
+            "description": "Recipient value used by the ColdTrace API.",
+            "example": "operations@coldtrace.test"
+          },
+          "message": {
+            "type": "string",
+            "description": "Message value used by the ColdTrace API.",
+            "example": "Temperature exceeded configured safe range."
+          },
+          "status": {
+            "type": "string",
+            "description": "Status value used by the ColdTrace API.",
+            "example": "active"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Created At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "deliveredAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Delivered At value used by the ColdTrace API.",
+            "example": "2026-06-20T09:00:00Z"
+          },
+          "failureReason": {
+            "type": "string",
+            "description": "Failure Reason value used by the ColdTrace API.",
+            "example": "Temperature remained above the configured threshold."
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "JWT returned by POST /api/v1/authentication/sign-in. In Swagger UI, paste only the raw token value; Swagger sends it as Authorization: Bearer <token>.",
+        "name": "Authorization",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

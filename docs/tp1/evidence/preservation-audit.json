@@ -1,0 +1,11 @@
+{
+  "originalMediaPreservedByteForByte": 32,
+  "originalTablesUnchanged": 82,
+  "originalTablesIntentionallyUpdated": [
+    "Version history: one 5.0 row added",
+    "Student Outcome: existing cells completed"
+  ],
+  "finalTables": 96,
+  "finalInlineImages": 40,
+  "chapterVContainsTrelloEvidence": true
+}
