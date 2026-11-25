@@ -1,0 +1,266 @@
+{
+  "shared": {
+    "tests": 2,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "com.acme.coldtrace.shared.CorrelationIdsTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "monitoring": {
+    "tests": 25,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "com.acme.coldtrace.platform.monitoring.ArchitectureTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "com.acme.coldtrace.platform.monitoring.OutboxRelayTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "com.acme.coldtrace.platform.monitoring.RunCucumberTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "com.acme.coldtrace.platform.monitoring.TelemetryIntegrationTest",
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "alert": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "com.acme.coldtrace.alerts.AlertWorkflowTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "com.acme.coldtrace.alerts.IncidentConsumerTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "gateway": {
+    "tests": 5,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "com.acme.coldtrace.gateway.GatewayRoutingTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "report": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "com.acme.coldtrace.reports.TraceabilityTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "backend": {
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "suites": [
+      {
+        "suite": "com.acme.coldtrace.platform.ColdtracePlatformApplicationTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "com.acme.coldtrace.platform.iam.interfaces.rest.SessionContextControllerTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "web": {
+    "tests": 23,
+    "failures": 0,
+    "source": "sprint1-web-verify.log"
+  },
+  "edge_baseline": {
+    "tests": 6,
+    "failures": 0
+  },
+  "edge_increment": {
+    "tests": 16,
+    "failures": 0,
+    "measurements_per_profile": 100,
+    "profiles": 2,
+    "source": "sprint2-edge-verify.log"
+  },
+  "newman": {
+    "at": "2026-11-04T00:36:23.350Z",
+    "runtime": "Docker edge, non-root, read-only profiles and persistent SQLite volume",
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 4,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "failures": [],
+    "requests": [
+      {
+        "name": "Accept Fahrenheit source",
+        "status": 202,
+        "assertions": [
+          {
+            "assertion": "Accepted durably at edge",
+            "failed": false
+          },
+          {
+            "assertion": "One reading accepted",
+            "failed": false
+          }
+        ]
+      },
+      {
+        "name": "Reject unsupported unit",
+        "status": 400,
+        "assertions": [
+          {
+            "assertion": "Incompatible input rejected",
+            "failed": false
+          }
+        ]
+      },
+      {
+        "name": "Reject missing credential",
+        "status": 401,
+        "assertions": [
+          {
+            "assertion": "Credential required",
+            "failed": false
+          }
+        ]
+      },
+      {
+        "name": "Confirm rejected input did not consume sequence",
+        "status": 202,
+        "assertions": [
+          {
+            "assertion": "Second valid input accepted",
+            "failed": false
+          },
+          {
+            "assertion": "Only valid inputs advance sequence",
+            "failed": false
+          }
+        ]
+      }
+    ]
+  },
+  "gcp": {
+    "projectId": "veltis-coldtrace-dev",
+    "projectNumber": "311618880556",
+    "state": "ACTIVE",
+    "billingEnabled": true,
+    "region": "southamerica-west1",
+    "checkedAt": "2026-11-04T00:20:21.8409038Z",
+    "operation": "read-only preflight"
+  },
+  "captures": {
+    "restored-alert-assigned.png": {
+      "sha256": "6c1b6c7cea5021ee52234fb5b6caae568aff42ddc0f46c1b0ced1146f420394c",
+      "ppt_media": "ppt/media/image3.png"
+    },
+    "restored-alert-detail.png": {
+      "sha256": "453a053f38d67d676fc68433e5f3197f8f47c0fe2ab4e9913f6e6e7ad7dccb10",
+      "ppt_media": "ppt/media/image2.png"
+    },
+    "restored-monitoring.png": {
+      "sha256": "29b10505bbe03e955a289207452f8a03eda01273e755d4651d1141f78b2dfbe6",
+      "ppt_media": "ppt/media/image.png"
+    },
+    "restored-report.png": {
+      "sha256": "02d8d853d5d58830ca472bab48688df6c20ca893b7e2b639c79ee6ff8adb7c4a",
+      "ppt_media": "ppt/media/image4.png"
+    }
+  }
+}

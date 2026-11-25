@@ -1,0 +1,9 @@
+{
+  "gatewayId": 9,
+  "repeated": {
+    "devicesProvisioned": 1
+  },
+  "first": {
+    "devicesProvisioned": 1
+  }
+}

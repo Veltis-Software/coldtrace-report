@@ -1,0 +1,102 @@
+{
+  "at": "2026-11-04T00:36:23.350Z",
+  "runtime": "Docker edge, non-root, read-only profiles and persistent SQLite volume",
+  "stats": {
+    "iterations": {
+      "total": 1,
+      "pending": 0,
+      "failed": 0
+    },
+    "items": {
+      "total": 4,
+      "pending": 0,
+      "failed": 0
+    },
+    "scripts": {
+      "total": 4,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequests": {
+      "total": 4,
+      "pending": 0,
+      "failed": 0
+    },
+    "requests": {
+      "total": 4,
+      "pending": 0,
+      "failed": 0
+    },
+    "tests": {
+      "total": 4,
+      "pending": 0,
+      "failed": 0
+    },
+    "assertions": {
+      "total": 6,
+      "pending": 0,
+      "failed": 0
+    },
+    "testScripts": {
+      "total": 4,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequestScripts": {
+      "total": 0,
+      "pending": 0,
+      "failed": 0
+    }
+  },
+  "failures": [],
+  "requests": [
+    {
+      "name": "Accept Fahrenheit source",
+      "status": 202,
+      "assertions": [
+        {
+          "assertion": "Accepted durably at edge",
+          "failed": false
+        },
+        {
+          "assertion": "One reading accepted",
+          "failed": false
+        }
+      ]
+    },
+    {
+      "name": "Reject unsupported unit",
+      "status": 400,
+      "assertions": [
+        {
+          "assertion": "Incompatible input rejected",
+          "failed": false
+        }
+      ]
+    },
+    {
+      "name": "Reject missing credential",
+      "status": 401,
+      "assertions": [
+        {
+          "assertion": "Credential required",
+          "failed": false
+        }
+      ]
+    },
+    {
+      "name": "Confirm rejected input did not consume sequence",
+      "status": 202,
+      "assertions": [
+        {
+          "assertion": "Second valid input accepted",
+          "failed": false
+        },
+        {
+          "assertion": "Only valid inputs advance sequence",
+          "failed": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+test_requires_explicit_emulator_without_contacting_cloud (test_pubsub_bootstrap.PubSubBootstrapTests.test_requires_explicit_emulator_without_contacting_cloud) ... ok
+test_source_subscription_routes_to_monitoring_and_bootstrap_is_repeatable (test_pubsub_bootstrap.PubSubBootstrapTests.test_source_subscription_routes_to_monitoring_and_bootstrap_is_repeatable) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.026s
+
+OK
