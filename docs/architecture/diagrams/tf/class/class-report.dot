@@ -1,0 +1,16 @@
+digraph G {
+graph [rankdir=TB, splines=true, newrank=true, nodesep=0.35, ranksep=0.5, fontname="Arial", pad=0.15];
+node [shape=plaintext, fontname="Arial", fontsize=10];
+edge [arrowhead=vee, color="#1F4E79", fontname="Arial", fontsize=8];
+"Job" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>Job</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ id: long</TD></TR><TR><TD ALIGN="LEFT">+ status: String</TD></TR><TR><TD ALIGN="LEFT">+ resultUrl: String</TD></TR></TABLE>>];
+"ReadingProjection" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>ReadingProjection</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- jdbc: JdbcTemplate</TD></TR><TR><TD ALIGN="LEFT">- json: ObjectMapper</TD></TR><HR/><TR><TD ALIGN="LEFT">+ accept()</TD></TR></TABLE>>];
+"ReportJobs" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>ReportJobs</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- jdbc: JdbcTemplate</TD></TR><TR><TD ALIGN="LEFT">- json: ObjectMapper</TD></TR><HR/><TR><TD ALIGN="LEFT">+ generatePending()</TD></TR><TR><TD ALIGN="LEFT">+ request()</TD></TR><TR><TD ALIGN="LEFT">+ result()</TD></TR><TR><TD ALIGN="LEFT">+ status()</TD></TR><TR><TD ALIGN="LEFT">+ validate()</TD></TR></TABLE>>];
+"Request" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>Request</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ title: String</TD></TR><TR><TD ALIGN="LEFT">+ periodStart: Instant</TD></TR><TR><TD ALIGN="LEFT">+ periodEnd: Instant</TD></TR><TR><TD ALIGN="LEFT">+ type: String</TD></TR></TABLE>>];
+"ReportJobs" -> "Request" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"ReportJobs" -> "Job" [arrowhead=odot, color="#7F7F7F", constraint=false];
+{rank=same; "ReadingProjection"; "ReportJobs"; "Request";}
+{rank=same; "Job";}
+"ReadingProjection" -> "Job" [style=invis];
+"ReadingProjection" -> "ReportJobs" [style=invis];
+"ReportJobs" -> "Request" [style=invis];
+labelloc="t"; label=<<B>Report Service</B> - modelo de dominio>; fontsize=13;}
