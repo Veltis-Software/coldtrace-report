@@ -1,22 +1,17 @@
-# ColdTrace — Informe del proyecto
+# ColdTrace: informe del proyecto
 
 Repositorio de documentación de **ColdTrace**, plataforma SaaS de monitoreo de la cadena de frío desarrollada por **Veltis Software** para el curso Fundamentos de Arquitectura de Software (1ASI0657), Universidad Peruana de Ciencias Aplicadas, ciclo 202620, sección 9199.
 
-| | |
+| Dato | Detalle |
 | --- | --- |
 | Docente | Daniel Enrique Mori Yzaguirre |
-| Integrantes | Condori Lozano, Alessandro Ramiro · Julca Cruz, Renso Anthony · Morales Venegas, David Joel |
+| Integrantes | Condori Lozano, Alessandro Ramiro<br>Julca Cruz, Renso Anthony<br>Morales Venegas, David Joel |
 | Aplicación desplegada | https://coldtrace-web-3zrmheawya-ue.a.run.app |
 | Tablero del equipo | https://trello.com/b/3tf7nnux/fundamentos |
 
-## Entregables
+## Informe
 
-| Entrega | Informe | Exposición | Participación |
-| --- | --- | --- | --- |
-| Trabajo Final | [DOCX](entregables/tf/upc-pre-202602-si657-9199-veltis-report-tf.docx) · [PDF](entregables/tf/upc-pre-202602-si657-9199-veltis-report-tf.pdf) | [PPTX](entregables/tf/upc-pre-202602-si657-9199-veltis-keynote-tf.pptx) · [PDF](entregables/tf/upc-pre-202602-si657-9199-veltis-keynote-tf.pdf) | [DOCX](entregables/tf/upc-pre-202602-si657-9199-veltis-performance-tf.docx) · [PDF](entregables/tf/upc-pre-202602-si657-9199-veltis-performance-tf.pdf) |
-| Avance 4 | [DOCX](entregables/av4/upc-pre-202602-si657-9199-veltis-report-av4.docx) · [PDF](entregables/av4/upc-pre-202602-si657-9199-veltis-report-av4.pdf) | | |
-| Avance 3 | [DOCX](entregables/av3/upc-pre-202602-si657-9199-veltis-report-av3.docx) · [PDF](entregables/av3/upc-pre-202602-si657-9199-veltis-report-av3.pdf) | | |
-| Trabajo Parcial | [DOCX](entregables/tp/upc-pre-202602-si657-9199-veltis-report-tp1.docx) | [PPTX](entregables/tp/upc-pre-202602-si657-9199-veltis-keynote-tp1.pptx) · [PDF](entregables/tp/upc-pre-202602-si657-9199-veltis-keynote-tp1.pdf) | [DOCX](entregables/tp/upc-pre-202602-si657-9199-veltis-performance-tp1.docx) |
+[Informe del Trabajo Final (DOCX)](informe/upc-pre-202602-si657-9199-veltis-report-tf.docx)
 
 ## Arquitectura
 
