@@ -1,0 +1,52 @@
+digraph G {
+graph [rankdir=TB, splines=true, newrank=true, nodesep=0.35, ranksep=0.5, fontname="Arial", pad=0.15];
+node [shape=plaintext, fontname="Arial", fontsize=10];
+edge [arrowhead=vee, color="#1F4E79", fontname="Arial", fontsize=8];
+"AcknowledgementPolicy" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>AcknowledgementPolicy</B></FONT></TD></TR><HR/><TR><TD> </TD></TR><HR/><TR><TD ALIGN="LEFT">+ undoAvailable()</TD></TR></TABLE>>];
+"Action" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>Action</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ description: String</TD></TR></TABLE>>];
+"AiResolutionPlan" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>AiResolutionPlan</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- id: Long</TD></TR><TR><TD ALIGN="LEFT">- organizationId: Long</TD></TR><TR><TD ALIGN="LEFT">- incidentId: Long</TD></TR><TR><TD ALIGN="LEFT">- status: AiResolutionPlanStatus</TD></TR><TR><TD ALIGN="LEFT">- summary: String</TD></TR><TR><TD ALIGN="LEFT">- probableCause: String</TD></TR><TR><TD ALIGN="LEFT">- recommendedSteps: List&lt;AiResolutionPlanStep&gt;</TD></TR><TR><TD ALIGN="LEFT">- correctiveActionDraft: String</TD></TR><TR><TD ALIGN="LEFT">- resolutionNotesDraft: String</TD></TR><TR><TD ALIGN="LEFT">- escalationRecommended: Boolean</TD></TR><TR><TD ALIGN="LEFT">- escalationUrgency: String</TD></TR><TR><TD ALIGN="LEFT">- escalationReason: String</TD></TR><TR><TD ALIGN="LEFT">- requiredEvidence: List&lt;String&gt;</TD></TR><TR><TD ALIGN="LEFT">- uncertaintyNotes: List&lt;String&gt;</TD></TR><TR><TD ALIGN="LEFT"><I>… 11 atributos más</I></TD></TR><HR/><TR><TD ALIGN="LEFT">+ approve()</TD></TR><TR><TD ALIGN="LEFT">+ reject()</TD></TR></TABLE>>];
+"AiResolutionPlanStatus" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#7F7F7F"><FONT COLOR="white"><B>«enumeration»<BR/>AiResolutionPlanStatus</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">PENDING</TD></TR><TR><TD ALIGN="LEFT">APPROVED</TD></TR><TR><TD ALIGN="LEFT">REJECTED</TD></TR></TABLE>>];
+"AiResolutionPlanStep" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>AiResolutionPlanStep</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- sequence: Integer</TD></TR><TR><TD ALIGN="LEFT">- action: String</TD></TR><TR><TD ALIGN="LEFT">- rationale: String</TD></TR><TR><TD ALIGN="LEFT">- expectedOutcome: String</TD></TR></TABLE>>];
+"AlertService" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>AlertService</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- jdbc: JdbcTemplate</TD></TR><TR><TD ALIGN="LEFT">- json: ObjectMapper</TD></TR><TR><TD ALIGN="LEFT">- clock: Clock</TD></TR><TR><TD ALIGN="LEFT">- updates: AlertUpdates</TD></TR><HR/><TR><TD ALIGN="LEFT">+ acknowledge()</TD></TR><TR><TD ALIGN="LEFT">+ action()</TD></TR><TR><TD ALIGN="LEFT">+ authorize()</TD></TR><TR><TD ALIGN="LEFT">+ detail()</TD></TR><TR><TD ALIGN="LEFT">+ list()</TD></TR><TR><TD ALIGN="LEFT">+ notifications()</TD></TR></TABLE>>];
+"AlertUpdates" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>AlertUpdates</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- jdbc: JdbcTemplate</TD></TR><TR><TD ALIGN="LEFT">- json: ObjectMapper</TD></TR><HR/><TR><TD ALIGN="LEFT">+ append()</TD></TR></TABLE>>];
+"AssetRef" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>AssetRef</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ assetId: long</TD></TR><TR><TD ALIGN="LEFT">+ name: String</TD></TR><TR><TD ALIGN="LEFT">+ locationName: String</TD></TR></TABLE>>];
+"Assignment" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>Assignment</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ assigneeUserId: Long</TD></TR></TABLE>>];
+"Detail" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>Detail</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ id: long</TD></TR><TR><TD ALIGN="LEFT">+ type: String</TD></TR><TR><TD ALIGN="LEFT">+ severity: String</TD></TR><TR><TD ALIGN="LEFT">+ state: String</TD></TR><TR><TD ALIGN="LEFT">+ detectedAt: Instant</TD></TR><TR><TD ALIGN="LEFT">+ asset: AssetRef</TD></TR><TR><TD ALIGN="LEFT">+ reading: ReadingRef</TD></TR><TR><TD ALIGN="LEFT">+ safeRange: RangeRef</TD></TR><TR><TD ALIGN="LEFT">+ assignee: UserRef</TD></TR><TR><TD ALIGN="LEFT">+ suggestedAssignee: UserRef</TD></TR><TR><TD ALIGN="LEFT">+ allowedActions: List&lt;String&gt;</TD></TR><TR><TD ALIGN="LEFT">+ correctiveActions: List&lt;Map&lt;String, Object&gt;&gt;</TD></TR><TR><TD ALIGN="LEFT">+ resolvedByUserId: Long</TD></TR><TR><TD ALIGN="LEFT">+ resolvedAt: Instant</TD></TR></TABLE>>];
+"HistoryFilter" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>HistoryFilter</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ assetId: Long</TD></TR><TR><TD ALIGN="LEFT">+ state: String</TD></TR><TR><TD ALIGN="LEFT">+ severity: String</TD></TR><TR><TD ALIGN="LEFT">+ assigneeUserId: Long</TD></TR></TABLE>>];
+"IncidentConsumer" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>IncidentConsumer</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- jdbc: JdbcTemplate</TD></TR><TR><TD ALIGN="LEFT">- json: ObjectMapper</TD></TR><HR/><TR><TD ALIGN="LEFT">+ accept()</TD></TR></TABLE>>];
+"IncidentSnapshot" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>IncidentSnapshot</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ id: Long</TD></TR><TR><TD ALIGN="LEFT">+ organizationId: Long</TD></TR><TR><TD ALIGN="LEFT">+ assetId: Long</TD></TR><TR><TD ALIGN="LEFT">+ status: String</TD></TR><TR><TD ALIGN="LEFT">+ detectedAt: Instant</TD></TR></TABLE>>];
+"RangeRef" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>RangeRef</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ minTemperature: Double</TD></TR><TR><TD ALIGN="LEFT">+ maxTemperature: Double</TD></TR><TR><TD ALIGN="LEFT">+ minHumidity: Double</TD></TR><TR><TD ALIGN="LEFT">+ maxHumidity: Double</TD></TR></TABLE>>];
+"ReadingRef" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>ReadingRef</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ readingId: Long</TD></TR><TR><TD ALIGN="LEFT">+ temperature: Double</TD></TR><TR><TD ALIGN="LEFT">+ humidity: Double</TD></TR><TR><TD ALIGN="LEFT">+ recordedAt: String</TD></TR></TABLE>>];
+"Result" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>Result</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ id: long</TD></TR><TR><TD ALIGN="LEFT">+ state: String</TD></TR><TR><TD ALIGN="LEFT">+ assignee: UserRef</TD></TR><TR><TD ALIGN="LEFT">+ acknowledgedAt: Instant</TD></TR><TR><TD ALIGN="LEFT">+ undoAvailableUntil: Instant</TD></TR></TABLE>>];
+"AlertService" -> "ReadingRef" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"AlertService" -> "RangeRef" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"AlertService" -> "HistoryFilter" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"AlertService" -> "AssetRef" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"AlertService" -> "Detail" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"AlertService" -> "Result" [arrowhead=odot, color="#7F7F7F", constraint=false];
+{rank=same; "AiResolutionPlan"; "AlertService"; "AiResolutionPlanStep"; "IncidentConsumer";}
+{rank=same; "AlertUpdates"; "AcknowledgementPolicy"; "Detail"; "IncidentSnapshot";}
+{rank=same; "Result"; "HistoryFilter"; "ReadingRef"; "RangeRef";}
+{rank=same; "AssetRef"; "AiResolutionPlanStatus"; "Assignment"; "Action";}
+"AiResolutionPlan" -> "AlertUpdates" [style=invis];
+"AlertUpdates" -> "Result" [style=invis];
+"Result" -> "AssetRef" [style=invis];
+"AiResolutionPlan" -> "AlertService" [style=invis];
+"AlertService" -> "AiResolutionPlanStep" [style=invis];
+"AiResolutionPlanStep" -> "IncidentConsumer" [style=invis];
+"AlertUpdates" -> "AcknowledgementPolicy" [style=invis];
+"AcknowledgementPolicy" -> "Detail" [style=invis];
+"Detail" -> "IncidentSnapshot" [style=invis];
+"Result" -> "HistoryFilter" [style=invis];
+"HistoryFilter" -> "ReadingRef" [style=invis];
+"ReadingRef" -> "RangeRef" [style=invis];
+"AssetRef" -> "AiResolutionPlanStatus" [style=invis];
+"AiResolutionPlanStatus" -> "Assignment" [style=invis];
+"Assignment" -> "Action" [style=invis];
+"AlertService" -> "AlertUpdates" [arrowtail=diamond, dir=both, arrowhead=vee, constraint=false];
+"Detail" -> "AssetRef" [style=dashed, constraint=false];
+"Detail" -> "ReadingRef" [style=dashed, constraint=false];
+"Detail" -> "RangeRef" [style=dashed, constraint=false];
+"AiResolutionPlan" -> "AiResolutionPlanStatus" [style=dashed, constraint=false];
+"AiResolutionPlan" -> "AiResolutionPlanStep" [headlabel="0..*", arrowtail=diamond, dir=both, arrowhead=vee, constraint=false];
+labelloc="t"; label=<<B>Alert Service</B> - modelo de dominio>; fontsize=13;}

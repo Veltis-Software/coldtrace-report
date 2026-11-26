@@ -1,0 +1,31 @@
+digraph G {
+graph [rankdir=TB, splines=true, newrank=true, nodesep=0.35, ranksep=0.5, fontname="Arial", pad=0.15];
+node [shape=plaintext, fontname="Arial", fontsize=10];
+edge [arrowhead=vee, color="#1F4E79", fontname="Arial", fontsize=8];
+"EmailAddress" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>EmailAddress</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ value: String</TD></TR></TABLE>>];
+"ExternalIdentity" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>ExternalIdentity</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- id: Long</TD></TR><TR><TD ALIGN="LEFT">- provider: SocialProvider</TD></TR><TR><TD ALIGN="LEFT">- providerSubject: String</TD></TR><TR><TD ALIGN="LEFT">- email: String</TD></TR><TR><TD ALIGN="LEFT">- userId: Long</TD></TR></TABLE>>];
+"Organization" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>Organization</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- id: Long</TD></TR><TR><TD ALIGN="LEFT">- legalName: String</TD></TR><TR><TD ALIGN="LEFT">- commercialName: String</TD></TR><TR><TD ALIGN="LEFT">- taxId: String</TD></TR><TR><TD ALIGN="LEFT">- contactEmail: EmailAddress</TD></TR></TABLE>>];
+"PasswordResetRequest" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>PasswordResetRequest</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- id: Long</TD></TR><TR><TD ALIGN="LEFT">- email: EmailAddress</TD></TR><TR><TD ALIGN="LEFT">- userId: Long</TD></TR><TR><TD ALIGN="LEFT">- tokenHash: String</TD></TR><TR><TD ALIGN="LEFT">- requestedAt: Instant</TD></TR><TR><TD ALIGN="LEFT">- expiresAt: Instant</TD></TR><TR><TD ALIGN="LEFT">- consumedAt: Instant</TD></TR></TABLE>>];
+"Permission" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>Permission</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- id: Long</TD></TR><TR><TD ALIGN="LEFT">- resource: String</TD></TR><TR><TD ALIGN="LEFT">- action: String</TD></TR><TR><TD ALIGN="LEFT">- description: String</TD></TR></TABLE>>];
+"Role" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>Role</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- id: Long</TD></TR><TR><TD ALIGN="LEFT">- name: RoleName</TD></TR><TR><TD ALIGN="LEFT">- label: String</TD></TR><TR><TD ALIGN="LEFT">- permissions: List&lt;Permission&gt;</TD></TR></TABLE>>];
+"RoleName" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>RoleName</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ value: String</TD></TR></TABLE>>];
+"SocialProvider" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#7F7F7F"><FONT COLOR="white"><B>«enumeration»<BR/>SocialProvider</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">GOOGLE</TD></TR><TR><TD ALIGN="LEFT">APPLE</TD></TR></TABLE>>];
+"User" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>User</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">- id: Long</TD></TR><TR><TD ALIGN="LEFT">- uuid: String</TD></TR><TR><TD ALIGN="LEFT">- organizationUserId: Long</TD></TR><TR><TD ALIGN="LEFT">- firstName: String</TD></TR><TR><TD ALIGN="LEFT">- lastName: String</TD></TR><TR><TD ALIGN="LEFT">- email: EmailAddress</TD></TR><TR><TD ALIGN="LEFT">- passwordHash: String</TD></TR><TR><TD ALIGN="LEFT">- organizationId: Long</TD></TR><TR><TD ALIGN="LEFT">- roleId: Long</TD></TR><HR/><TR><TD ALIGN="LEFT">+ assignRole()</TD></TR></TABLE>>];
+{rank=same; "User"; "PasswordResetRequest"; "ExternalIdentity";}
+{rank=same; "Organization"; "Role"; "Permission";}
+{rank=same; "SocialProvider"; "EmailAddress"; "RoleName";}
+"User" -> "Organization" [style=invis];
+"Organization" -> "SocialProvider" [style=invis];
+"User" -> "PasswordResetRequest" [style=invis];
+"PasswordResetRequest" -> "ExternalIdentity" [style=invis];
+"Organization" -> "Role" [style=invis];
+"Role" -> "Permission" [style=invis];
+"SocialProvider" -> "EmailAddress" [style=invis];
+"EmailAddress" -> "RoleName" [style=invis];
+"ExternalIdentity" -> "SocialProvider" [style=dashed, constraint=false];
+"Organization" -> "EmailAddress" [arrowtail=diamond, dir=both, arrowhead=vee, constraint=false];
+"PasswordResetRequest" -> "EmailAddress" [arrowtail=diamond, dir=both, arrowhead=vee, constraint=false];
+"User" -> "EmailAddress" [arrowtail=diamond, dir=both, arrowhead=vee, constraint=false];
+"Role" -> "RoleName" [arrowtail=diamond, dir=both, arrowhead=vee, constraint=false];
+"Role" -> "Permission" [headlabel="0..*", arrowtail=diamond, dir=both, arrowhead=vee, constraint=false];
+labelloc="t"; label=<<B>Identity Service</B> - modelo de dominio>; fontsize=13;}

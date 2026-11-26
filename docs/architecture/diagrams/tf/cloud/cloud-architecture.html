@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1a1a1a}
+#c{position:relative;width:1600px;height:1060px;padding:18px}
+.box{position:absolute;border:2px solid #1F4E79;border-radius:10px;background:#fff;text-align:center;font-size:17px;padding:8px 6px;display:flex;flex-direction:column;justify-content:center;line-height:1.25}
+.box b{font-size:18px}.small{font-size:14px;color:#333}
+.zone{position:absolute;border-radius:14px;padding:8px 14px;font-size:17px;font-weight:bold;color:#1F4E79}
+.gcp{border:3px solid #1F4E79;background:#F4F8FC}
+.pub{border:2px solid #2E75B6;background:#E9F2FB}.priv{border:2px solid #2E75B6;background:#EEF4FA}
+.ext{border:2px dashed #7F7F7F;background:#FAFAFA;color:#404040}
+.svc{background:#fff}.blue{background:#BDD7EE}.green{background:#E2EFDA;border-color:#548235}
+.yellow{background:#FFF2CC;border-color:#BF9000}.orange{background:#FCE4D6;border-color:#C55A11}.grey{background:#F2F2F2;border-color:#595959}.lb{background:#DEEBF7}
+svg{position:absolute;left:0;top:0}
+.lbl{font-size:13px;fill:#333}
+</style></head><body><div id="c">
+<div class="zone ext" style="left:18px;top:18px;width:300px;height:250px">Sitio del cliente</div>
+<div class="box grey" style="left:48px;top:62px;width:240px;height:64px"><b>Sensores IoT</b><span class="small">MQTT/JSON · HTTP/JSON</span></div>
+<div class="box green" style="left:48px;top:170px;width:240px;height:70px"><b>Edge Gateway Agent</b><span class="small">Python · buffer durable</span></div>
+
+<div class="zone ext" style="left:18px;top:300px;width:300px;height:330px">Desarrollo y entrega</div>
+<div class="box grey" style="left:48px;top:344px;width:240px;height:70px"><b>GitHub · Veltis-Software</b><span class="small">15 repositorios · GitFlow · v1.0.0</span></div>
+<div class="box grey" style="left:48px;top:440px;width:240px;height:70px"><b>GitHub Actions (CI)</b><span class="small">mvn verify · Cucumber · docker build</span></div>
+<div class="box grey" style="left:48px;top:536px;width:240px;height:70px"><b>Equipo de desarrollo</b><span class="small">docker push · gcloud run deploy</span></div>
+
+<div class="box grey" style="left:48px;top:700px;width:240px;height:70px"><b>Usuarios de la organización</b><span class="small">navegador web</span></div>
+
+<div class="zone gcp" style="left:360px;top:18px;width:1222px;height:1024px">Google Cloud · proyecto veltis-coldtrace-dev · región us-east1</div>
+<div class="zone pub" style="left:390px;top:640px;width:300px;height:170px">Cloud Run · acceso público</div>
+<div class="box blue" style="left:415px;top:690px;width:250px;height:92px"><b>coldtrace-web</b><span class="small">Angular · proxy autenticado<br>hacia el Gateway</span></div>
+
+<div class="zone priv" style="left:730px;top:300px;width:830px;height:510px">Cloud Run · servicios privados (IAM, roles/run.invoker)</div>
+<div class="box blue" style="left:1000px;top:345px;width:290px;height:78px"><b>coldtrace-gateway</b><span class="small">Spring Cloud Gateway · /api/v1/*</span></div>
+<div class="box svc" style="left:755px;top:500px;width:180px;height:62px"><b>identity</b><span class="small">ct_identity</span></div>
+<div class="box svc" style="left:955px;top:500px;width:180px;height:62px"><b>asset</b><span class="small">ct_asset</span></div>
+<div class="box svc" style="left:1155px;top:500px;width:180px;height:62px"><b>monitoring</b><span class="small">ct_monitoring</span></div>
+<div class="box svc" style="left:1355px;top:500px;width:180px;height:62px"><b>alert</b><span class="small">ct_alert</span></div>
+<div class="box svc" style="left:755px;top:600px;width:180px;height:62px"><b>subscription</b><span class="small">ct_subscription</span></div>
+<div class="box svc" style="left:955px;top:600px;width:180px;height:62px"><b>maintenance</b><span class="small">ct_maintenance</span></div>
+<div class="box svc" style="left:1155px;top:600px;width:180px;height:62px"><b>report</b><span class="small">ct_report</span></div>
+<div class="box svc" style="left:1355px;top:600px;width:180px;height:62px"><b>ai</b><span class="small">sin base de datos</span></div>
+<div class="small" style="position:absolute;left:755px;top:700px;width:780px;font-size:14px;text-align:left;color:#333">Cada servicio se ejecuta con su cuenta de servicio y con contenedores auxiliares: <b>Cloud SQL Auth Proxy</b> para su esquema y <b>proxy privado</b> que firma con token de identidad las llamadas internas.</div>
+
+<div class="box lb" style="left:390px;top:70px;width:300px;height:78px"><b>Artifact Registry</b><span class="small">coldtrace-services (imágenes Docker)</span></div>
+<div class="box lb" style="left:390px;top:180px;width:300px;height:92px"><b>Secret Manager</b><span class="small">firma JWT · clave interna<br>credenciales por esquema</span></div>
+<div class="box lb" style="left:390px;top:300px;width:300px;height:78px"><b>IAM</b><span class="small">cuentas de servicio por microservicio</span></div>
+<div class="box lb" style="left:390px;top:410px;width:300px;height:64px"><b>Cloud Logging</b><span class="small">registros de Cloud Run</span></div>
+
+<div class="box yellow" style="left:740px;top:870px;width:400px;height:130px"><b>Pub/Sub · 6 tópicos, suscripciones push</b><span class="small">readings.ingested → report · threshold.breached → alert<br>source.gap → alert · incident.opened → report<br>source.configuration-changed → monitoring<br>asset.settings-changed → monitoring</span></div>
+<div class="box orange" style="left:1170px;top:870px;width:390px;height:130px;border-radius:40px/14px"><b>Cloud SQL · MySQL 8.4</b><span class="small">coldtrace-mysql-dev<br>7 esquemas: ct_identity, ct_asset, ct_monitoring,<br>ct_alert, ct_report, ct_subscription, ct_maintenance</span></div>
+
+<svg width="1600" height="1060"><defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#404040"/></marker><marker id="y" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#BF9000"/></marker><marker id="o" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#C55A11"/></marker></defs>
+<g stroke="#404040" stroke-width="2" fill="none">
+<path d="M168,126 L168,168" marker-end="url(#a)"/>
+<path d="M168,414 L168,438" marker-end="url(#a)"/>
+<path d="M288,571 L345,571 L345,110 L388,110" stroke-dasharray="7 5" marker-end="url(#a)"/>
+<path d="M288,735 L413,735" marker-end="url(#a)"/>
+<path d="M540,148 L540,170" stroke="#fff"/>
+<path d="M665,712 L710,712 L710,384 L998,384" marker-end="url(#a)"/>
+<path d="M288,205 L325,205 L325,286 L1250,286 L1250,343" stroke-dasharray="7 5" marker-end="url(#a)"/>
+<path d="M1145,423 L1145,460 L845,460 L845,498" marker-end="url(#a)"/><path d="M1045,460 L1045,498" marker-end="url(#a)"/><path d="M1245,460 L1245,498" marker-end="url(#a)"/><path d="M1145,460 L1445,460 L1445,498" marker-end="url(#a)"/>
+</g>
+<g stroke="#BF9000" stroke-width="2.5" fill="none"><path d="M940,812 L940,866" marker-end="url(#y)"/><path d="M900,866 L900,812" marker-end="url(#y)"/></g>
+<g stroke="#C55A11" stroke-width="2" fill="none"><path d="M1500,810 L1500,868" marker-end="url(#o)"/></g>
+<text class="lbl" x="352" y="600">imágenes v1.0.0</text><text class="lbl" x="300" y="725">HTTPS</text>
+<text class="lbl" x="722" y="372">HTTPS + token de identidad</text>
+<text class="lbl" x="712" y="280">lotes de telemetría por HTTPS (ruta de integración del agente Edge)</text>
+<text class="lbl" x="950" y="845" fill="#7F6000">Outbox → publicación · entrega push a alert, report y monitoring</text>
+<text class="lbl" x="1385" y="845" fill="#843C0C">esquema propio</text>
+</svg></div></body></html>
