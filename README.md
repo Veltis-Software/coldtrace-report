@@ -1,120 +1,50 @@
-# ColdTrace
+# ColdTrace — Informe del proyecto
 
-- [Informe vigente del Avance 3](docs/av3/upc-pre-202602-si657-9199-veltis-report-av3.docx)
-- [Previsualización PDF](docs/av3/upc-pre-202602-si657-9199-veltis-report-av3.pdf)
-- [Arquitectura y vistas ADD](docs/architecture/README.md)
-- [Verificación del Sprint 1](docs/sprint-1/review.md)
-- [Implementación y evidencias del Sprint 2](docs/sprint-2/README.md)
-- [Plan e historial de continuidad](docs/continuity/PLAN_REVISION_ADD_20261103.md)
+Repositorio de documentación de **ColdTrace**, plataforma SaaS de monitoreo de la cadena de frío desarrollada por **Veltis Software** para el curso Fundamentos de Arquitectura de Software (1ASI0657), Universidad Peruana de Ciencias Aplicadas, ciclo 202620, sección 9199.
 
-<h2 style="text-align: center;"> Universidad Peruana de Ciencias Aplicadas </h2>
+| | |
+| --- | --- |
+| Docente | Daniel Enrique Mori Yzaguirre |
+| Integrantes | Condori Lozano, Alessandro Ramiro · Julca Cruz, Renso Anthony · Morales Venegas, David Joel |
+| Aplicación desplegada | https://coldtrace-web-3zrmheawya-ue.a.run.app |
+| Tablero del equipo | https://trello.com/b/3tf7nnux/fundamentos |
 
-<div style="text-align: center;">
-  <img src="https://marketingperu.beglobal.biz/wp-content/uploads/2025/01/logo-upc-png-transparente-1.png" alt="UPC Logo" style="width: 250px; height: auto;">
-</div>
+## Entregables
 
-<h4 style="text-align: center"> Ingeniería de Software </h4>
+| Entrega | Informe | Exposición | Participación |
+| --- | --- | --- | --- |
+| Trabajo Final | [DOCX](entregables/tf/upc-pre-202602-si657-9199-veltis-report-tf.docx) · [PDF](entregables/tf/upc-pre-202602-si657-9199-veltis-report-tf.pdf) | [PPTX](entregables/tf/upc-pre-202602-si657-9199-veltis-keynote-tf.pptx) · [PDF](entregables/tf/upc-pre-202602-si657-9199-veltis-keynote-tf.pdf) | [DOCX](entregables/tf/upc-pre-202602-si657-9199-veltis-performance-tf.docx) · [PDF](entregables/tf/upc-pre-202602-si657-9199-veltis-performance-tf.pdf) |
+| Avance 4 | [DOCX](entregables/av4/upc-pre-202602-si657-9199-veltis-report-av4.docx) · [PDF](entregables/av4/upc-pre-202602-si657-9199-veltis-report-av4.pdf) | | |
+| Avance 3 | [DOCX](entregables/av3/upc-pre-202602-si657-9199-veltis-report-av3.docx) · [PDF](entregables/av3/upc-pre-202602-si657-9199-veltis-report-av3.pdf) | | |
+| Trabajo Parcial | [DOCX](entregables/tp/upc-pre-202602-si657-9199-veltis-report-tp1.docx) | [PPTX](entregables/tp/upc-pre-202602-si657-9199-veltis-keynote-tp1.pptx) · [PDF](entregables/tp/upc-pre-202602-si657-9199-veltis-keynote-tp1.pdf) | [DOCX](entregables/tp/upc-pre-202602-si657-9199-veltis-performance-tp1.docx) |
 
-<h4 style="text-align: center"> Periodo: 202620 </h4>
+## Arquitectura
 
-<h4 style="text-align: center"> 1ASI0657 | Fundamentos de Arquitectura de Software</h4>
+| Carpeta | Contenido |
+| --- | --- |
+| [`arquitectura/c4`](arquitectura/c4) | Modelo C4 en Structurizr (`workspace.dsl`) y vistas de contexto, contenedores y componentes de las iteraciones ADD 0 a 3 |
+| [`arquitectura/uml`](arquitectura/uml) | Diagramas de secuencia en PlantUML de cada iteración |
+| [`arquitectura/microservicios`](arquitectura/microservicios) | Diagramas de clases y de base de datos de cada microservicio, generados desde el código y las migraciones Flyway |
+| [`arquitectura/cloud`](arquitectura/cloud) | Arquitectura de despliegue en Google Cloud |
+| [`arquitectura/decisiones`](arquitectura/decisiones) | Registro de decisiones de arquitectura |
 
-<h4 style="text-align: center"> NRC: 9199  </h4>
+Detalle en [`arquitectura/README.md`](arquitectura/README.md).
 
-<h4 style="text-align: center"> Docente: Daniel Enrique Mori Yzaguirre </h4>
+## Repositorios de la solución
 
-<h3 style="text-align: center;"> Informe del Trabajo Final </h3>
-
-<h4 style="text-align: center"> Startup: Veltis Software </h4>
-
-<h4 style="text-align: center"> Producto: Cold Trace </h4>
-
-<h4 style="text-align: center">Integrantes:</h4>
-
-<div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
-  <p> — Condori Lozano, Alessandro Ramiro </p>
-  <p>U202121579 — Julca Cruz, Renso Anthony</p>
-  <p> — Morales Venegas, David Joel</p>
-</div>
-
-<br>
-
-<h5 style="text-align: center; font-style: italic;"> Setiembre 2026 </h5>
-
-<hr class="page-break">
-
-# Registro de Versiones del Informe
-
-| Versión | Fecha     | Autor               | Descripción de modificación                              |
-|---------|-----------|---------------------|----------------------------------------------------------|
-| 1.0     | 1/09/2026 |  Julca Cruz, Renso Anthony        | Creación inicial de la estructura del informe            |
-
-# Contenido
-
-- [Capítulo I: Introducción](#capítulo-i-introducción)
-    - [1.1. Startup Profile](#11-startup-profile)
-        - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
-        - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
-    - [1.2. Solution Profile](#12-solution-profile)
-        - [1.2.1. Nombre del producto](#121-nombre-del-producto)
-        - [1.2.2. Antecedentes y problemática](#122-antecedentes-y-problemática)
-        - [1.2.3. Lean UX Process](#123-lean-ux-process)
-            - [1.2.3.1. Lean UX Problem Statement](#1231-lean-ux-problem-statement)
-            - [1.2.3.2. Lean UX Assumptions](#1232-lean-ux-assumptions)
-            - [1.2.3.3. Lean UX Hypothesis](#1233-lean-ux-hypothesis)
-            - [1.2.3.4. Lean UX Canvas](#1234-lean-ux-canvas)
-    - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-- [Capítulo II: Requirements & Analysis](#capítulo-ii-requirements--analysis)
-    - [2.1. Competidores](#21-competidores)
-    - [2.2. Entrevistas](#22-entrevistas)
-    - [2.3. Needfinding](#23-needfinding)
-        - [2.3.1. User Personas](#231-user-personas)
-        - [2.3.2. User Task Matrix](#232-user-task-matrix)
-        - [2.3.3. Empathy Maps](#233-empathy-maps)
-        - [2.3.4. As-is Scenario Mapping](#234-as-is-scenario-mapping)
-- [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
-    - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
-    - [3.2. User Stories](#32-user-stories)
-    - [3.3. Impact Map](#33-impact-map)
-    - [3.4. Product Backlog](#34-product-backlog)
-
-# Student Outcome
-
-En el siguiente cuadro se describe las acciones realizadas y enunciadas de conclusiones por parte del equipo, que permiten sustentar el haber alcanzado el logro ABET - EAC - Student Outcome.
-
-<table border="1" style="border-collapse: collapse; width: 100%; font-family: sans-serif; font-size: 14px;">
-    <thead>
-        <tr style="background-color: #f2f2f2; text-align: left;">
-            <th style="padding: 10px; width: 25%;">Criterio específico</th>
-            <th style="padding: 10px; width: 50%;">Acciones realizadas</th>
-            <th style="padding: 10px; width: 25%;">Conclusiones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="padding: 10px;"><strong> Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software. </strong></td>
-            <td style="padding: 10px;">
-                <p><strong>Julca Cruz, Renso Anthony</strong><br> 
-                <strong>TB1:</strong><br>
-            </td>
-            <td style="padding: 10px; vertical-align: top;"> 
-                <strong>TB1:</strong><br>
-                <br><br>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 10px;"><strong> Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software. </strong></td>
-            <td style="padding: 10px;">
-                <p><strong>Julca Cruz, Renso Anthony</strong><br> 
-                <strong>TB1:</strong><br>
-                <br>
-            </td>
-            <td style="padding: 10px; vertical-align: top;"> 
-                <strong>TB1:</strong><br>
-                <br><br>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<hr class="page-break">
+| Repositorio | Responsabilidad |
+| --- | --- |
+| [coldtrace-web-app](https://github.com/Veltis-Software/coldtrace-web-app) | Aplicación web en Angular |
+| [coldtrace-api-gateway](https://github.com/Veltis-Software/coldtrace-api-gateway) | Punto de entrada único (Spring Cloud Gateway) |
+| [coldtrace-identity-service](https://github.com/Veltis-Software/coldtrace-identity-service) | Organizaciones, usuarios, roles y sesiones |
+| [coldtrace-asset-service](https://github.com/Veltis-Software/coldtrace-asset-service) | Sedes, activos, gateways, dispositivos y rangos seguros |
+| [coldtrace-monitoring-service](https://github.com/Veltis-Software/coldtrace-monitoring-service) | Ingesta de telemetría, estado actual y detección de brechas |
+| [coldtrace-alert-service](https://github.com/Veltis-Software/coldtrace-alert-service) | Incidencias, notificaciones y atención |
+| [coldtrace-report-service](https://github.com/Veltis-Software/coldtrace-report-service) | Reportes de trazabilidad |
+| [coldtrace-subscription-service](https://github.com/Veltis-Software/coldtrace-subscription-service) | Planes, suscripciones y facturación |
+| [coldtrace-maintenance-service](https://github.com/Veltis-Software/coldtrace-maintenance-service) | Mantenimiento preventivo y solicitudes técnicas |
+| [coldtrace-ai-assistance-service](https://github.com/Veltis-Software/coldtrace-ai-assistance-service) | Asistencia con modelos de lenguaje |
+| [coldtrace-edge-gateway](https://github.com/Veltis-Software/coldtrace-edge-gateway) | Agente Edge con almacenamiento local y reenvío |
+| [coldtrace-shared](https://github.com/Veltis-Software/coldtrace-shared) | Biblioteca técnica compartida |
+| [coldtrace-infrastructure](https://github.com/Veltis-Software/coldtrace-infrastructure) | Entorno local con Docker Compose |
+| [coldtrace-backend](https://github.com/Veltis-Software/coldtrace-backend) | Aplicación monolítica de referencia para la migración |
