@@ -1,0 +1,28 @@
+digraph G {
+graph [rankdir=TB, splines=true, newrank=true, nodesep=0.35, ranksep=0.5, fontname="Arial", pad=0.15];
+node [shape=plaintext, fontname="Arial", fontsize=10];
+edge [arrowhead=vee, color="#1F4E79", fontname="Arial", fontsize=8];
+"BatchResult" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>BatchResult</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ accepted: int</TD></TR><TR><TD ALIGN="LEFT">+ duplicated: int</TD></TR></TABLE>>];
+"Device" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>Device</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ id: long</TD></TR><TR><TD ALIGN="LEFT">+ organizationId: long</TD></TR><TR><TD ALIGN="LEFT">+ assetId: long</TD></TR><TR><TD ALIGN="LEFT">+ gatewayId: long</TD></TR><TR><TD ALIGN="LEFT">+ locationId: long</TD></TR><TR><TD ALIGN="LEFT">+ frequencySeconds: int</TD></TR></TABLE>>];
+"Gateway" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>Gateway</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ id: long</TD></TR><TR><TD ALIGN="LEFT">+ organizationId: long</TD></TR><TR><TD ALIGN="LEFT">+ keyHash: String</TD></TR><TR><TD ALIGN="LEFT">+ lastHeartbeat: Instant</TD></TR><TR><TD ALIGN="LEFT">+ provisionedAt: Instant</TD></TR></TABLE>>];
+"Reading" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>Reading</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ deviceUuid: UUID</TD></TR><TR><TD ALIGN="LEFT">+ sequenceNumber: long</TD></TR><TR><TD ALIGN="LEFT">+ recordedAt: Instant</TD></TR><TR><TD ALIGN="LEFT">+ temperature: Double</TD></TR><TR><TD ALIGN="LEFT">+ humidity: Double</TD></TR><TR><TD ALIGN="LEFT">+ batteryLevel: Integer</TD></TR><TR><TD ALIGN="LEFT">+ signalStrength: Integer</TD></TR><TR><TD ALIGN="LEFT">+ sourceId: String</TD></TR><TR><TD ALIGN="LEFT">+ profileVersion: Integer</TD></TR><TR><TD ALIGN="LEFT">+ schemaVersion: Integer</TD></TR><TR><TD ALIGN="LEFT">+ temperatureUnit: String</TD></TR><TR><TD ALIGN="LEFT">+ humidityUnit: String</TD></TR></TABLE>>];
+"SafeRange" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>SafeRange</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ minimumTemperature: double</TD></TR><TR><TD ALIGN="LEFT">+ maximumTemperature: double</TD></TR><TR><TD ALIGN="LEFT">+ minimumHumidity: Double</TD></TR><TR><TD ALIGN="LEFT">+ maximumHumidity: Double</TD></TR><TR><TD ALIGN="LEFT">+ toleranceMinutes: int</TD></TR></TABLE>>];
+"SourceAssignment" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#2E75B6"><FONT COLOR="white"><B>«record»<BR/>SourceAssignment</B></FONT></TD></TR><HR/><TR><TD ALIGN="LEFT">+ configurationVersion: long</TD></TR><TR><TD ALIGN="LEFT">+ sourceId: String</TD></TR><TR><TD ALIGN="LEFT">+ profileVersion: int</TD></TR><TR><TD ALIGN="LEFT">+ effectiveAt: Instant</TD></TR></TABLE>>];
+"Telemetry" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#1F4E79"><FONT COLOR="white"><B>Telemetry</B></FONT></TD></TR><HR/><TR><TD> </TD></TR><HR/><TR><TD ALIGN="LEFT">+ breached()</TD></TR><TR><TD ALIGN="LEFT">+ gap()</TD></TR><TR><TD ALIGN="LEFT">+ hasSourceContext()</TD></TR><TR><TD ALIGN="LEFT">+ validSourceContext()</TD></TR></TABLE>>];
+"TelemetryStore" [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" COLOR="#7F7F7F"><TR><TD BGCOLOR="#7F7F7F"><FONT COLOR="white"><B>«interface»<BR/>TelemetryStore</B></FONT></TD></TR><HR/><TR><TD> </TD></TR><HR/><TR><TD ALIGN="LEFT">+ assetContext()</TD></TR><TR><TD ALIGN="LEFT">+ claimBatch()</TD></TR><TR><TD ALIGN="LEFT">+ device()</TD></TR><TR><TD ALIGN="LEFT">+ event()</TD></TR><TR><TD ALIGN="LEFT">+ exists()</TD></TR><TR><TD ALIGN="LEFT">+ heartbeat()</TD></TR></TABLE>>];
+"Telemetry" -> "Reading" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"Telemetry" -> "BatchResult" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"Telemetry" -> "SafeRange" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"Telemetry" -> "Device" [arrowhead=odot, color="#7F7F7F", constraint=false];
+"Telemetry" -> "Gateway" [arrowhead=odot, color="#7F7F7F", constraint=false];
+{rank=same; "Telemetry"; "Reading"; "Device";}
+{rank=same; "Gateway"; "SafeRange"; "SourceAssignment";}
+{rank=same; "BatchResult"; "TelemetryStore";}
+"Telemetry" -> "Gateway" [style=invis];
+"Gateway" -> "BatchResult" [style=invis];
+"Telemetry" -> "Reading" [style=invis];
+"Reading" -> "Device" [style=invis];
+"Gateway" -> "SafeRange" [style=invis];
+"SafeRange" -> "SourceAssignment" [style=invis];
+"BatchResult" -> "TelemetryStore" [style=invis];
+labelloc="t"; label=<<B>Monitoring Service</B> - modelo de dominio>; fontsize=13;}
