@@ -1,0 +1,59 @@
+
+> coldtrace-frontend@1.0.0 test
+> ng test --watch=false
+
+Node.js version v25.2.0 detected.
+Odd numbered Node.js versions will not enter LTS status and should not be used for production. For more information, please see https://nodejs.org/en/about/previous-releases/.
+> Building...
+√ Building...
+Initial chunk files                                                                             | Names                                                                                        |  Raw size
+spec-app-app.js                                                                                 | spec-app-app                                                                                 | 264.30 kB | 
+chunk-AMQ7NANA.js                                                                               | -                                                                                            |  84.96 kB | 
+spec-app-asset-management-presentation-components-source-configuration-source-configuration.js  | spec-app-asset-management-presentation-components-source-configuration-source-configuration  |  63.34 kB | 
+spec-app-monitoring-presentation-views-asset-monitoring-dashboard-asset-monitoring-dashboard.js | spec-app-monitoring-presentation-views-asset-monitoring-dashboard-asset-monitoring-dashboard |  59.01 kB | 
+spec-app-monitoring-presentation-components-incidents-chart-incidents-chart.js                  | spec-app-monitoring-presentation-components-incidents-chart-incidents-chart                  |  27.80 kB | 
+spec-app-monitoring-presentation-components-stat-card-stat-card.js                              | spec-app-monitoring-presentation-components-stat-card-stat-card                              |  24.92 kB | 
+chunk-KJLLJQPS.js                                                                               | -                                                                                            |  24.72 kB | 
+chunk-6PAYVWCD.js                                                                               | -                                                                                            |  22.48 kB | 
+spec-app-monitoring-presentation-components-storage-distribution-storage-distribution.js        | spec-app-monitoring-presentation-components-storage-distribution-storage-distribution        |  17.52 kB | 
+chunk-BATY6TGN.js                                                                               | -                                                                                            |  16.78 kB | 
+spec-app-monitoring-presentation-components-maintenance-list-maintenance-list.js                | spec-app-monitoring-presentation-components-maintenance-list-maintenance-list                |  15.61 kB | 
+chunk-2AVFKQKQ.js                                                                               | -                                                                                            |  13.79 kB | 
+chunk-RSTWSNOR.js                                                                               | -                                                                                            |   4.75 kB | 
+chunk-VXBRA6WA.js                                                                               | -                                                                                            |   3.36 kB | 
+spec-app-shared-infrastructure-increment-api.js                                                 | spec-app-shared-infrastructure-increment-api                                                 |   2.75 kB | 
+chunk-CI2TZJU6.js                                                                               | -                                                                                            |   2.56 kB | 
+spec-app-monitoring-presentation-components-monitoring-asset-card-monitoring-asset-card.js      | spec-app-monitoring-presentation-components-monitoring-asset-card-monitoring-asset-card      |   2.35 kB | 
+chunk-BCLLXFHR.js                                                                               | -                                                                                            |   1.99 kB | 
+chunk-UB5E37NZ.js                                                                               | -                                                                                            |   1.82 kB | 
+styles.css                                                                                      | styles                                                                                       |   1.73 kB | 
+chunk-NEFAZOO4.js                                                                               | -                                                                                            |   1.39 kB | 
+chunk-P7IDB4ZV.js                                                                               | -                                                                                            |   1.23 kB | 
+init-testbed.js                                                                                 | init-testbed                                                                                 |   1.21 kB | 
+spec-app-monitoring-domain-model-storage-distribution-item.entity.js                            | spec-app-monitoring-domain-model-storage-distribution-item.entity                            |   1.06 kB | 
+spec-app-monitoring-domain-model-incident-day.entity.js                                         | spec-app-monitoring-domain-model-incident-day.entity                                         |   1.05 kB | 
+vitest-mock-patch.js                                                                            | vitest-mock-patch                                                                            | 974 bytes | 
+spec-app-asset-management-infrastructure-asset-assembler.js                                     | spec-app-asset-management-infrastructure-asset-assembler                                     | 881 bytes | 
+spec-app-monitoring-presentation-components-temperature-chart-temperature-chart.js              | spec-app-monitoring-presentation-components-temperature-chart-temperature-chart              | 860 bytes | 
+spec-app-monitoring-presentation-components-temperature-gauge-temperature-gauge.js              | spec-app-monitoring-presentation-components-temperature-gauge-temperature-gauge              | 857 bytes | 
+spec-app-monitoring-domain-model-maintenance-task.entity.js                                     | spec-app-monitoring-domain-model-maintenance-task.entity                                     | 854 bytes | 
+chunk-EZTYSXOT.js                                                                               | -                                                                                            | 831 bytes | 
+spec-app-monitoring-presentation-components-recent-alerts-recent-alerts.js                      | spec-app-monitoring-presentation-components-recent-alerts-recent-alerts                      | 828 bytes | 
+chunk-TEIHVEVN.js                                                                               | -                                                                                            | 754 bytes | 
+spec-app-monitoring-domain-model-temperature-point.entity.js                                    | spec-app-monitoring-domain-model-temperature-point.entity                                    | 500 bytes | 
+spec-app-monitoring-domain-model-recent-alert.entity.js                                         | spec-app-monitoring-domain-model-recent-alert.entity                                         | 358 bytes | 
+chunk-5CZCCWBO.js                                                                               | -                                                                                            | 283 bytes | 
+
+                                                                                                | Initial total                                                                                | 670.45 kB
+
+Application bundle generation complete. [3.644 seconds] - 2026-11-04T19:08:11.217Z
+
+
+ RUN  v4.1.12 C:/Users/david/IdeaProjects/coldtrace-sprint1-repositories/coldtrace-web-app
+
+
+ Test Files  18 passed (18)
+      Tests  32 passed (32)
+   Start at  14:08:12
+   Duration  12.64s (transform 3.67s, setup 42.68s, import 6.86s, tests 5.11s, environment 130.51s)
+

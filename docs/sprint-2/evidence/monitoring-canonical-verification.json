@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-03",
+  "commit": "7492a48",
+  "pull_request": "https://github.com/Veltis-Software/coldtrace-monitoring-service/pull/4",
+  "tests": 31,
+  "failures": 0,
+  "errors": 0,
+  "suites": [
+    {
+      "name": "com.acme.coldtrace.platform.monitoring.ArchitectureTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.acme.coldtrace.platform.monitoring.OutboxRelayTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.acme.coldtrace.platform.monitoring.RunCucumberTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.acme.coldtrace.platform.monitoring.TelemetryIntegrationTest",
+      "tests": "24",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "mysql": {
+    "version": "8.0.40",
+    "isolated_database": "ct_canonical_test",
+    "migrations_applied": 8,
+    "tests": 31,
+    "failures": 0,
+    "errors": 0
+  },
+  "scope": "Canonical source context in Monitoring; source registry administration remains S2-03/S2-04."
+}

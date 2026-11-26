@@ -1,0 +1,12 @@
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 s -- in com.acme.coldtrace.shared.CorrelationIdsTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.359 s -- in com.acme.coldtrace.platform.monitoring.ArchitectureTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.692 s -- in com.acme.coldtrace.platform.monitoring.OutboxRelayTest
+{"timestamp":"2026-11-03T20:44:57.249-05:00","level":"INFO","thread":"main","logger":"org.flywaydb.core.internal.command.DbMigrate","message":"Successfully applied 8 migrations to schema \"public\", now at version v8 (execution time 00:00.182s)"}
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.14 s -- in com.acme.coldtrace.platform.monitoring.TelemetryIntegrationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.403 s -- in com.acme.coldtrace.platform.monitoring.RunCucumberTest
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0
+[INFO] coldtrace-shared ................................... SUCCESS [  2.025 s]
+[INFO] coldtrace-monitoring-service ....................... SUCCESS [ 53.803 s]
+[INFO] BUILD SUCCESS
+[INFO] Finished at: 2026-11-03T20:45:25-05:00

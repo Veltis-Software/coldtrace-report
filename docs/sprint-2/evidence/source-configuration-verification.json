@@ -1,0 +1,95 @@
+{
+  "runtime": {
+    "screenshots": [
+      {
+        "sha256": "6A31ABC6711B6408C14261F17653E665422C972850CED7BD1865ECB3CE8658CD",
+        "file": "source-configuration-desktop.png"
+      },
+      {
+        "sha256": "68E44D11D2A0831A5345E184801B8B832795F95C898CF6A69943E43FBBDA5116",
+        "file": "source-configuration-mobile.png"
+      }
+    ],
+    "replacement": "MQTT/Celsius to HTTP/Fahrenheit",
+    "historyRevisions": 2,
+    "failures": 0,
+    "requests": 5,
+    "assertions": 8,
+    "mode": "real authenticated API with isolated database, browser-only routing proxy"
+  },
+  "remaining": [
+    "Remote configuration provisioning and retired-source rejection end to end",
+    "Monitoring enforcement of the source registry",
+    "Cloud deployment and paid database sizing",
+    "Incorporate this continuation into the next Word cut preserving formatting"
+  ],
+  "backend": {
+    "commit": "4ffeb9e",
+    "tests": 21,
+    "repository": "Veltis-Software/coldtrace-backend",
+    "pullRequest": "https://github.com/Veltis-Software/coldtrace-backend/pull/7",
+    "database": "isolated MySQL 8.0.40",
+    "suites": [
+      {
+        "failures": 0,
+        "tests": 3,
+        "name": "com.acme.coldtrace.platform.assetmanagement.IoTDeviceManagedSourceTest",
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "failures": 0,
+        "tests": 10,
+        "name": "com.acme.coldtrace.platform.assetmanagement.SourceConfigurationIntegrationTest",
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "failures": 0,
+        "tests": 5,
+        "name": "com.acme.coldtrace.platform.assetmanagement.SourceConfigurationsControllerTest",
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "failures": 0,
+        "tests": 1,
+        "name": "com.acme.coldtrace.platform.ColdtracePlatformApplicationTests",
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "failures": 0,
+        "tests": 2,
+        "name": "com.acme.coldtrace.platform.iam.interfaces.rest.SessionContextControllerTest",
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "checkedAt": "2026-11-04T05:18:43.0275223Z",
+  "frontend": {
+    "commit": "240838c",
+    "tests": 28,
+    "build": "success",
+    "repository": "Veltis-Software/coldtrace-web-app",
+    "pullRequest": "https://github.com/Veltis-Software/coldtrace-web-app/pull/3",
+    "files": 18,
+    "audit": {
+      "moderate": 16,
+      "critical": 0,
+      "high": 0
+    },
+    "cleanInstall": "Windows npm ci and Linux Node22 npm ci dry-run successful",
+    "angularCore": "21.2.26",
+    "angularBuild": "21.2.29"
+  },
+  "ci": {
+    "servicesAndContainers": "https://github.com/Veltis-Software/coldtrace-backend/actions/runs/41778438467",
+    "backend": "https://github.com/Veltis-Software/coldtrace-backend/actions/runs/41778438538",
+    "backendStatus": "success",
+    "webStatus": "success",
+    "servicesAndContainersStatus": "success",
+    "web": "https://github.com/Veltis-Software/coldtrace-web-app/actions/runs/41778998525"
+  }
+}

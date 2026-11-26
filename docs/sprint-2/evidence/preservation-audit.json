@@ -1,0 +1,16 @@
+{
+  "source_tables": 94,
+  "final_tables": 102,
+  "sections": 5,
+  "global_styles_unchanged": true,
+  "original_content_tables_unchanged": true,
+  "paragraph_properties_changed": [],
+  "replaced_image_paragraph_ids": [
+    "02C8936D",
+    "395C110C",
+    "49DBDFFD",
+    "3727ED0E"
+  ],
+  "unique_paragraph_ids": true,
+  "sha256": "0363b64beca2524f852c1452f6d88b80e23bceb84e246d87643a19dc5c0c3f5f"
+}
